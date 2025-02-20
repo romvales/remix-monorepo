@@ -1,17 +1,20 @@
+import invariant from 'tiny-invariant'
+import { defineConfig } from 'vite'
 
 import yaml from '@modyfi/vite-plugin-yaml'
 import { vitePlugin as remix } from '@remix-run/dev'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
-import { defineConfig } from 'vite'
+invariant(process.env.APP, 'Missing APP environment variable.')
 
 export default defineConfig({
+
   plugins: [
     yaml(),
     tsconfigPaths(),
     remix({
-      appDirectory: `web/${process.env.APP_NAME}`,
-      buildDirectory: `web/${process.env.APP_NAME}`,
+      appDirectory: `web/${process.env.APP}`,
+      buildDirectory: `build/${process.env.APP}`,
 
       ignoredRouteFiles: [ 
         '**/*.css',

@@ -3,7 +3,8 @@
 declare namespace NodeJS {
 
   interface ProcessEnv {
-    APP_NAME: string
+    APP: string
+    ENV: 'dev' | 'test' | 'prod'
   }
 
 }

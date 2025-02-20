@@ -4,7 +4,7 @@ import { LinksFunction } from '@remix-run/node';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 
 export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: stylesHref }
+  { rel: 'stylesheet', href: stylesHref },
 ]
 
 export default function App() {
@@ -12,11 +12,11 @@ export default function App() {
   <html lang='en'>
   <head>
     <Meta />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta charSet='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <Links />
   </head>
-  <body>
+  <body> 
     <noscript></noscript>
 
     <Outlet />

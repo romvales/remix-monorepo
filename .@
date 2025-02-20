@@ -1,17 +1,62 @@
 #!/bin/bash -
 
-case $1 in
+shopt -s expand_aliases
 
-  remix.dev)
-    remix vite:dev
-    ;;
-  
-  remix.build)
-    remix vite:build
-    ;;
+export APP=${APP:-example}
+export ENV=${ENV:-dev}
+export POCKETBASE_DIR="web/${APP}.pocketbase"
 
-  remix.start)
-    remix-serve ./build/${APP_NAME}/server/index.js
-    ;;
+# Load the environment variables from the config.toml
+eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
+  case $1 in
 
-esac
+    remix.dev)
+      remix vite:dev
+      ;;
+    
+    remix.build)
+      remix vite:build
+      ;;
+
+    remix.start)
+      remix-serve ./build/${APP}/server/index.js
+      ;;
+
+    email.dev)
+      email dev -d ./emails/${APP}
+      ;;
+
+    email.build)
+      email build -d ./emails/${APP}
+      ;;
+
+    pocketbase)
+      cd $POCKETBASE_DIR && eval ${@:2};
+      ;;
+
+    pocketbase.dev)
+      ./.@ pocketbase go run main.go serve
+      ;;
+
+    pocketbase.build)
+      ./.@ pocketbase go build -ldflags "-s -w" . -o bin/pocketbase
+      ;;
+
+    pocketbase.migrate)
+      ./.@ pocketbase.dev migrate collections
+      ;;
+
+    pocketbase.start)
+      ./.@ pocketbase ./bin/pocketbase serve
+      ;;
+
+    pocketbase.types)
+      npx pocketbase-typegen --db ./web/${APP}.pocketbase/pb_data/data.db --out ./web/${APP}/types/pocketbase-types.ts
+      ;;
+
+    *)
+      eval ${@:1};
+      ;;
+
+  esac
+} || exit 0

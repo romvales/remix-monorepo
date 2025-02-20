@@ -1,3 +1,13 @@
+.react-email
+
 node_modules
+build
+
+.env
+.env.*
+!.env.example
+
 **/config.*.toml
 !**/config.example.toml
+
+**/pb_data
