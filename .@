@@ -1,0 +1,17 @@
+#!/bin/bash -
+
+case $1 in
+
+  remix.dev)
+    remix vite:dev
+    ;;
+  
+  remix.build)
+    remix vite:build
+    ;;
+
+  remix.start)
+    remix-serve ./build/${APP_NAME}/server/index.js
+    ;;
+
+esac

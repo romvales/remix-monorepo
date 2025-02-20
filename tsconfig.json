@@ -1,0 +1,43 @@
+{
+  "include": [
+    "web/**/*.ts",
+    "web/**/*.tsx",
+    "web/**/.server/**/*.ts",
+    "web/**/.server/**/*.tsx",
+    "web/**/.client/**/*.ts",
+    "web/**/.client/**/*.tsx",
+    "shared/**/*.tsx",
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowJs": true,
+    "types": [
+      "@remix-run/node",
+      "vite/client",
+      "vitest/globals",
+      "@modyfi/vite-plugin-yaml/modules"
+    ],
+    "paths": {
+      "@web/*": [ "./web/*" ],
+      "@components/*": [ "./shared/components/*" ],
+      "@components/ui/*": [ "./shared/components/ui/*" ],
+    }
+  },
+  
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
