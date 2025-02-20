@@ -30,7 +30,7 @@
       "@modyfi/vite-plugin-yaml/modules"
     ],
     "paths": {
-      "@talentbridgevisa/*": [ "./web/talentbridgevisa/*" ],
+      "@zapenlist/*": [ "./web/zapenlist/*" ],
       "@components/*": [ "./shared/components/*" ],
       "@components/ui/*": [ "./shared/components/ui/*" ],
     }
