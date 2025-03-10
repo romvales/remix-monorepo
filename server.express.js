@@ -16,9 +16,12 @@ const vite = /production/.test(process.env.NODE_ENV) ?
 
 const handleRequest = createRequestHandler({
   build: vite ? () => vite.ssrLoadModule('virtual:remix/server-build') : await import(`./build/${APP}/server/index.js`),
+  getLoadContext() {
+    return {}
+  },
 })
 
-App.disable('X-Powered-By')
+App.disable('X-Powered-By') 
 
 if (vite) {
   App.use(vite.middlewares)

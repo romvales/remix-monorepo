@@ -12,9 +12,9 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
 
     remix.dev)
 
-      case $RUNTIME in
-        node)
-          node ./server.js
+      case $ADAPTER in
+        express)
+          node ./server.express.js
           ;;
         *)
           remix vite:dev
@@ -29,9 +29,9 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
 
     remix.start)
       
-      case $RUNTIME in
-        node)
-          NODE_ENV=production node ./server.js
+      case $ADAPTER in
+        express)
+          NODE_ENV=production node ./server.express.js
           ;;
         *)
           remix-serve ./build/${APP}/server/index.js
