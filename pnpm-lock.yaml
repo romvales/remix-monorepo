@@ -38,6 +38,9 @@ importers:
       '@react-email/components':
         specifier: ^0.0.33
         version: 0.0.33(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@remix-run/deno':
+        specifier: ^2.16.0
+        version: 2.16.0(typescript@5.7.3)
       '@remix-run/express':
         specifier: ^2.16.0
         version: 2.16.0(express@4.21.2)(typescript@5.7.3)
@@ -1748,6 +1751,15 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^18.0 || ^19.0 || ^19.0.0-rc
+
+  '@remix-run/deno@2.16.0':
+    resolution: {integrity: sha512-twejB9r8DCko8vL7OweoDY/Dfj97M1GK5UDJxsIu9NdFA9/8A00qwlKajGcQZ2oWGfJHi2gCEhKOlRL3qW8vjg==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   '@remix-run/dev@2.15.3':
     resolution: {integrity: sha512-agndQJHs7qISPXXH/Zet0VHWvcwtQGoEOXxltjerNQ2zWcAJQBm9i06tS6n6v/ZP0sHIVdo/IsvgAA4wetqmNw==}
@@ -7220,6 +7232,13 @@ snapshots:
     dependencies:
       react: 18.2.0
 
+  '@remix-run/deno@2.16.0(typescript@5.7.3)':
+    dependencies:
+      '@remix-run/server-runtime': 2.16.0(typescript@5.7.3)
+      mime: 3.0.0
+    optionalDependencies:
+      typescript: 5.7.3
+
   '@remix-run/dev@2.15.3(@remix-run/react@2.15.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.7.3))(@remix-run/serve@2.15.3(typescript@5.7.3))(@types/node@22.13.4)(lightningcss@1.29.1)(ts-node@10.9.2(@types/node@22.13.4)(typescript@5.7.3))(typescript@5.7.3)(vite@5.4.14(@types/node@22.13.4)(lightningcss@1.29.1))':
     dependencies:
       '@babel/core': 7.26.9
@@ -7308,8 +7327,8 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@8.38.0)(typescript@5.7.3)
       eslint: 8.38.0
       eslint-import-resolver-node: 0.3.7
-      eslint-import-resolver-typescript: 3.8.2(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint@8.38.0))(eslint@8.38.0)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint-import-resolver-typescript@3.8.2(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint@8.38.0))(eslint@8.38.0))(eslint@8.38.0)
+      eslint-import-resolver-typescript: 3.8.2(eslint-plugin-import@2.31.0)(eslint@8.38.0)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint-import-resolver-typescript@3.8.2)(eslint@8.38.0)
       eslint-plugin-jest: 26.9.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint@8.38.0)(typescript@5.7.3))(eslint@8.38.0)(typescript@5.7.3)
       eslint-plugin-jest-dom: 4.0.3(eslint@8.38.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.38.0)
@@ -8834,7 +8853,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.8.2(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint@8.38.0))(eslint@8.38.0):
+  eslint-import-resolver-typescript@3.8.2(eslint-plugin-import@2.31.0)(eslint@8.38.0):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.0
@@ -8845,18 +8864,18 @@ snapshots:
       stable-hash: 0.0.4
       tinyglobby: 0.2.12
     optionalDependencies:
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint-import-resolver-typescript@3.8.2(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint@8.38.0))(eslint@8.38.0))(eslint@8.38.0)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint-import-resolver-typescript@3.8.2)(eslint@8.38.0)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.8.2(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint@8.38.0))(eslint@8.38.0))(eslint@8.38.0):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.8.2)(eslint@8.38.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 5.62.0(eslint@8.38.0)(typescript@5.7.3)
       eslint: 8.38.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.8.2(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint@8.38.0))(eslint@8.38.0)
+      eslint-import-resolver-typescript: 3.8.2(eslint-plugin-import@2.31.0)(eslint@8.38.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -8866,7 +8885,7 @@ snapshots:
       eslint-utils: 2.1.0
       regexpp: 3.2.0
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint-import-resolver-typescript@3.8.2(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint@8.38.0))(eslint@8.38.0))(eslint@8.38.0):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint-import-resolver-typescript@3.8.2)(eslint@8.38.0):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -8877,7 +8896,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.38.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.8.2(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint@8.38.0))(eslint@8.38.0))(eslint@8.38.0)
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@5.62.0(eslint@8.38.0)(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.8.2)(eslint@8.38.0)
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
