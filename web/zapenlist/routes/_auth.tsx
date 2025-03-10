@@ -1,14 +1,10 @@
-import { Outlet } from '@remix-run/react'
-
-import { AuthFooter } from '@zapenlist/components/common/auth'
-
+import { Fragment } from 'react'
 
 export default function Layout() {
 
   return (
-    <>
-      <Outlet />
-      <AuthFooter />
-    </>
+    <Fragment>
+
+    </Fragment>
   )
 }

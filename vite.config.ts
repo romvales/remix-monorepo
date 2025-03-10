@@ -3,14 +3,16 @@ import { defineConfig } from 'vite'
 
 import yaml from '@modyfi/vite-plugin-yaml'
 import { vitePlugin as remix } from '@remix-run/dev'
+import { envOnlyMacros } from 'vite-env-only'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 invariant(process.env.APP, 'Missing APP environment variable.')
 
 export default defineConfig({
-
+  publicDir: `web/${process.env.APP}/public`,
   plugins: [
     yaml(),
+    envOnlyMacros(),
     tsconfigPaths(),
     remix({
       appDirectory: `web/${process.env.APP}`,

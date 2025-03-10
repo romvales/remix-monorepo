@@ -1,0 +1,346 @@
+standard: ISIC Rev. 4
+standardVersion: "Revision 4"
+standardDescription: "The International Standard Industrial Classification of All Economic Activities (ISIC) is a United Nations system for classifying economic data. Revision 4 is the latest version, providing a comprehensive framework for categorizing industries globally."
+source: "United Nations Statistics Division"
+sourceUrl: "https://unstats.un.org/unsd/classifications/Econ"
+lastUpdated: "2025-02-22"
+license: "CC BY 4.0"
+licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+contactEmail: "CHL@un.org"
+contactOrganization: "Global Data Standards Organization"
+industries:
+  - id: 507f1f77bcf86cd799439011
+    code: A
+    name: Agriculture, forestry and fishing
+    description: Activities related to crop and animal production, forestry, and fishing.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [cropProduction, animalProduction, forestry, fishing]
+    relatedIndustries: [foodProcessing, environmentalServices]
+    keywords: [crops, livestock, forestry, fishing, agriculture, farming, aquaculture, harvest, cultivation, sustainability]
+    tags: [primarySector, naturalResources, foodProduction]
+    sectorType: primary
+    globalImportance: high
+    economicImpact: essential
+  
+  - id: 507f1f77bcf86cd799439012
+    code: B
+    name: Mining and quarrying
+    description: Extraction of mineral resources from the earth.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [coalMining, oilExtraction, metalOreMining, quarrying]
+    relatedIndustries: [energyProduction, construction]
+    keywords: [coal, oil, gas, minerals, mining, quarrying, extraction, drilling, resources, energy]
+    tags: [primarySector, naturalResources, energy]
+    sectorType: primary
+    globalImportance: high
+    economicImpact: critical
+
+  - id: 507f1f77bcf86cd799439013
+    code: C
+    name: Manufacturing
+    description: Transformation of materials into new products.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [foodProduction, textileManufacturing, chemicalProduction, machineryManufacturing]
+    relatedIndustries: [wholesaleTrade, retailTrade]
+    keywords: [production, factories, goods, manufacturing, assembly, machinery, textiles, chemicals, automation, innovation]
+    tags: [secondarySector, industrial, production]
+    sectorType: secondary
+    globalImportance: high
+    economicImpact: essential
+
+  - id: 507f1f77bcf86cd799439014
+    code: D
+    name: Electricity, gas, steam, and air conditioning supply
+    description: Generation and distribution of energy and utilities.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [electricityGeneration, gasDistribution, renewableEnergy]
+    relatedIndustries: [mining, construction]
+    keywords: [energy, power, utilities, electricity, gas, steam, airConditioning, renewableEnergy, distribution, sustainability]
+    tags: [secondarySector, utilities, energy]
+    sectorType: secondary
+    globalImportance: high
+    economicImpact: critical
+
+  - id: 507f1f77bcf86cd799439015
+    code: E
+    name: Water supply, sewerage, waste management, and remediation activities
+    description: Management of water resources and waste treatment.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [waterTreatment, wasteCollection, recycling, environmentalRemediation]
+    relatedIndustries: [construction, publicAdministration]
+    keywords: [water, waste, recycling, sewerage, treatment, remediation, sanitation, environmentalServices, sustainability]
+    tags: [secondarySector, utilities, environmental]
+    sectorType: secondary
+    globalImportance: high
+    economicImpact: essential
+
+  - id: 507f1f77bcf86cd799439016
+    code: F
+    name: Construction
+    description: Building and infrastructure development.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [residentialConstruction, commercialConstruction, civilEngineering]
+    relatedIndustries: [realEstate, manufacturing]
+    keywords: [buildings, infrastructure, construction, engineering, architecture, contractors, development, projects, urbanization]
+    tags: [secondarySector, infrastructure, development]
+    sectorType: secondary
+    globalImportance: high
+    economicImpact: critical
+
+  - id: 507f1f77bcf86cd799439017
+    code: G
+    name: Wholesale and retail trade; repair of motor vehicles and motorcycles
+    description: Sale and repair of goods and vehicles.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [wholesaleTrade, retailTrade, vehicleRepair]
+    relatedIndustries: [manufacturing, transportation]
+    keywords: [retail, wholesale, vehicles, motorcycles, sales, repair, commerce, distribution, automotive, eCommerce]
+    tags: [tertiarySector, commerce, trade]
+    sectorType: tertiary
+    globalImportance: high
+    economicImpact: essential
+
+  - id: 507f1f77bcf86cd799439018
+    code: H
+    name: Transportation and storage
+    description: Movement of goods and people, and storage services.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [logistics, warehousing, passengerTransport]
+    relatedIndustries: [wholesaleTrade, eCommerce]
+    keywords: [logistics, shipping, storage, transportation, freight, warehousing, supplyChain, delivery, cargo, mobility]
+    tags: [tertiarySector, logistics, supplyChain]
+    sectorType: tertiary
+    globalImportance: high
+    economicImpact: critical
+
+  - id: 507f1f77bcf86cd799439019
+    code: I
+    name: Accommodation and food service activities
+    description: Hospitality and food services.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [hotels, restaurants, catering]
+    relatedIndustries: [tourism, entertainment]
+    keywords: [hotels, restaurants, hospitality, catering, tourism, foodService, lodging, dining, events, travel]
+    tags: [tertiarySector, hospitality, tourism]
+    sectorType: tertiary
+    globalImportance: high
+    economicImpact: essential
+
+  - id: 507f1f77bcf86cd799439020
+    code: J
+    name: Information and communication
+    description: Activities related to information technology and communication.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [softwareDevelopment, telecommunications, publishing]
+    relatedIndustries: [education, professionalServices]
+    keywords: [IT, telecommunications, software, internet, data, communication, technology, networks, media, innovation]
+    tags: [tertiarySector, technology, digital]
+    sectorType: tertiary
+    globalImportance: high
+    economicImpact: critical
+
+  - id: 507f1f77bcf86cd799439021
+    code: K
+    name: Financial and insurance activities
+    description: Banking, finance, and insurance services.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [banking, insurance, investment]
+    relatedIndustries: [realEstate, professionalServices]
+    keywords: [banking, finance, insurance, investments, loans, wealthManagement, risk, trading, markets, fintech]
+    tags: [tertiarySector, finance, banking]
+    sectorType: tertiary
+    globalImportance: high
+    economicImpact: critical
+
+  - id: 507f1f77bcf86cd799439022
+    code: L
+    name: Real estate activities
+    description: Buying, selling, and managing properties.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [propertyManagement, realEstateDevelopment, leasing]
+    relatedIndustries: [construction, financialServices]
+    keywords: [property, realEstate, housing, leasing, development, management, sales, rentals, investments, urbanization]
+    tags: [tertiarySector, property, development]
+    sectorType: tertiary
+    globalImportance: high
+    economicImpact: essential
+
+  - id: 507f1f77bcf86cd799439023
+    code: M
+    name: Professional, scientific, and technical activities
+    description: Services requiring specialized knowledge.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [legalServices, accounting, engineeringServices]
+    relatedIndustries: [informationTechnology, financialServices]
+    keywords: [consulting, research, legal, accounting, engineering, design, architecture, scientific, technical, innovation]
+    tags: [tertiarySector, professionalServices, knowledgeEconomy]
+    sectorType: tertiary
+    globalImportance: high
+    economicImpact: critical
+
+  - id: 507f1f77bcf86cd799439024
+    code: N
+    name: Administrative and support service activities
+    description: Office administration and support services.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [callCenters, officeAdministration, securityServices]
+    relatedIndustries: [professionalServices, transportation]
+    keywords: [office, support, administration, callCenters, security, facilities, management, outsourcing, services, efficiency]
+    tags: [tertiarySector, supportServices, businessServices]
+    sectorType: tertiary
+    globalImportance: medium
+    economicImpact: significant
+
+  - id: 507f1f77bcf86cd799439025
+    code: O
+    name: Public administration and defense; compulsory social security
+    description: Government and defense services.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [governmentServices, defense, socialSecurity]
+    relatedIndustries: [education, healthcare]
+    keywords: [government, defense, socialSecurity, publicServices, administration, policy, regulation, security, welfare, governance]
+    tags: [publicSector, governance, defense]
+    sectorType: public
+    globalImportance: high
+    economicImpact: essential
+
+  - id: 507f1f77bcf86cd799439026
+    code: P
+    name: Education
+    description: Provision of educational services.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [primaryEducation, secondaryEducation, higherEducation]
+    relatedIndustries: [professionalServices, healthcare]
+    keywords: [schools, universities, training, education, learning, teaching, academics, research, development, knowledge]
+    tags: [publicSector, education, knowledgeEconomy]
+    sectorType: public
+    globalImportance: high
+    economicImpact: essential
+
+  - id: 507f1f77bcf86cd799439027
+    code: Q
+    name: Human health and social work activities
+    description: Healthcare and social services.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [hospitals, clinics, socialServices]
+    relatedIndustries: [education, publicAdministration]
+    keywords: [healthcare, hospitals, socialWork, medicine, nursing, clinics, wellness, publicHealth, therapy, care]
+    tags: [publicSector, healthcare, socialServices]
+    sectorType: public
+    globalImportance: high
+    economicImpact: critical
+
+  - id: 507f1f77bcf86cd799439028
+    code: R
+    name: Arts, entertainment, and recreation
+    description: Cultural and recreational activities.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [performingArts, sports, recreation]
+    relatedIndustries: [tourism, hospitality]
+    keywords: [entertainment, sports, arts, culture, recreation, events, music, theater, leisure, tourism]
+    tags: [tertiarySector, entertainment, culture]
+    sectorType: tertiary
+    globalImportance: medium
+    economicImpact: significant
+
+  - id: 507f1f77bcf86cd799439029
+    code: S
+    name: Other service activities
+    description: Miscellaneous service activities.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [repairServices, personalCare, membershipOrganizations]
+    relatedIndustries: [retailTrade, hospitality]
+    keywords: [services, personalCare, repair, maintenance, organizations, associations, clubs, beauty, wellness, community]
+    tags: [tertiarySector, miscellaneous, communityServices]
+    sectorType: tertiary
+    globalImportance: medium
+    economicImpact: moderate
+
+  - id: 507f1f77bcf86cd799439030
+    code: T
+    name: Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use
+    description: Household activities and production for own use.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [domesticServices, householdProduction]
+    relatedIndustries: [agriculture, retailTrade]
+    keywords: [households, domestic, self-production, services, goods, home, family, maintenance, care, informalEconomy]
+    tags: [informalSector, household, domestic]
+    sectorType: informal
+    globalImportance: low
+    economicImpact: moderate
+
+  - id: 507f1f77bcf86cd799439031
+    code: U
+    name: Activities of extraterritorial organizations and bodies
+    description: Activities of international organizations.
+    created: 2023-10-01T00:00:00Z
+    updated: 2023-10-01T00:00:00Z
+    isActive: true
+    parentIndustry: null
+    subIndustries: [internationalOrganizations, diplomaticMissions]
+    relatedIndustries: [publicAdministration, education]
+    keywords: [international, organizations, diplomacy, global, governance, agencies, bodies, cooperation, treaties, globalAffairs]
+    tags: [publicSector, international, diplomacy]
+    sectorType: public
+    globalImportance: high
+    economicImpact: significant

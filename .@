@@ -39,11 +39,11 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
       ;;
 
     pocketbase.build)
-      ./.@ pocketbase go build -ldflags "-s -w" . -o bin/pocketbase
+      ./.@ pocketbase go build -o bin/pocketbase -ldflags "-s"
       ;;
 
     pocketbase.migrate)
-      ./.@ pocketbase.dev migrate collections
+      ./.@ pocketbase go run main.go migrate collections
       ;;
 
     pocketbase.start)

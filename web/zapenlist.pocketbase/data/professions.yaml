@@ -1,0 +1,3185 @@
+professions:
+  # Agriculture, forestry and fishing
+  - id: 507f1f77bcf86cd799439101
+    industry: 507f1f77bcf86cd799439011
+    profession: Agricultural Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, agriculture, sustainability]
+    isActive: true
+  - id: 507f1f77bcf86cd799439102
+    industry: 507f1f77bcf86cd799439011
+    profession: Agronomist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [agriculture, science, crops]
+    isActive: true
+  - id: 507f1f77bcf86cd799439103
+    industry: 507f1f77bcf86cd799439011
+    profession: Farm Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, agriculture, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439104
+    industry: 507f1f77bcf86cd799439011
+    profession: Horticulturist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [plants, agriculture, science]
+    isActive: true
+  - id: 507f1f77bcf86cd799439105
+    industry: 507f1f77bcf86cd799439011
+    profession: Livestock Veterinarian
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [veterinary, agriculture, livestock]
+    isActive: true
+  - id: 507f1f77bcf86cd799439106
+    industry: 507f1f77bcf86cd799439011
+    profession: Aquaculture Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [aquaculture, fisheries, sustainability]
+    isActive: true
+  - id: 507f1f77bcf86cd799439107
+    industry: 507f1f77bcf86cd799439011
+    profession: Soil Scientist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [science, agriculture, soil]
+    isActive: true
+  - id: 507f1f77bcf86cd799439108
+    industry: 507f1f77bcf86cd799439011
+    profession: Crop Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [consulting, agriculture, crops]
+    isActive: true
+  - id: 507f1f77bcf86cd799439109
+    industry: 507f1f77bcf86cd799439011
+    profession: Irrigation Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [irrigation, agriculture, waterManagement]
+    isActive: true
+  - id: 507f1f77bcf86cd799439110
+    industry: 507f1f77bcf86cd799439011
+    profession: Agricultural Economist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [economics, agriculture, policy]
+    isActive: true
+  - id: 507f1f77bcf86cd799439111
+    industry: 507f1f77bcf86cd799439011
+    profession: Beekeeper
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [beekeeping, agriculture, sustainability]
+    isActive: true
+  - id: 507f1f77bcf86cd799439112
+    industry: 507f1f77bcf86cd799439011
+    profession: Organic Farmer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [organic, agriculture, sustainability]
+    isActive: true
+  - id: 507f1f77bcf86cd799439113
+    industry: 507f1f77bcf86cd799439011
+    profession: Pest Control Advisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [pestControl, agriculture, crops]
+    isActive: true
+  - id: 507f1f77bcf86cd799439114
+    industry: 507f1f77bcf86cd799439011
+    profession: Seed Technologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [seeds, agriculture, science]
+    isActive: true
+  - id: 507f1f77bcf86cd799439115
+    industry: 507f1f77bcf86cd799439011
+    profession: Agricultural Inspector
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [inspection, agriculture, compliance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439116
+    industry: 507f1f77bcf86cd799439011
+    profession: Farm Equipment Mechanic
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [mechanics, agriculture, machinery]
+    isActive: true
+  - id: 507f1f77bcf86cd799439117
+    industry: 507f1f77bcf86cd799439011
+    profession: Agricultural Journalist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [journalism, agriculture, media]
+    isActive: true
+  - id: 507f1f77bcf86cd799439118
+    industry: 507f1f77bcf86cd799439011
+    profession: Food Safety Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [foodSafety, agriculture, compliance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439119
+    industry: 507f1f77bcf86cd799439011
+    profession: Agricultural Educator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, agriculture, science]
+    isActive: true
+  - id: 507f1f77bcf86cd799439120
+    industry: 507f1f77bcf86cd799439011
+    profession: Agroecologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [ecology, agriculture, sustainability]
+    isActive: true
+
+  # Mining and quarrying
+  - id: 507f1f77bcf86cd799439121
+    industry: 507f1f77bcf86cd799439012
+    profession: Mining Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, mining, resources]
+    isActive: true
+  - id: 507f1f77bcf86cd799439122
+    industry: 507f1f77bcf86cd799439012
+    profession: Geologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [geology, mining, science]
+    isActive: true
+  - id: 507f1f77bcf86cd799439123
+    industry: 507f1f77bcf86cd799439012
+    profession: Drilling Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [drilling, mining, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439124
+    industry: 507f1f77bcf86cd799439012
+    profession: Mine Safety Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [safety, mining, compliance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439125
+    industry: 507f1f77bcf86cd799439012
+    profession: Mineral Processing Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, mining, processing]
+    isActive: true
+  - id: 507f1f77bcf86cd799439126
+    industry: 507f1f77bcf86cd799439012
+    profession: Quarry Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, quarrying, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439127
+    industry: 507f1f77bcf86cd799439012
+    profession: Blasting Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, mining, explosives]
+    isActive: true
+  - id: 507f1f77bcf86cd799439128
+    industry: 507f1f77bcf86cd799439012
+    profession: Exploration Geologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [geology, exploration, mining]
+    isActive: true
+  - id: 507f1f77bcf86cd799439129
+    industry: 507f1f77bcf86cd799439012
+    profession: Mine Surveyor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [surveying, mining, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439130
+    industry: 507f1f77bcf86cd799439012
+    profession: Environmental Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [environment, mining, consulting]
+    isActive: true
+  - id: 507f1f77bcf86cd799439131
+    industry: 507f1f77bcf86cd799439012
+    profession: Heavy Equipment Operator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [operations, mining, machinery]
+    isActive: true
+  - id: 507f1f77bcf86cd799439132
+    industry: 507f1f77bcf86cd799439012
+    profession: Metallurgist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [metallurgy, mining, science]
+    isActive: true
+  - id: 507f1f77bcf86cd799439133
+    industry: 507f1f77bcf86cd799439012
+    profession: Mine Planner
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [planning, mining, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439134
+    industry: 507f1f77bcf86cd799439012
+    profession: Resource Geologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [geology, mining, resources]
+    isActive: true
+  - id: 507f1f77bcf86cd799439135
+    industry: 507f1f77bcf86cd799439012
+    profession: Mine Electrician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [electrical, mining, maintenance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439136
+    industry: 507f1f77bcf86cd799439012
+    profession: Mine Geotechnical Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, mining, geotechnical]
+    isActive: true
+  - id: 507f1f77bcf86cd799439137
+    industry: 507f1f77bcf86cd799439012
+    profession: Mine Ventilation Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, mining, ventilation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439138
+    industry: 507f1f77bcf86cd799439012
+    profession: Mineral Economist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [economics, mining, resources]
+    isActive: true
+  - id: 507f1f77bcf86cd799439139
+    industry: 507f1f77bcf86cd799439012
+    profession: Mine Rehabilitation Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [environment, mining, rehabilitation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439140
+    industry: 507f1f77bcf86cd799439012
+    profession: Mine Health and Safety Trainer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [safety, mining, training]
+    isActive: true
+
+  # Manufacturing
+  - id: 507f1f77bcf86cd799439141
+    industry: 507f1f77bcf86cd799439013
+    profession: Production Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, manufacturing, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439142
+    industry: 507f1f77bcf86cd799439013
+    profession: Quality Assurance Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [quality, manufacturing, engineering]
+    isActive: true
+  - id: 507f1f77bcf86cd799439143
+    industry: 507f1f77bcf86cd799439013
+    profession: Industrial Designer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [design, manufacturing, innovation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439144
+    industry: 507f1f77bcf86cd799439013
+    profession: Process Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, manufacturing, processes]
+    isActive: true
+  - id: 507f1f77bcf86cd799439145
+    industry: 507f1f77bcf86cd799439013
+    profession: CNC Machinist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [machining, manufacturing, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439146
+    industry: 507f1f77bcf86cd799439013
+    profession: Supply Chain Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, manufacturing, logistics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439147
+    industry: 507f1f77bcf86cd799439013
+    profession: Maintenance Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [maintenance, manufacturing, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439148
+    industry: 507f1f77bcf86cd799439013
+    profession: Manufacturing Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, manufacturing, production]
+    isActive: true
+  - id: 507f1f77bcf86cd799439149
+    industry: 507f1f77bcf86cd799439013
+    profession: Assembly Line Worker
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [operations, manufacturing, assembly]
+    isActive: true
+  - id: 507f1f77bcf86cd799439150
+    industry: 507f1f77bcf86cd799439013
+    profession: Materials Scientist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [science, manufacturing, materials]
+    isActive: true
+  - id: 507f1f77bcf86cd799439151
+    industry: 507f1f77bcf86cd799439013
+    profession: Lean Manufacturing Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [lean, manufacturing, efficiency]
+    isActive: true
+  - id: 507f1f77bcf86cd799439152
+    industry: 507f1f77bcf86cd799439013
+    profession: Tool and Die Maker
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [tooling, manufacturing, precision]
+    isActive: true
+  - id: 507f1f77bcf86cd799439153
+    industry: 507f1f77bcf86cd799439013
+    profession: Packaging Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, manufacturing, packaging]
+    isActive: true
+  - id: 507f1f77bcf86cd799439154
+    industry: 507f1f77bcf86cd799439013
+    profession: Robotics Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [robotics, manufacturing, automation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439155
+    industry: 507f1f77bcf86cd799439013
+    profession: Industrial Safety Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [safety, manufacturing, compliance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439156
+    industry: 507f1f77bcf86cd799439013
+    profession: Production Planner
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [planning, manufacturing, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439157
+    industry: 507f1f77bcf86cd799439013
+    profession: Welding Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [welding, manufacturing, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439158
+    industry: 507f1f77bcf86cd799439013
+    profession: Industrial Electrician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [electrical, manufacturing, maintenance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439159
+    industry: 507f1f77bcf86cd799439013
+    profession: Manufacturing Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [consulting, manufacturing, efficiency]
+    isActive: true
+  - id: 507f1f77bcf86cd799439160
+    industry: 507f1f77bcf86cd799439013
+    profession: Production Supervisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [supervision, manufacturing, operations]
+    isActive: true
+
+  # Electricity, gas, steam, and air conditioning supply
+  - id: 507f1f77bcf86cd799439161
+    industry: 507f1f77bcf86cd799439014
+    profession: Power Plant Operator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [operations, energy, utilities]
+    isActive: true
+  - id: 507f1f77bcf86cd799439162
+    industry: 507f1f77bcf86cd799439014
+    profession: Electrical Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, energy, electricity]
+    isActive: true
+  - id: 507f1f77bcf86cd799439163
+    industry: 507f1f77bcf86cd799439014
+    profession: Energy Auditor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [energy, auditing, efficiency]
+    isActive: true
+  - id: 507f1f77bcf86cd799439164
+    industry: 507f1f77bcf86cd799439014
+    profession: HVAC Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [HVAC, maintenance, utilities]
+    isActive: true
+  - id: 507f1f77bcf86cd799439165
+    industry: 507f1f77bcf86cd799439014
+    profession: Renewable Energy Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [renewable, energy, sustainability]
+    isActive: true
+  - id: 507f1f77bcf86cd799439166
+    industry: 507f1f77bcf86cd799439014
+    profession: Gas Distribution Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, gas, utilities]
+    isActive: true
+  - id: 507f1f77bcf86cd799439167
+    industry: 507f1f77bcf86cd799439014
+    profession: Steam Turbine Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [turbine, maintenance, energy]
+    isActive: true
+  - id: 507f1f77bcf86cd799439168
+    industry: 507f1f77bcf86cd799439014
+    profession: Energy Policy Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [policy, energy, analysis]
+    isActive: true
+  - id: 507f1f77bcf86cd799439169
+    industry: 507f1f77bcf86cd799439014
+    profession: Wind Turbine Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [wind, energy, maintenance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439170
+    industry: 507f1f77bcf86cd799439014
+    profession: Solar Panel Installer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [solar, energy, installation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439171
+    industry: 507f1f77bcf86cd799439014
+    profession: Energy Storage Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [energy, storage, engineering]
+    isActive: true
+  - id: 507f1f77bcf86cd799439172
+    industry: 507f1f77bcf86cd799439014
+    profession: Power Systems Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, power, systems]
+    isActive: true
+  - id: 507f1f77bcf86cd799439173
+    industry: 507f1f77bcf86cd799439014
+    profession: Utility Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, utilities, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439174
+    industry: 507f1f77bcf86cd799439014
+    profession: Energy Efficiency Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [energy, efficiency, consulting]
+    isActive: true
+  - id: 507f1f77bcf86cd799439175
+    industry: 507f1f77bcf86cd799439014
+    profession: Electrical Grid Operator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [grid, operations, energy]
+    isActive: true
+  - id: 507f1f77bcf86cd799439176
+    industry: 507f1f77bcf86cd799439014
+    profession: Gas Pipeline Inspector
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [inspection, gas, utilities]
+    isActive: true
+  - id: 507f1f77bcf86cd799439177
+    industry: 507f1f77bcf86cd799439014
+    profession: Energy Trader
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [trading, energy, markets]
+    isActive: true
+  - id: 507f1f77bcf86cd799439178
+    industry: 507f1f77bcf86cd799439014
+    profession: Power Distribution Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [distribution, energy, maintenance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439179
+    industry: 507f1f77bcf86cd799439014
+    profession: Renewable Energy Project Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [renewable, energy, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439180
+    industry: 507f1f77bcf86cd799439014
+    profession: Energy Economist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [economics, energy, policy]
+    isActive: true
+
+  # Water supply, sewerage, waste management, and remediation activities
+  - id: 507f1f77bcf86cd799439181
+    industry: 507f1f77bcf86cd799439015
+    profession: Water Treatment Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [water, treatment, utilities]
+    isActive: true
+  - id: 507f1f77bcf86cd799439182
+    industry: 507f1f77bcf86cd799439015
+    profession: Wastewater Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [wastewater, engineering, utilities]
+    isActive: true
+  - id: 507f1f77bcf86cd799439183
+    industry: 507f1f77bcf86cd799439015
+    profession: Environmental Remediation Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [environment, remediation, sustainability]
+    isActive: true
+  - id: 507f1f77bcf86cd799439184
+    industry: 507f1f77bcf86cd799439015
+    profession: Recycling Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [recycling, waste, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439185
+    industry: 507f1f77bcf86cd799439015
+    profession: Sanitation Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [sanitation, engineering, utilities]
+    isActive: true
+  - id: 507f1f77bcf86cd799439186
+    industry: 507f1f77bcf86cd799439015
+    profession: Water Quality Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [water, quality, analysis]
+    isActive: true
+  - id: 507f1f77bcf86cd799439187
+    industry: 507f1f77bcf86cd799439015
+    profession: Waste Management Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [waste, management, consulting]
+    isActive: true
+  - id: 507f1f77bcf86cd799439188
+    industry: 507f1f77bcf86cd799439015
+    profession: Sewer System Inspector
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [sewer, inspection, utilities]
+    isActive: true
+  - id: 507f1f77bcf86cd799439189
+    industry: 507f1f77bcf86cd799439015
+    profession: Hazardous Waste Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [hazardous, waste, safety]
+    isActive: true
+  - id: 507f1f77bcf86cd799439190
+    industry: 507f1f77bcf86cd799439015
+    profession: Water Resource Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [water, management, resources]
+    isActive: true
+  - id: 507f1f77bcf86cd799439191
+    industry: 507f1f77bcf86cd799439015
+    profession: Environmental Health Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [environment, health, safety]
+    isActive: true
+  - id: 507f1f77bcf86cd799439192
+    industry: 507f1f77bcf86cd799439015
+    profession: Waste Collection Supervisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [waste, collection, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439193
+    industry: 507f1f77bcf86cd799439015
+    profession: Water Distribution Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [water, distribution, utilities]
+    isActive: true
+  - id: 507f1f77bcf86cd799439194
+    industry: 507f1f77bcf86cd799439015
+    profession: Pollution Control Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [pollution, control, environment]
+    isActive: true
+  - id: 507f1f77bcf86cd799439195
+    industry: 507f1f77bcf86cd799439015
+    profession: Landfill Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [landfill, management, waste]
+    isActive: true
+  - id: 507f1f77bcf86cd799439196
+    industry: 507f1f77bcf86cd799439015
+    profession: Water Conservation Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [water, conservation, sustainability]
+    isActive: true
+  - id: 507f1f77bcf86cd799439197
+    industry: 507f1f77bcf86cd799439015
+    profession: Wastewater Treatment Operator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [wastewater, treatment, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439198
+    industry: 507f1f77bcf86cd799439015
+    profession: Environmental Compliance Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [environment, compliance, regulations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439199
+    industry: 507f1f77bcf86cd799439015
+    profession: Stormwater Management Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [stormwater, management, environment]
+    isActive: true
+  - id: 507f1f77bcf86cd799439200
+    industry: 507f1f77bcf86cd799439015
+    profession: Water Systems Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [water, engineering, systems]
+    isActive: true
+
+  # Construction
+  - id: 507f1f77bcf86cd799439201
+    industry: 507f1f77bcf86cd799439016
+    profession: Construction Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, construction, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439202
+    industry: 507f1f77bcf86cd799439016
+    profession: Civil Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, construction, infrastructure]
+    isActive: true
+  - id: 507f1f77bcf86cd799439203
+    industry: 507f1f77bcf86cd799439016
+    profession: Architect
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [design, architecture, construction]
+    isActive: true
+  - id: 507f1f77bcf86cd799439204
+    industry: 507f1f77bcf86cd799439016
+    profession: Site Supervisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [supervision, construction, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439205
+    industry: 507f1f77bcf86cd799439016
+    profession: Quantity Surveyor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [surveying, construction, cost]
+    isActive: true
+  - id: 507f1f77bcf86cd799439206
+    industry: 507f1f77bcf86cd799439016
+    profession: Structural Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [engineering, construction, structures]
+    isActive: true
+  - id: 507f1f77bcf86cd799439207
+    industry: 507f1f77bcf86cd799439016
+    profession: Construction Safety Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [safety, construction, compliance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439208
+    industry: 507f1f77bcf86cd799439016
+    profession: Building Inspector
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [inspection, construction, compliance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439209
+    industry: 507f1f77bcf86cd799439016
+    profession: Project Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, construction, projects]
+    isActive: true
+  - id: 507f1f77bcf86cd799439210
+    industry: 507f1f77bcf86cd799439016
+    profession: Construction Estimator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [estimation, construction, cost]
+    isActive: true
+  - id: 507f1f77bcf86cd799439211
+    industry: 507f1f77bcf86cd799439016
+    profession: Crane Operator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [operations, construction, machinery]
+    isActive: true
+  - id: 507f1f77bcf86cd799439212
+    industry: 507f1f77bcf86cd799439016
+    profession: Construction Laborer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [labor, construction, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439213
+    industry: 507f1f77bcf86cd799439016
+    profession: Electrician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [electrical, construction, maintenance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439214
+    industry: 507f1f77bcf86cd799439016
+    profession: Plumber
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [plumbing, construction, maintenance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439215
+    industry: 507f1f77bcf86cd799439016
+    profession: Carpenter
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [carpentry, construction, woodwork]
+    isActive: true
+  - id: 507f1f77bcf86cd799439216
+    industry: 507f1f77bcf86cd799439016
+    profession: Mason
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [masonry, construction, stonework]
+    isActive: true
+  - id: 507f1f77bcf86cd799439217
+    industry: 507f1f77bcf86cd799439016
+    profession: Roofer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [roofing, construction, maintenance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439218
+    industry: 507f1f77bcf86cd799439016
+    profession: Welder
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [welding, construction, metalwork]
+    isActive: true
+  - id: 507f1f77bcf86cd799439219
+    industry: 507f1f77bcf86cd799439016
+    profession: Heavy Equipment Operator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [operations, construction, machinery]
+    isActive: true
+  - id: 507f1f77bcf86cd799439220
+    industry: 507f1f77bcf86cd799439016
+    profession: Construction Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [consulting, construction, projects]
+    isActive: true
+
+  # Wholesale and retail trade; repair of motor vehicles and motorcycles
+  - id: 507f1f77bcf86cd799439221
+    industry: 507f1f77bcf86cd799439017
+    profession: Retail Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, retail, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439222
+    industry: 507f1f77bcf86cd799439017
+    profession: Sales Associate
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [sales, retail, customerService]
+    isActive: true
+  - id: 507f1f77bcf86cd799439223
+    industry: 507f1f77bcf86cd799439017
+    profession: Wholesale Buyer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [buying, wholesale, procurement]
+    isActive: true
+  - id: 507f1f77bcf86cd799439224
+    industry: 507f1f77bcf86cd799439017
+    profession: Automotive Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [automotive, repair, maintenance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439225
+    industry: 507f1f77bcf86cd799439017
+    profession: Motorcycle Mechanic
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [motorcycle, repair, maintenance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439226
+    industry: 507f1f77bcf86cd799439017
+    profession: Inventory Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [inventory, management, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439227
+    industry: 507f1f77bcf86cd799439017
+    profession: E-commerce Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [eCommerce, retail, digital]
+    isActive: true
+  - id: 507f1f77bcf86cd799439228
+    industry: 507f1f77bcf86cd799439017
+    profession: Visual Merchandiser
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [merchandising, retail, design]
+    isActive: true
+  - id: 507f1f77bcf86cd799439229
+    industry: 507f1f77bcf86cd799439017
+    profession: Supply Chain Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [supplyChain, logistics, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439230
+    industry: 507f1f77bcf86cd799439017
+    profession: Retail Buyer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [buying, retail, procurement]
+    isActive: true
+  - id: 507f1f77bcf86cd799439231
+    industry: 507f1f77bcf86cd799439017
+    profession: Customer Service Representative
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [customerService, retail, support]
+    isActive: true
+  - id: 507f1f77bcf86cd799439232
+    industry: 507f1f77bcf86cd799439017
+    profession: Store Supervisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [supervision, retail, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439233
+    industry: 507f1f77bcf86cd799439017
+    profession: Automotive Parts Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [automotive, parts, sales]
+    isActive: true
+  - id: 507f1f77bcf86cd799439234
+    industry: 507f1f77bcf86cd799439017
+    profession: Retail Marketing Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [marketing, retail, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439235
+    industry: 507f1f77bcf86cd799439017
+    profession: Warehouse Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [warehouse, management, logistics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439236
+    industry: 507f1f77bcf86cd799439017
+    profession: Sales Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [sales, analysis, retail]
+    isActive: true
+  - id: 507f1f77bcf86cd799439237
+    industry: 507f1f77bcf86cd799439017
+    profession: Automotive Sales Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [automotive, sales, consulting]
+    isActive: true
+  - id: 507f1f77bcf86cd799439238
+    industry: 507f1f77bcf86cd799439017
+    profession: Retail Operations Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [operations, retail, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439239
+    industry: 507f1f77bcf86cd799439017
+    profession: E-commerce Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [eCommerce, management, digital]
+    isActive: true
+  - id: 507f1f77bcf86cd799439240
+    industry: 507f1f77bcf86cd799439017
+    profession: Retail Loss Prevention Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [lossPrevention, retail, security]
+    isActive: true
+
+  # Transportation and storage
+  - id: 507f1f77bcf86cd799439241
+    industry: 507f1f77bcf86cd799439018
+    profession: Logistics Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [logistics, management, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439242
+    industry: 507f1f77bcf86cd799439018
+    profession: Truck Driver
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [transportation, driving, logistics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439243
+    industry: 507f1f77bcf86cd799439018
+    profession: Warehouse Supervisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [warehouse, supervision, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439244
+    industry: 507f1f77bcf86cd799439018
+    profession: Supply Chain Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [supplyChain, analysis, logistics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439245
+    industry: 507f1f77bcf86cd799439018
+    profession: Freight Broker
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [freight, logistics, brokerage]
+    isActive: true
+  - id: 507f1f77bcf86cd799439246
+    industry: 507f1f77bcf86cd799439018
+    profession: Fleet Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [fleet, management, logistics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439247
+    industry: 507f1f77bcf86cd799439018
+    profession: Customs Broker
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [customs, logistics, brokerage]
+    isActive: true
+  - id: 507f1f77bcf86cd799439248
+    industry: 507f1f77bcf86cd799439018
+    profession: Shipping Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [shipping, logistics, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439249
+    industry: 507f1f77bcf86cd799439018
+    profession: Transportation Planner
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [transportation, planning, logistics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439250
+    industry: 507f1f77bcf86cd799439018
+    profession: Inventory Control Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [inventory, control, logistics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439251
+    industry: 507f1f77bcf86cd799439018
+    profession: Cargo Inspector
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [cargo, inspection, logistics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439252
+    industry: 507f1f77bcf86cd799439018
+    profession: Rail Operations Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [rail, operations, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439253
+    industry: 507f1f77bcf86cd799439018
+    profession: Air Cargo Agent
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [airCargo, logistics, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439254
+    industry: 507f1f77bcf86cd799439018
+    profession: Port Operations Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [port, operations, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439255
+    industry: 507f1f77bcf86cd799439018
+    profession: Delivery Driver
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [delivery, transportation, logistics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439256
+    industry: 507f1f77bcf86cd799439018
+    profession: Logistics Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [logistics, coordination, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439257
+    industry: 507f1f77bcf86cd799439018
+    profession: Supply Chain Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [supplyChain, management, logistics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439258
+    industry: 507f1f77bcf86cd799439018
+    profession: Transportation Safety Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [safety, transportation, compliance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439259
+    industry: 507f1f77bcf86cd799439018
+    profession: Freight Forwarder
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [freight, logistics, forwarding]
+    isActive: true
+  - id: 507f1f77bcf86cd799439260
+    industry: 507f1f77bcf86cd799439018
+    profession: Warehouse Operations Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [warehouse, operations, management]
+    isActive: true
+
+  # Accommodation and food service activities
+  - id: 507f1f77bcf86cd799439261
+    industry: 507f1f77bcf86cd799439019
+    profession: Hotel Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, hospitality, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439262
+    industry: 507f1f77bcf86cd799439019
+    profession: Chef
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [culinary, food, hospitality]
+    isActive: true
+  - id: 507f1f77bcf86cd799439263
+    industry: 507f1f77bcf86cd799439019
+    profession: Restaurant Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, food, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439264
+    industry: 507f1f77bcf86cd799439019
+    profession: Bartender
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [beverage, hospitality, service]
+    isActive: true
+  - id: 507f1f77bcf86cd799439265
+    industry: 507f1f77bcf86cd799439019
+    profession: Housekeeping Supervisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [housekeeping, hospitality, supervision]
+    isActive: true
+  - id: 507f1f77bcf86cd799439266
+    industry: 507f1f77bcf86cd799439019
+    profession: Event Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [events, hospitality, coordination]
+    isActive: true
+  - id: 507f1f77bcf86cd799439267
+    industry: 507f1f77bcf86cd799439019
+    profession: Food and Beverage Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [food, beverage, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439268
+    industry: 507f1f77bcf86cd799439019
+    profession: Front Desk Agent
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [hospitality, customerService, frontDesk]
+    isActive: true
+  - id: 507f1f77bcf86cd799439269
+    industry: 507f1f77bcf86cd799439019
+    profession: Catering Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [catering, food, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439270
+    industry: 507f1f77bcf86cd799439019
+    profession: Concierge
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [hospitality, customerService, concierge]
+    isActive: true
+  - id: 507f1f77bcf86cd799439271
+    industry: 507f1f77bcf86cd799439019
+    profession: Pastry Chef
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [culinary, pastry, food]
+    isActive: true
+  - id: 507f1f77bcf86cd799439272
+    industry: 507f1f77bcf86cd799439019
+    profession: Restaurant Server
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [food, service, hospitality]
+    isActive: true
+  - id: 507f1f77bcf86cd799439273
+    industry: 507f1f77bcf86cd799439019
+    profession: Hotel Receptionist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [hospitality, customerService, frontDesk]
+    isActive: true
+  - id: 507f1f77bcf86cd799439274
+    industry: 507f1f77bcf86cd799439019
+    profession: Kitchen Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [kitchen, management, food]
+    isActive: true
+  - id: 507f1f77bcf86cd799439275
+    industry: 507f1f77bcf86cd799439019
+    profession: Sommelier
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [wine, beverage, hospitality]
+    isActive: true
+  - id: 507f1f77bcf86cd799439276
+    industry: 507f1f77bcf86cd799439019
+    profession: Banquet Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [banquet, hospitality, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439277
+    industry: 507f1f77bcf86cd799439019
+    profession: Food Safety Inspector
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [food, safety, inspection]
+    isActive: true
+  - id: 507f1f77bcf86cd799439278
+    industry: 507f1f77bcf86cd799439019
+    profession: Host/Hostess
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [hospitality, customerService, frontDesk]
+    isActive: true
+  - id: 507f1f77bcf86cd799439279
+    industry: 507f1f77bcf86cd799439019
+    profession: Room Service Attendant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [hospitality, service, roomService]
+    isActive: true
+  - id: 507f1f77bcf86cd799439280
+    industry: 507f1f77bcf86cd799439019
+    profession: Food Stylist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [food, styling, culinary]
+    isActive: true
+
+  # Information and communication
+  - id: 507f1f77bcf86cd799439281
+    industry: 507f1f77bcf86cd799439020
+    profession: Software Developer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [software, development, IT]
+    isActive: true
+  - id: 507f1f77bcf86cd799439282
+    industry: 507f1f77bcf86cd799439020
+    profession: Data Scientist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [data, science, analytics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439283
+    industry: 507f1f77bcf86cd799439020
+    profession: Network Administrator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [network, IT, administration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439284
+    industry: 507f1f77bcf86cd799439020
+    profession: Cybersecurity Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [cybersecurity, IT, security]
+    isActive: true
+  - id: 507f1f77bcf86cd799439285
+    industry: 507f1f77bcf86cd799439020
+    profession: IT Project Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [IT, projectManagement, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439286
+    industry: 507f1f77bcf86cd799439020
+    profession: Web Developer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [web, development, IT]
+    isActive: true
+  - id: 507f1f77bcf86cd799439287
+    industry: 507f1f77bcf86cd799439020
+    profession: Systems Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [systems, analysis, IT]
+    isActive: true
+  - id: 507f1f77bcf86cd799439288
+    industry: 507f1f77bcf86cd799439020
+    profession: Telecommunications Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [telecommunications, engineering, IT]
+    isActive: true
+  - id: 507f1f77bcf86cd799439289
+    industry: 507f1f77bcf86cd799439020
+    profession: UX/UI Designer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [UX, UI, design]
+    isActive: true
+  - id: 507f1f77bcf86cd799439290
+    industry: 507f1f77bcf86cd799439020
+    profession: Database Administrator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [database, IT, administration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439291
+    industry: 507f1f77bcf86cd799439020
+    profession: Cloud Architect
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [cloud, architecture, IT]
+    isActive: true
+  - id: 507f1f77bcf86cd799439292
+    industry: 507f1f77bcf86cd799439020
+    profession: IT Support Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [IT, support, troubleshooting]
+    isActive: true
+  - id: 507f1f77bcf86cd799439293
+    industry: 507f1f77bcf86cd799439020
+    profession: Mobile App Developer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [mobile, development, IT]
+    isActive: true
+  - id: 507f1f77bcf86cd799439294
+    industry: 507f1f77bcf86cd799439020
+    profession: AI Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [AI, engineering, IT]
+    isActive: true
+  - id: 507f1f77bcf86cd799439295
+    industry: 507f1f77bcf86cd799439020
+    profession: DevOps Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [DevOps, engineering, IT]
+    isActive: true
+  - id: 507f1f77bcf86cd799439296
+    industry: 507f1f77bcf86cd799439020
+    profession: IT Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [IT, consulting, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439297
+    industry: 507f1f77bcf86cd799439020
+    profession: Network Security Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [network, security, engineering]
+    isActive: true
+  - id: 507f1f77bcf86cd799439298
+    industry: 507f1f77bcf86cd799439020
+    profession: Technical Writer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [technical, writing, documentation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439299
+    industry: 507f1f77bcf86cd799439020
+    profession: IT Trainer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [IT, training, education]
+    isActive: true
+  - id: 507f1f77bcf86cd799439300
+    industry: 507f1f77bcf86cd799439020
+    profession: Blockchain Developer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [blockchain, development, IT]
+    isActive: true
+
+  # Financial and insurance activities
+  - id: 507f1f77bcf86cd799439301
+    industry: 507f1f77bcf86cd799439021
+    profession: Financial Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [finance, analysis, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439302
+    industry: 507f1f77bcf86cd799439021
+    profession: Investment Banker
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [investment, banking, finance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439303
+    industry: 507f1f77bcf86cd799439021
+    profession: Insurance Underwriter
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [insurance, underwriting, risk]
+    isActive: true
+  - id: 507f1f77bcf86cd799439304
+    industry: 507f1f77bcf86cd799439021
+    profession: Actuary
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [actuarial, risk, finance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439305
+    industry: 507f1f77bcf86cd799439021
+    profession: Wealth Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [wealth, management, finance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439306
+    industry: 507f1f77bcf86cd799439021
+    profession: Claims Adjuster
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [insurance, claims, adjustment]
+    isActive: true
+  - id: 507f1f77bcf86cd799439307
+    industry: 507f1f77bcf86cd799439021
+    profession: Risk Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [risk, management, finance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439308
+    industry: 507f1f77bcf86cd799439021
+    profession: Credit Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [credit, analysis, finance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439309
+    industry: 507f1f77bcf86cd799439021
+    profession: Financial Planner
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [finance, planning, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439310
+    industry: 507f1f77bcf86cd799439021
+    profession: Insurance Agent
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [insurance, sales, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439311
+    industry: 507f1f77bcf86cd799439021
+    profession: Loan Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [loans, finance, banking]
+    isActive: true
+  - id: 507f1f77bcf86cd799439312
+    industry: 507f1f77bcf86cd799439021
+    profession: Treasury Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [treasury, finance, analysis]
+    isActive: true
+  - id: 507f1f77bcf86cd799439313
+    industry: 507f1f77bcf86cd799439021
+    profession: Compliance Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [compliance, finance, regulations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439314
+    industry: 507f1f77bcf86cd799439021
+    profession: Hedge Fund Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [hedgeFund, finance, investment]
+    isActive: true
+  - id: 507f1f77bcf86cd799439315
+    industry: 507f1f77bcf86cd799439021
+    profession: Financial Controller
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [finance, control, accounting]
+    isActive: true
+  - id: 507f1f77bcf86cd799439316
+    industry: 507f1f77bcf86cd799439021
+    profession: Insurance Broker
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [insurance, brokerage, sales]
+    isActive: true
+  - id: 507f1f77bcf86cd799439317
+    industry: 507f1f77bcf86cd799439021
+    profession: Portfolio Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [portfolio, management, finance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439318
+    industry: 507f1f77bcf86cd799439021
+    profession: Tax Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [tax, consulting, finance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439319
+    industry: 507f1f77bcf86cd799439021
+    profession: Fraud Investigator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [fraud, investigation, finance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439320
+    industry: 507f1f77bcf86cd799439021
+    profession: Financial Auditor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [finance, auditing, compliance]
+    isActive: true
+
+  # Real estate activities
+  - id: 507f1f77bcf86cd799439321
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Agent
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, sales, property]
+    isActive: true
+  - id: 507f1f77bcf86cd799439322
+    industry: 507f1f77bcf86cd799439022
+    profession: Property Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [property, management, realEstate]
+    isActive: true
+  - id: 507f1f77bcf86cd799439323
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Developer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, development, property]
+    isActive: true
+  - id: 507f1f77bcf86cd799439324
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Appraiser
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, appraisal, property]
+    isActive: true
+  - id: 507f1f77bcf86cd799439325
+    industry: 507f1f77bcf86cd799439022
+    profession: Leasing Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [leasing, realEstate, property]
+    isActive: true
+  - id: 507f1f77bcf86cd799439326
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Broker
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, brokerage, sales]
+    isActive: true
+  - id: 507f1f77bcf86cd799439327
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Investor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, investment, property]
+    isActive: true
+  - id: 507f1f77bcf86cd799439328
+    industry: 507f1f77bcf86cd799439022
+    profession: Commercial Real Estate Agent
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [commercial, realEstate, sales]
+    isActive: true
+  - id: 507f1f77bcf86cd799439329
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, analysis, property]
+    isActive: true
+  - id: 507f1f77bcf86cd799439330
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, consulting, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439331
+    industry: 507f1f77bcf86cd799439022
+    profession: Property Assessor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [property, assessment, realEstate]
+    isActive: true
+  - id: 507f1f77bcf86cd799439332
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Marketing Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, marketing, sales]
+    isActive: true
+  - id: 507f1f77bcf86cd799439333
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Attorney
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, legal, property]
+    isActive: true
+  - id: 507f1f77bcf86cd799439334
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Photographer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, photography, marketing]
+    isActive: true
+  - id: 507f1f77bcf86cd799439335
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Inspector
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, inspection, property]
+    isActive: true
+  - id: 507f1f77bcf86cd799439336
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Accountant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, accounting, finance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439337
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Loan Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, loans, finance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439338
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Project Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, projectManagement, property]
+    isActive: true
+  - id: 507f1f77bcf86cd799439339
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Trainer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, training, education]
+    isActive: true
+  - id: 507f1f77bcf86cd799439340
+    industry: 507f1f77bcf86cd799439022
+    profession: Real Estate Data Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [realEstate, data, analysis]
+    isActive: true
+
+  # Professional, scientific, and technical activities
+  - id: 507f1f77bcf86cd799439341
+    industry: 507f1f77bcf86cd799439023
+    profession: Legal Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [legal, consulting, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439342
+    industry: 507f1f77bcf86cd799439023
+    profession: Architect
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [architecture, design, construction]
+    isActive: true
+  - id: 507f1f77bcf86cd799439343
+    industry: 507f1f77bcf86cd799439023
+    profession: Research Scientist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [research, science, innovation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439344
+    industry: 507f1f77bcf86cd799439023
+    profession: Data Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [data, analysis, analytics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439345
+    industry: 507f1f77bcf86cd799439023
+    profession: Patent Attorney
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [patent, legal, intellectualProperty]
+    isActive: true
+  - id: 507f1f77bcf86cd799439346
+    industry: 507f1f77bcf86cd799439023
+    profession: Environmental Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [environment, consulting, sustainability]
+    isActive: true
+  - id: 507f1f77bcf86cd799439347
+    industry: 507f1f77bcf86cd799439023
+    profession: Management Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [management, consulting, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439348
+    industry: 507f1f77bcf86cd799439023
+    profession: Software Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [software, engineering, IT]
+    isActive: true
+  - id: 507f1f77bcf86cd799439349
+    industry: 507f1f77bcf86cd799439023
+    profession: Market Research Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [market, research, analysis]
+    isActive: true
+  - id: 507f1f77bcf86cd799439350
+    industry: 507f1f77bcf86cd799439023
+    profession: Technical Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [technical, consulting, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439351
+    industry: 507f1f77bcf86cd799439023
+    profession: Forensic Scientist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [forensic, science, investigation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439352
+    industry: 507f1f77bcf86cd799439023
+    profession: Urban Planner
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [urban, planning, development]
+    isActive: true
+  - id: 507f1f77bcf86cd799439353
+    industry: 507f1f77bcf86cd799439023
+    profession: Biomedical Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [biomedical, engineering, healthcare]
+    isActive: true
+  - id: 507f1f77bcf86cd799439354
+    industry: 507f1f77bcf86cd799439023
+    profession: Geologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [geology, science, exploration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439355
+    industry: 507f1f77bcf86cd799439023
+    profession: Statistician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [statistics, data, analysis]
+    isActive: true
+  - id: 507f1f77bcf86cd799439356
+    industry: 507f1f77bcf86cd799439023
+    profession: Technical Writer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [technical, writing, documentation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439357
+    industry: 507f1f77bcf86cd799439023
+    profession: IT Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [IT, consulting, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439358
+    industry: 507f1f77bcf86cd799439023
+    profession: Environmental Scientist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [environment, science, sustainability]
+    isActive: true
+  - id: 507f1f77bcf86cd799439359
+    industry: 507f1f77bcf86cd799439023
+    profession: Robotics Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [robotics, engineering, automation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439360
+    industry: 507f1f77bcf86cd799439023
+    profession: AI Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [AI, technology, innovation]
+    isActive: true
+
+  # Administrative and support service activities
+  - id: 507f1f77bcf86cd799439361
+    industry: 507f1f77bcf86cd799439024
+    profession: Office Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [office, management, administration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439362
+    industry: 507f1f77bcf86cd799439024
+    profession: HR Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [HR, coordination, administration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439363
+    industry: 507f1f77bcf86cd799439024
+    profession: Customer Support Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [customer, support, service]
+    isActive: true
+  - id: 507f1f77bcf86cd799439364
+    industry: 507f1f77bcf86cd799439024
+    profession: Recruitment Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [recruitment, HR, consulting]
+    isActive: true
+  - id: 507f1f77bcf86cd799439365
+    industry: 507f1f77bcf86cd799439024
+    profession: Facilities Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [facilities, management, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439366
+    industry: 507f1f77bcf86cd799439024
+    profession: Administrative Assistant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [administration, support, office]
+    isActive: true
+  - id: 507f1f77bcf86cd799439367
+    industry: 507f1f77bcf86cd799439024
+    profession: Call Center Agent
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [callCenter, customerService, support]
+    isActive: true
+  - id: 507f1f77bcf86cd799439368
+    industry: 507f1f77bcf86cd799439024
+    profession: Event Planner
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [events, planning, coordination]
+    isActive: true
+  - id: 507f1f77bcf86cd799439369
+    industry: 507f1f77bcf86cd799439024
+    profession: Travel Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [travel, coordination, administration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439370
+    industry: 507f1f77bcf86cd799439024
+    profession: Data Entry Clerk
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [data, entry, administration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439371
+    industry: 507f1f77bcf86cd799439024
+    profession: Office Administrator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [office, administration, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439372
+    industry: 507f1f77bcf86cd799439024
+    profession: Security Guard
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [security, safety, protection]
+    isActive: true
+  - id: 507f1f77bcf86cd799439373
+    industry: 507f1f77bcf86cd799439024
+    profession: Payroll Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [payroll, finance, administration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439374
+    industry: 507f1f77bcf86cd799439024
+    profession: Executive Assistant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [executive, support, administration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439375
+    industry: 507f1f77bcf86cd799439024
+    profession: Document Controller
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [document, control, administration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439376
+    industry: 507f1f77bcf86cd799439024
+    profession: Receptionist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [reception, customerService, office]
+    isActive: true
+  - id: 507f1f77bcf86cd799439377
+    industry: 507f1f77bcf86cd799439024
+    profession: Training Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [training, coordination, HR]
+    isActive: true
+  - id: 507f1f77bcf86cd799439378
+    industry: 507f1f77bcf86cd799439024
+    profession: Facilities Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [facilities, coordination, operations]
+    isActive: true
+  - id: 507f1f77bcf86cd799439379
+    industry: 507f1f77bcf86cd799439024
+    profession: Office Support Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [office, support, administration]
+    isActive: true
+  - id: 507f1f77bcf86cd799439380
+    industry: 507f1f77bcf86cd799439024
+    profession: Administrative Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [administration, coordination, office]
+    isActive: true
+
+  # Public administration and defense; compulsory social security
+  - id: 507f1f77bcf86cd799439381
+    industry: 507f1f77bcf86cd799439025
+    profession: Public Policy Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [publicPolicy, analysis, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439382
+    industry: 507f1f77bcf86cd799439025
+    profession: Urban Planner
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [urban, planning, development]
+    isActive: true
+  - id: 507f1f77bcf86cd799439383
+    industry: 507f1f77bcf86cd799439025
+    profession: Government Relations Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [government, relations, advocacy]
+    isActive: true
+  - id: 507f1f77bcf86cd799439384
+    industry: 507f1f77bcf86cd799439025
+    profession: Defense Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [defense, analysis, security]
+    isActive: true
+  - id: 507f1f77bcf86cd799439385
+    industry: 507f1f77bcf86cd799439025
+    profession: Social Security Administrator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [socialSecurity, administration, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439386
+    industry: 507f1f77bcf86cd799439025
+    profession: Public Health Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [publicHealth, healthcare, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439387
+    industry: 507f1f77bcf86cd799439025
+    profession: Military Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [military, defense, leadership]
+    isActive: true
+  - id: 507f1f77bcf86cd799439388
+    industry: 507f1f77bcf86cd799439025
+    profession: Policy Advisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [policy, advisory, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439389
+    industry: 507f1f77bcf86cd799439025
+    profession: Tax Auditor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [tax, auditing, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439390
+    industry: 507f1f77bcf86cd799439025
+    profession: Emergency Management Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [emergency, management, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439391
+    industry: 507f1f77bcf86cd799439025
+    profession: Intelligence Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [intelligence, analysis, security]
+    isActive: true
+  - id: 507f1f77bcf86cd799439392
+    industry: 507f1f77bcf86cd799439025
+    profession: Public Affairs Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [publicAffairs, communication, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439393
+    industry: 507f1f77bcf86cd799439025
+    profession: Legislative Assistant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [legislative, support, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439394
+    industry: 507f1f77bcf86cd799439025
+    profession: Customs Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [customs, enforcement, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439395
+    industry: 507f1f77bcf86cd799439025
+    profession: Diplomat
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [diplomacy, internationalRelations, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439396
+    industry: 507f1f77bcf86cd799439025
+    profession: Public Administrator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [public, administration, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439397
+    industry: 507f1f77bcf86cd799439025
+    profession: Defense Contractor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [defense, contracting, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439398
+    industry: 507f1f77bcf86cd799439025
+    profession: Social Worker
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [socialWork, support, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439399
+    industry: 507f1f77bcf86cd799439025
+    profession: Public Safety Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [publicSafety, security, government]
+    isActive: true
+  - id: 507f1f77bcf86cd799439400
+    industry: 507f1f77bcf86cd799439025
+    profession: Policy Researcher
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [policy, research, government]
+    isActive: true
+
+  # Education
+  - id: 507f1f77bcf86cd799439401
+    industry: 507f1f77bcf86cd799439026
+    profession: Teacher
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, teaching, classroom]
+    isActive: true
+  - id: 507f1f77bcf86cd799439402
+    industry: 507f1f77bcf86cd799439026
+    profession: School Principal
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, leadership, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439403
+    industry: 507f1f77bcf86cd799439026
+    profession: College Professor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, teaching, academia]
+    isActive: true
+  - id: 507f1f77bcf86cd799439404
+    industry: 507f1f77bcf86cd799439026
+    profession: Education Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, consulting, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439405
+    industry: 507f1f77bcf86cd799439026
+    profession: Curriculum Developer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, curriculum, development]
+    isActive: true
+  - id: 507f1f77bcf86cd799439406
+    industry: 507f1f77bcf86cd799439026
+    profession: School Counselor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, counseling, support]
+    isActive: true
+  - id: 507f1f77bcf86cd799439407
+    industry: 507f1f77bcf86cd799439026
+    profession: Special Education Teacher
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, specialNeeds, teaching]
+    isActive: true
+  - id: 507f1f77bcf86cd799439408
+    industry: 507f1f77bcf86cd799439026
+    profession: Librarian
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, library, information]
+    isActive: true
+  - id: 507f1f77bcf86cd799439409
+    industry: 507f1f77bcf86cd799439026
+    profession: Education Administrator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, administration, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439410
+    industry: 507f1f77bcf86cd799439026
+    profession: Tutor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, tutoring, support]
+    isActive: true
+  - id: 507f1f77bcf86cd799439411
+    industry: 507f1f77bcf86cd799439026
+    profession: Instructional Designer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, design, curriculum]
+    isActive: true
+  - id: 507f1f77bcf86cd799439412
+    industry: 507f1f77bcf86cd799439026
+    profession: School Psychologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, psychology, support]
+    isActive: true
+  - id: 507f1f77bcf86cd799439413
+    industry: 507f1f77bcf86cd799439026
+    profession: Education Policy Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, policy, analysis]
+    isActive: true
+  - id: 507f1f77bcf86cd799439414
+    industry: 507f1f77bcf86cd799439026
+    profession: Admissions Counselor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, admissions, counseling]
+    isActive: true
+  - id: 507f1f77bcf86cd799439415
+    industry: 507f1f77bcf86cd799439026
+    profession: Career Counselor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, career, counseling]
+    isActive: true
+  - id: 507f1f77bcf86cd799439416
+    industry: 507f1f77bcf86cd799439026
+    profession: ESL Teacher
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, ESL, teaching]
+    isActive: true
+  - id: 507f1f77bcf86cd799439417
+    industry: 507f1f77bcf86cd799439026
+    profession: Educational Technologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, technology, innovation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439418
+    industry: 507f1f77bcf86cd799439026
+    profession: School Nurse
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, healthcare, nursing]
+    isActive: true
+  - id: 507f1f77bcf86cd799439419
+    industry: 507f1f77bcf86cd799439026
+    profession: Education Researcher
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, research, analysis]
+    isActive: true
+  - id: 507f1f77bcf86cd799439420
+    industry: 507f1f77bcf86cd799439026
+    profession: Student Advisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, advising, support]
+    isActive: true
+
+  # Human health and social work activities
+  - id: 507f1f77bcf86cd799439421
+    industry: 507f1f77bcf86cd799439027
+    profession: Doctor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, medicine, doctor]
+    isActive: true
+  - id: 507f1f77bcf86cd799439422
+    industry: 507f1f77bcf86cd799439027
+    profession: Nurse
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, nursing, patientCare]
+    isActive: true
+  - id: 507f1f77bcf86cd799439423
+    industry: 507f1f77bcf86cd799439027
+    profession: Psychologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [psychology, mentalHealth, counseling]
+    isActive: true
+  - id: 507f1f77bcf86cd799439424
+    industry: 507f1f77bcf86cd799439027
+    profession: Social Worker
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [socialWork, support, counseling]
+    isActive: true
+  - id: 507f1f77bcf86cd799439425
+    industry: 507f1f77bcf86cd799439027
+    profession: Physical Therapist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, therapy, rehabilitation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439426
+    industry: 507f1f77bcf86cd799439027
+    profession: Pharmacist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, pharmacy, medication]
+    isActive: true
+  - id: 507f1f77bcf86cd799439427
+    industry: 507f1f77bcf86cd799439027
+    profession: Occupational Therapist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, therapy, rehabilitation]
+    isActive: true
+  - id: 507f1f77bcf86cd799439428
+    industry: 507f1f77bcf86cd799439027
+    profession: Medical Laboratory Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, laboratory, diagnostics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439429
+    industry: 507f1f77bcf86cd799439027
+    profession: Radiologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, radiology, diagnostics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439430
+    industry: 507f1f77bcf86cd799439027
+    profession: Dietitian
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, nutrition, diet]
+    isActive: true
+  - id: 507f1f77bcf86cd799439431
+    industry: 507f1f77bcf86cd799439027
+    profession: Paramedic
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, emergency, paramedic]
+    isActive: true
+  - id: 507f1f77bcf86cd799439432
+    industry: 507f1f77bcf86cd799439027
+    profession: Medical Secretary
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, administration, support]
+    isActive: true
+  - id: 507f1f77bcf86cd799439433
+    industry: 507f1f77bcf86cd799439027
+    profession: Health Educator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, education, wellness]
+    isActive: true
+  - id: 507f1f77bcf86cd799439434
+    industry: 507f1f77bcf86cd799439027
+    profession: Clinical Psychologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [psychology, mentalHealth, clinical]
+    isActive: true
+  - id: 507f1f77bcf86cd799439435
+    industry: 507f1f77bcf86cd799439027
+    profession: Speech Therapist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, therapy, speech]
+    isActive: true
+  - id: 507f1f77bcf86cd799439436
+    industry: 507f1f77bcf86cd799439027
+    profession: Medical Researcher
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, research, medicine]
+    isActive: true
+  - id: 507f1f77bcf86cd799439437
+    industry: 507f1f77bcf86cd799439027
+    profession: Home Health Aide
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, homeCare, support]
+    isActive: true
+  - id: 507f1f77bcf86cd799439438
+    industry: 507f1f77bcf86cd799439027
+    profession: Medical Imaging Technician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, imaging, diagnostics]
+    isActive: true
+  - id: 507f1f77bcf86cd799439439
+    industry: 507f1f77bcf86cd799439027
+    profession: Public Health Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, publicHealth, wellness]
+    isActive: true
+  - id: 507f1f77bcf86cd799439440
+    industry: 507f1f77bcf86cd799439027
+    profession: Rehabilitation Counselor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [healthcare, counseling, rehabilitation]
+    isActive: true
+
+  # Arts, entertainment, and recreation
+  - id: 507f1f77bcf86cd799439441
+    industry: 507f1f77bcf86cd799439028
+    profession: Musician
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [music, entertainment, performance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439442
+    industry: 507f1f77bcf86cd799439028
+    profession: Actor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [acting, entertainment, performance]
+    isActive: true
+  - id: 507f1f77bcf86cd799439443
+    industry: 507f1f77bcf86cd799439028
+    profession: Film Director
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [film, directing, entertainment]
+    isActive: true
+  - id: 507f1f77bcf86cd799439444
+    industry: 507f1f77bcf86cd799439028
+    profession: Graphic Designer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [design, graphics, creative]
+    isActive: true
+  - id: 507f1f77bcf86cd799439445
+    industry: 507f1f77bcf86cd799439028
+    profession: Event Planner
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [events, planning, coordination]
+    isActive: true
+  - id: 507f1f77bcf86cd799439446
+    industry: 507f1f77bcf86cd799439028
+    profession: Photographer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [photography, creative, media]
+    isActive: true
+  - id: 507f1f77bcf86cd799439447
+    industry: 507f1f77bcf86cd799439028
+    profession: Art Director
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [art, creative, direction]
+    isActive: true
+  - id: 507f1f77bcf86cd799439448
+    industry: 507f1f77bcf86cd799439028
+    profession: Dancer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [dance, performance, entertainment]
+    isActive: true
+  - id: 507f1f77bcf86cd799439449
+    industry: 507f1f77bcf86cd799439028
+    profession: Game Designer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [gaming, design, creative]
+    isActive: true
+  - id: 507f1f77bcf86cd799439450
+    industry: 507f1f77bcf86cd799439028
+    profession: Theater Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [theater, management, entertainment]
+    isActive: true
+  - id: 507f1f77bcf86cd799439451
+    industry: 507f1f77bcf86cd799439028
+    profession: Music Producer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [music, production, entertainment]
+    isActive: true
+  - id: 507f1f77bcf86cd799439452
+    industry: 507f1f77bcf86cd799439028
+    profession: Animator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [animation, creative, media]
+    isActive: true
+  - id: 507f1f77bcf86cd799439453
+    industry: 507f1f77bcf86cd799439028
+    profession: Curator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [art, curation, museum]
+    isActive: true
+  - id: 507f1f77bcf86cd799439454
+    industry: 507f1f77bcf86cd799439028
+    profession: Sports Coach
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [sports, coaching, training]
+    isActive: true
+  - id: 507f1f77bcf86cd799439455
+    industry: 507f1f77bcf86cd799439028
+    profession: Fitness Instructor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [fitness, training, wellness]
+    isActive: true
+  - id: 507f1f77bcf86cd799439456
+    industry: 507f1f77bcf86cd799439028
+    profession: Tour Guide
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [tourism, guiding, entertainment]
+    isActive: true
+  - id: 507f1f77bcf86cd799439457
+    industry: 507f1f77bcf86cd799439028
+    profession: Art Therapist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [art, therapy, mentalHealth]
+    isActive: true
+  - id: 507f1f77bcf86cd799439458
+    industry: 507f1f77bcf86cd799439028
+    profession: Event Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [events, coordination, planning]
+    isActive: true
+  - id: 507f1f77bcf86cd799439459
+    industry: 507f1f77bcf86cd799439028
+    profession: Recreation Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [recreation, management, leisure]
+    isActive: true
+  - id: 507f1f77bcf86cd799439460
+    industry: 507f1f77bcf86cd799439028
+    profession: Voice Actor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [voice, acting, entertainment]
+    isActive: true
+
+  # Activities of extraterritorial organizations and bodies (continued)
+  - id: 507f1f77bcf86cd799439521
+    industry: 507f1f77bcf86cd799439031
+    profession: International Human Rights Advocate
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [humanRights, international, advocacy]
+    isActive: true
+  - id: 507f1f77bcf86cd799439522
+    industry: 507f1f77bcf86cd799439031
+    profession: Global Health Policy Advisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [health, global, policy]
+    isActive: true
+  - id: 507f1f77bcf86cd799439523
+    industry: 507f1f77bcf86cd799439031
+    profession: International Disaster Relief Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [disaster, relief, international]
+    isActive: true
+  - id: 507f1f77bcf86cd799439524
+    industry: 507f1f77bcf86cd799439031
+    profession: International Trade Compliance Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [trade, compliance, international]
+    isActive: true
+  - id: 507f1f77bcf86cd799439525
+    industry: 507f1f77bcf86cd799439031
+    profession: Global Education Program Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, global, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439526
+    industry: 507f1f77bcf86cd799439031
+    profession: International Conflict Mediator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [conflict, mediation, international]
+    isActive: true
+  - id: 507f1f77bcf86cd799439527
+    industry: 507f1f77bcf86cd799439031
+    profession: Global Environmental Policy Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [environment, global, policy]
+    isActive: true
+  - id: 507f1f77bcf86cd799439528
+    industry: 507f1f77bcf86cd799439031
+    profession: International Migration Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [migration, international, policy]
+    isActive: true
+  - id: 507f1f77bcf86cd799439529
+    industry: 507f1f77bcf86cd799439031
+    profession: Global Cybersecurity Advisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [cybersecurity, global, advisory]
+    isActive: true
+  - id: 507f1f77bcf86cd799439530
+    industry: 507f1f77bcf86cd799439031
+    profession: International Energy Policy Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [energy, policy, international]
+    isActive: true
+  - id: 507f1f77bcf86cd799439531
+    industry: 507f1f77bcf86cd799439031
+    profession: Global Humanitarian Logistics Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [humanitarian, logistics, global]
+    isActive: true
+  - id: 507f1f77bcf86cd799439532
+    industry: 507f1f77bcf86cd799439031
+    profession: International Trade Policy Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [trade, policy, international]
+    isActive: true
+  - id: 507f1f77bcf86cd799439533
+    industry: 507f1f77bcf86cd799439031
+    profession: Global Health Program Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [health, global, coordination]
+    isActive: true
+  - id: 507f1f77bcf86cd799439534
+    industry: 507f1f77bcf86cd799439031
+    profession: International Development Program Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [development, international, management]
+    isActive: true
+  - id: 507f1f77bcf86cd799439535
+    industry: 507f1f77bcf86cd799439031
+    profession: Global Climate Change Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [climate, global, environment]
+    isActive: true
+  - id: 507f1f77bcf86cd799439536
+    industry: 507f1f77bcf86cd799439031
+    profession: International Trade Compliance Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [trade, compliance, international]
+    isActive: true
+  - id: 507f1f77bcf86cd799439537
+    industry: 507f1f77bcf86cd799439031
+    profession: Global Education Policy Advisor
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, global, policy]
+    isActive: true
+  - id: 507f1f77bcf86cd799439538
+    industry: 507f1f77bcf86cd799439031
+    profession: International Humanitarian Law Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [humanitarian, law, international]
+    isActive: true
+  - id: 507f1f77bcf86cd799439539
+    industry: 507f1f77bcf86cd799439031
+    profession: Global Economic Development Consultant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [economic, development, global]
+    isActive: true
+  - id: 507f1f77bcf86cd799439540
+    industry: 507f1f77bcf86cd799439031
+    profession: International Trade and Investment Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [trade, investment, international]
+    isActive: true
+
+  ### Business Services (Linked to Information and Communication Industry - Code: J)
+  - id: 507f1f77bcf86cd799439147
+    industry: 507f1f77bcf86cd799439020
+    profession: Service Manager ICT
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [ICT, management, technology]
+
+  - id: 507f1f77bcf86cd799439148
+    industry: 507f1f77bcf86cd799439020
+    profession: Cyber Security Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [cybersecurity, IT, technology]
+
+  - id: 507f1f77bcf86cd799439149
+    industry: 507f1f77bcf86cd799439020
+    profession: Data Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [data, analysis, IT]
+
+  - id: 507f1f77bcf86cd799439150
+    industry: 507f1f77bcf86cd799439020
+    profession: Information Systems Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [IT, systems, information]
+
+  ### Community Services (Linked to Human Health and Social Work - Code: Q)
+  - id: 507f1f77bcf86cd799439151
+    industry: 507f1f77bcf86cd799439027
+    profession: Children's Services Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [children, community, socialWork]
+
+  - id: 507f1f77bcf86cd799439152
+    industry: 507f1f77bcf86cd799439027
+    profession: Youth Engagement Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [youth, community, engagement]
+
+  - id: 507f1f77bcf86cd799439153
+    industry: 507f1f77bcf86cd799439027
+    profession: Aged and Disability Services Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [agedCare, disability, community]
+
+  - id: 507f1f77bcf86cd799439154
+    industry: 507f1f77bcf86cd799439027
+    profession: Multicultural Liaison Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [multicultural, community, diversity]
+
+  ### Economic Development (Linked to Professional, Scientific, and Technical Activities - Code: M)
+  - id: 507f1f77bcf86cd799439155
+    industry: 507f1f77bcf86cd799439023
+    profession: Economic Development Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [economic, development, management]
+
+  - id: 507f1f77bcf86cd799439156
+    industry: 507f1f77bcf86cd799439023
+    profession: Business Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [business, coordination, economic]
+
+  ### Engineering & Asset Management (Linked to Construction - Code: F)
+  - id: 507f1f77bcf86cd799439157
+    industry: 507f1f77bcf86cd799439016
+    profession: Director of Infrastructure Services
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [infrastructure, engineering, management]
+
+  - id: 507f1f77bcf86cd799439158
+    industry: 507f1f77bcf86cd799439016
+    profession: Civil and Open Space Asset Strategist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [civil, engineering, assetManagement]
+
+  - id: 507f1f77bcf86cd799439159
+    industry: 507f1f77bcf86cd799439016
+    profession: Water Treatment Plant Operator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [water, treatment, utilities]
+
+  ### Environment (Linked to Water Supply, Sewerage, Waste Management - Code: E)
+  - id: 507f1f77bcf86cd799439160
+    industry: 507f1f77bcf86cd799439015
+    profession: Sustainability Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [sustainability, environment, management]
+
+  - id: 507f1f77bcf86cd799439161
+    industry: 507f1f77bcf86cd799439015
+    profession: Waste Education Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [waste, education, environment]
+
+  ### Finance (Linked to Financial and Insurance Activities - Code: K)
+  - id: 507f1f77bcf86cd799439162
+    industry: 507f1f77bcf86cd799439021
+    profession: Chief Financial Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [finance, management, CFO]
+
+  - id: 507f1f77bcf86cd799439163
+    industry: 507f1f77bcf86cd799439021
+    profession: Grants Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [finance, grants, administration]
+
+  ### Human Resources (Linked to Administrative and Support Services - Code: N)
+  - id: 507f1f77bcf86cd799439164
+    industry: 507f1f77bcf86cd799439024
+    profession: Human Resources Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [HR, management, administration]
+
+  - id: 507f1f77bcf86cd799439165
+    industry: 507f1f77bcf86cd799439024
+    profession: Recruitment Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [HR, recruitment, administration]
+
+  ### Tourism, Culture & Recreation (Linked to Arts, Entertainment, and Recreation - Code: R)
+  - id: 507f1f77bcf86cd799439166
+    industry: 507f1f77bcf86cd799439028
+    profession: Events Coordinator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [tourism, events, coordination]
+
+  - id: 507f1f77bcf86cd799439167
+    industry: 507f1f77bcf86cd799439028
+    profession: Museum and Gallery Assistant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [culture, museum, arts]
+
+  ### Agriculture, Forestry, and Fishing (Code: A)
+  - id: 507f1f77bcf86cd799439168
+    industry: 507f1f77bcf86cd799439011
+    profession: Natural Resources Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [naturalResources, agriculture, environment]
+
+  - id: 507f1f77bcf86cd799439169
+    industry: 507f1f77bcf86cd799439011
+    profession: Wildlife Biologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [wildlife, biology, conservation]
+
+  ### Mining and Quarrying (Code: B)
+  - id: 507f1f77bcf86cd799439170
+    industry: 507f1f77bcf86cd799439012
+    profession: Petroleum Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [petroleum, engineering, mining]
+
+  - id: 507f1f77bcf86cd799439171
+    industry: 507f1f77bcf86cd799439012
+    profession: Geophysicist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [geophysics, mining, exploration]
+
+  ### Manufacturing (Code: C)
+  - id: 507f1f77bcf86cd799439172
+    industry: 507f1f77bcf86cd799439013
+    profession: Chemical Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [chemical, engineering, manufacturing]
+
+  - id: 507f1f77bcf86cd799439173
+    industry: 507f1f77bcf86cd799439013
+    profession: Industrial Hygienist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [safety, manufacturing, health]
+
+  ### Electricity, Gas, Steam, and Air Conditioning Supply (Code: D)
+  - id: 507f1f77bcf86cd799439174
+    industry: 507f1f77bcf86cd799439014
+    profession: Energy Program Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [energy, utilities, policy]
+
+  - id: 507f1f77bcf86cd799439175
+    industry: 507f1f77bcf86cd799439014
+    profession: Electrical Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [electrical, engineering, energy]
+
+  ### Water Supply, Sewerage, Waste Management, and Remediation (Code: E)
+  - id: 507f1f77bcf86cd799439176
+    industry: 507f1f77bcf86cd799439015
+    profession: Environmental Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [environmental, engineering, sustainability]
+
+  - id: 507f1f77bcf86cd799439177
+    industry: 507f1f77bcf86cd799439015
+    profession: Hazardous Waste Generator Initiative Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [waste, hazardous, environment]
+
+  ### Construction (Code: F)
+  - id: 507f1f77bcf86cd799439178
+    industry: 507f1f77bcf86cd799439016
+    profession: Civil Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [civil, engineering, construction]
+
+  - id: 507f1f77bcf86cd799439179
+    industry: 507f1f77bcf86cd799439016
+    profession: Structural Engineer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [structural, engineering, construction]
+
+  ### Wholesale and Retail Trade (Code: G)
+  - id: 507f1f77bcf86cd799439180
+    industry: 507f1f77bcf86cd799439017
+    profession: Procurement Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [procurement, trade, supplyChain]
+
+  - id: 507f1f77bcf86cd799439181
+    industry: 507f1f77bcf86cd799439017
+    profession: Contract Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [contracts, trade, procurement]
+
+  ### Transportation and Storage (Code: H)
+  - id: 507f1f77bcf86cd799439182
+    industry: 507f1f77bcf86cd799439018
+    profession: Logistics Management Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [logistics, transportation, supplyChain]
+
+  - id: 507f1f77bcf86cd799439183
+    industry: 507f1f77bcf86cd799439018
+    profession: Transportation Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [transportation, analysis, logistics]
+
+  ### Information and Communication (Code: J)
+  - id: 507f1f77bcf86cd799439184
+    industry: 507f1f77bcf86cd799439020
+    profession: Information Technology Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [IT, technology, information]
+
+  - id: 507f1f77bcf86cd799439185
+    industry: 507f1f77bcf86cd799439020
+    profession: Telecommunications Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [telecommunications, IT, technology]
+
+  ### Financial and Insurance Activities (Code: K)
+  - id: 507f1f77bcf86cd799439186
+    industry: 507f1f77bcf86cd799439021
+    profession: Financial Management Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [finance, management, banking]
+
+  - id: 507f1f77bcf86cd799439187
+    industry: 507f1f77bcf86cd799439021
+    profession: Actuary
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [actuarial, finance, insurance]
+
+  ### Professional, Scientific, and Technical Activities (Code: M)
+  - id: 507f1f77bcf86cd799439188
+    industry: 507f1f77bcf86cd799439023
+    profession: Policy Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [policy, analysis, professional]
+
+  - id: 507f1f77bcf86cd799439189
+    industry: 507f1f77bcf86cd799439023
+    profession: Economist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [economics, analysis, professional]
+
+  ### Public Administration and Defense (Code: O)
+  - id: 507f1f77bcf86cd799439190
+    industry: 507f1f77bcf86cd799439025
+    profession: Emergency Management Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [emergency, management, publicAdministration]
+
+  - id: 507f1f77bcf86cd799439191
+    industry: 507f1f77bcf86cd799439025
+    profession: Intelligence Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [intelligence, analysis, defense]
+
+  ### Education (Code: P)
+  - id: 507f1f77bcf86cd799439192
+    industry: 507f1f77bcf86cd799439026
+    profession: Education Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [education, specialist, teaching]
+
+  - id: 507f1f77bcf86cd799439193
+    industry: 507f1f77bcf86cd799439026
+    profession: Training Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [training, education, development]
+
+  ### Human Health and Social Work (Code: Q)
+  - id: 507f1f77bcf86cd799439194
+    industry: 507f1f77bcf86cd799439027
+    profession: Public Health Analyst
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [publicHealth, analysis, healthcare]
+
+  - id: 507f1f77bcf86cd799439195
+    industry: 507f1f77bcf86cd799439027
+    profession: Epidemiologist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [epidemiology, health, research]
+
+  ### Arts, Entertainment, and Recreation (Code: R)
+  - id: 507f1f77bcf86cd799439196
+    industry: 507f1f77bcf86cd799439028
+    profession: Public Affairs Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [publicAffairs, communications, arts]
+
+  - id: 507f1f77bcf86cd799439197
+    industry: 507f1f77bcf86cd799439028
+    profession: Video Production Specialist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [video, production, entertainment]
+
+  ### Arts, Entertainment, and Recreation (Code: R)
+  - id: 507f1f77bcf86cd799439204
+    industry: 507f1f77bcf86cd799439028
+    profession: Junior Digital Artist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [digitalArt, junior, creative]
+
+  - id: 507f1f77bcf86cd799439205
+    industry: 507f1f77bcf86cd799439028
+    profession: Digital Art Assistant
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [digitalArt, assistant, creative]
+
+  - id: 507f1f77bcf86cd799439206
+    industry: 507f1f77bcf86cd799439028
+    profession: Graphic Designer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [graphicDesign, creative, design]
+
+  - id: 507f1f77bcf86cd799439207
+    industry: 507f1f77bcf86cd799439028
+    profession: Illustrator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [illustration, creative, design]
+
+  - id: 507f1f77bcf86cd799439208
+    industry: 507f1f77bcf86cd799439028
+    profession: 3D Modeler
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [3D, modeling, creative]
+
+  - id: 507f1f77bcf86cd799439209
+    industry: 507f1f77bcf86cd799439028
+    profession: Concept Artist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [conceptArt, creative, design]
+
+  - id: 507f1f77bcf86cd799439210
+    industry: 507f1f77bcf86cd799439028
+    profession: Motion Graphics Designer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [motionGraphics, animation, creative]
+
+  - id: 507f1f77bcf86cd799439211
+    industry: 507f1f77bcf86cd799439028
+    profession: Senior Graphic Designer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [graphicDesign, senior, creative]
+
+  - id: 507f1f77bcf86cd799439212
+    industry: 507f1f77bcf86cd799439028
+    profession: Lead Animator
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [animation, lead, creative]
+
+  - id: 507f1f77bcf86cd799439213
+    industry: 507f1f77bcf86cd799439028
+    profession: Visual Effects Artist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [VFX, visualEffects, creative]
+
+  - id: 507f1f77bcf86cd799439214
+    industry: 507f1f77bcf86cd799439028
+    profession: Creative Director
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [creative, director, leadership]
+
+  - id: 507f1f77bcf86cd799439215
+    industry: 507f1f77bcf86cd799439028
+    profession: Lead Concept Artist
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [conceptArt, lead, creative]
+
+  - id: 507f1f77bcf86cd799439216
+    industry: 507f1f77bcf86cd799439028
+    profession: UI/UX Design Manager
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [UI, UX, design, management]
+
+  - id: 507f1f77bcf86cd799439217
+    industry: 507f1f77bcf86cd799439028
+    profession: Head of Creative Design
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [creative, design, leadership]
+
+  - id: 507f1f77bcf86cd799439218
+    industry: 507f1f77bcf86cd799439028
+    profession: Chief Visual Officer
+    createdAt: 2023-10-01T00:00:00Z
+    updatedAt: 2023-10-01T00:00:00Z
+    tags: [visual, leadership, executive]
+
