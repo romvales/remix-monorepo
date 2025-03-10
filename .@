@@ -11,7 +11,16 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
   case $1 in
 
     remix.dev)
-      remix vite:dev
+
+      case $RUNTIME in
+        node)
+          node ./server.js
+          ;;
+        *)
+          remix vite:dev
+          ;;
+      esac
+
       ;;
     
     remix.build)
@@ -19,7 +28,16 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
       ;;
 
     remix.start)
-      remix-serve ./build/${APP}/server/index.js
+      
+      case $RUNTIME in
+        node)
+          NODE_ENV=production node ./server.js
+          ;;
+        *)
+          remix-serve ./build/${APP}/server/index.js
+          ;;
+      esac
+
       ;;
 
     email.dev)

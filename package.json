@@ -1,6 +1,7 @@
 {
   "name": "remix-monorepo",
   "private": true,
+  "sideEffects": false,
   "type": "module",
   "version": "1.0.0",
   "scripts": {
@@ -10,7 +11,7 @@
     "email.dev": "./.@ email.dev",
     "email.build": "./.@ email.build",
     "test": "./.@ vitest",
-    "lint": "./.@ eslint --ignore-path .gitignore .",
+    "lint": "./.@ eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "typecheck": "./.@ tsc"
   },
   "keywords": [],
@@ -27,6 +28,7 @@
     "@radix-ui/react-toggle": "^1.1.2",
     "@radix-ui/react-toggle-group": "^1.1.2",
     "@react-email/components": "^0.0.33",
+    "@remix-run/express": "^2.16.0",
     "@remix-run/node": "^2.15.3",
     "@remix-run/react": "^2.15.3",
     "@remix-run/serve": "^2.15.3",
@@ -35,6 +37,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.0",
+    "express": "^4.21.2",
     "isbot": "4",
     "lodash-es": "^4.17.21",
     "lucide-react": "^0.475.0",
@@ -59,6 +62,7 @@
     "@remix-run/testing": "^2.15.3",
     "@tailwindcss/postcss": "^4.0.7",
     "@testing-library/react": "^16.2.0",
+    "@types/express": "^5.0.0",
     "@types/lodash-es": "^4.17.12",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.0",
