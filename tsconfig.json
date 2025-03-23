@@ -31,6 +31,7 @@
     ],
     "paths": {
       "@zapenlist/*": [ "./web/zapenlist/*" ],
+      "@namestash/*": [ "./web/namestash/*" ],
       "@components/*": [ "./shared/components/*" ],
       "@components/ui/*": [ "./shared/components/ui/*" ],
     }

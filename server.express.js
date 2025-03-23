@@ -21,7 +21,7 @@ const handleRequest = createRequestHandler({
   },
 })
 
-App.disable('X-Powered-By') 
+App.disable('X-Powered-By')
 
 if (vite) {
   App.use(vite.middlewares)

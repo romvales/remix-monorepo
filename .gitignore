@@ -11,3 +11,4 @@ build
 !**/config.example.toml
 
 **/pb_data
+.vercel

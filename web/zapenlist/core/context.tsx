@@ -2,7 +2,7 @@ import { createContext, useRef } from 'react'
 
 const coreContext = createContext(null)
 
-export const CoreContextProvider = ({ children }: CompProps) => {
+export const CoreContextProvider = ({ children }: ComponentProps) => {
   const ref = useRef(null)
 
   if (!ref.current) {

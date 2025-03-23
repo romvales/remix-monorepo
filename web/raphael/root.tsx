@@ -1,21 +1,11 @@
-import stylesHref from './root.css?url'
+import './root.css'
 
-import { LinksFunction } from '@remix-run/node'
-import { CoreContextProvider } from './core/context'
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
 
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration
-} from '@remix-run/react'
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: stylesHref },
-]
+import { Fragment } from 'react'
 
 function Root() {
+
   return (
   <html lang='en'>
   <head>
@@ -29,7 +19,7 @@ function Root() {
     </noscript>
 
     <Outlet />
-    
+
     <ScrollRestoration />
     <Scripts />
   </body>
@@ -40,8 +30,8 @@ function Root() {
 export default function App() {
 
   return (
-    <CoreContextProvider>
+    <Fragment>
       <Root />
-    </CoreContextProvider>
+    </Fragment>
   )
 }
