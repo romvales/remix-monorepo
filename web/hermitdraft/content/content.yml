@@ -1,0 +1,67 @@
+name: Hermitdraft.org
+tagline: A minimalist writing tool for offline writers.
+
+nav:
+  - label: 'Sign in'
+    to: /login
+  - label: 'Contact'
+    to: /contact
+
+hero:
+  main: >
+    Hermitdraft is an offline-first free writing tool for writers
+    who loves simplicity and writing in solitude.
+    Write your drafts even when you're disconnected
+
+benefits:
+  - title: Offline-first writing
+    desc: >
+      Don't have an internet? No worries, all your drafts and
+      media files are still accessible even when you're in a
+      offline place.
+
+  - title: Easy access
+    desc: >
+      Hermitdraft is a progressive web application (PWA), it works directly
+      in your browser. You don't have to download additional things, just open
+      and start writing.
+
+features:
+  - title: Offline-first writing experience
+    desc: Allows your to continue working on your draft in a place where internet is unavailable. 
+
+convo:
+  title: For writers, made by a noob writer
+  desc:
+    - >
+      Hermitdraft is a writing tool made by a noob,
+      lonely, and ambitious writer who doesn't know 
+      how to write well.
+    - >
+      This was made out of the idea that writers 
+      don't need complicated tools to unleash 
+      their creativity.
+
+faqs:
+  title: Frequently Asked Questions
+  desc: See what questions are mostly asked by Hermitdraft users
+  items:
+    - text: Can I access my drafts even when offline?
+      ans: Yes.
+    - text: Which browser supports Hermitdraft?
+      ans: >
+        Hermitdraft works in all modern browsers, but 
+        using Google Chrome or any Chromium-based browser 
+        is suggested when using this writing tool.
+    - text: Does it work on mobile devices?
+      ans: >
+        Yes! Hermitdraft is supported on both mobile and 
+        desktop modern web browsers.
+
+cta:
+  title: Start writing your drafts today.
+  actions:
+    - label: Sign up to Hermitdraft
+      to: /signup
+    - label: Contact
+      to: /contact

@@ -12,3 +12,4 @@ build
 
 **/pb_data
 .vercel
+.env*.local

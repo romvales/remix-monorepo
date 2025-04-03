@@ -72,6 +72,18 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
       npx pocketbase-typegen --db ./web/${APP}.pocketbase/pb_data/data.db --out ./web/${APP}/types/pocketbase-types.ts
       ;;
 
+    prisma-js)
+      npx prisma ${@:2}
+      ;;
+
+    prisma.migrate)
+      ./.@ prisma-js migrate dev --schema=./web/${APP}.server/schema.prisma
+      ;;
+
+    prisma-js.generate)
+      ./.@ prisma-js generate --schema=./web/${APP}.server/schema.prisma --generator js 
+      ;;
+
     *)
       eval ${@:1};
       ;;

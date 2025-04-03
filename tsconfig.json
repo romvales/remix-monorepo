@@ -7,6 +7,9 @@
     "web/**/.client/**/*.ts",
     "web/**/.client/**/*.tsx",
     "shared/**/*.tsx",
+    "shared/**/*.ts",
+    "vite.config.ts",
+    "node.d.ts"
   ],
   "compilerOptions": {
     "baseUrl": ".",
@@ -31,9 +34,11 @@
     ],
     "paths": {
       "@zapenlist/*": [ "./web/zapenlist/*" ],
+      "@hermitdraft/*": [ "./web/hermitdraft/*" ],
       "@namestash/*": [ "./web/namestash/*" ],
       "@components/*": [ "./shared/components/*" ],
       "@components/ui/*": [ "./shared/components/ui/*" ],
+      "@shared/*": [ "./shared/*" ]
     }
   },
   

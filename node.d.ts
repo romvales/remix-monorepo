@@ -6,6 +6,8 @@ declare namespace NodeJS {
     APP: string
     ENV: 'dev' | 'test' | 'prod'
     ADAPTER: 'vercel' | 'netlify' | 'serve' | 'express'
+    SECRET: string
+    PWA: string
   }
 
 }

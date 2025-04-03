@@ -1,0 +1,47 @@
+
+datasource db {
+  url = env("DATABASE_URL")
+  provider = "postgresql"
+}
+
+generator js {
+  provider = "prisma-client-js"
+}
+
+enum Sex {
+  MALE
+  FEMALE
+}
+
+model Author {
+  id Int @id @default(autoincrement())
+  id2 String @unique
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  email String @unique
+  username String @unique
+  secret String?
+  name String
+  birthday DateTime
+  country String
+  desc String @default("")
+  sex Sex
+
+  googleId String?
+  googleRefreshToken String?
+
+  sync AuthorDataSync?
+
+  @@map("authors")
+}
+
+model AuthorDataSync {
+  id Int @id @default(autoincrement())
+  authorId Int @unique
+  updatedAt DateTime @default(now())
+  draftsBytes Int
+  mediaBytes Int
+  author Author @relation(fields: [authorId], references: [id])
+
+  @@map("authorsDataSync")
+}
