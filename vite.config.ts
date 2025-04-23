@@ -38,7 +38,13 @@ const plugins: PluginOption[] = [
 // Add the vercelPreset if process.env.ADAPTER is vercel.
 if (/vercel/.test(process.env.ADAPTER)) presets.push(vercelPreset())
 if (process.env.PWA) plugins.push(remixPWA({
+  workerMinify: process.env.NODE_ENV == 'production',
   workerBuildDirectory: `web/${process.env.APP}/public`,
+  workerSourceMap: true,
+  scope: '/',
+  buildVariables: {
+    'process.env.ORIGIN': process.env.ORIGIN,
+  },
 }))
 
 plugins.push(
@@ -75,8 +81,9 @@ export default defineConfig({
   },
 
   worker: {
-    format: 'iife',
+    format: 'es',
     plugins: () => [
+      yaml(),
       tsconfigPaths(),
       nodePolyfills({
         include: [ 'buffer' ],
@@ -86,6 +93,24 @@ export default defineConfig({
   },
 
   build: {
-    target: 'esnext', 
+    target: 'esnext',
+  },
+
+  define: {
+    'process.env': {
+      ORIGIN: process.env.ORIGIN,
+      SECRET: process.env.SECRET,
+
+      CLOUDFLARE_R2_BUCKET_NAME: process.env.CLOUDFLARE_R2_BUCKET_NAME,
+      CLOUDFLARE_R2_ENDPOINT: process.env.CLOUDFLARE_R2_ENDPOINT,
+      CLOUDFLARE_R2_ACCESS_KEY: process.env.CLOUDFLARE_R2_ACCESS_KEY,
+      CLOUDFLARE_R2_SECRET: process.env.CLOUDFLARE_R2_SECRET,
+
+      DIRECTUS_URL: process.env.DIRECTUS_URL,
+      DIRECTUS_TOKEN: process.env.DIRECTUS_TOKEN,
+
+      TURNSTILE_SITE: process.env.TURNSTILE_SITE,
+      TURNSTILE_SECRET: process.env.TURNSTILE_SECRET,
+    },
   },
 })

@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "name": "hermitdraft",
   "buildCommand": "pnpm prisma-js.generate && pnpm remix.build",
   "outputDirectory": "build",
   "devCommand": "pnpm remix.dev",

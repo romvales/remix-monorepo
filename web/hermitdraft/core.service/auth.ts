@@ -9,27 +9,29 @@ import { kebabCase } from 'lodash-es'
 import { prisma } from '../core.db'
 import { sessionStore } from '../session'
 
-export const signupSchema = z.object({
-  author: z.object({
-    name: z.string().trim().nonempty(),
-    email: z.string().email().nonempty(),
-    country: z.string().nonempty(),
-    birthMonth: z.number().nonnegative().min(1).max(12),
-    birthDay: z.number().nonnegative().min(1).max(31),
-    birthYear: z.number().nonnegative().min(1940).max(dayjs().year()),
-    sex: z.enum([ 'MALE', 'FEMALE' ]).default('MALE'),
-    pass: z.string().trim().nonempty().min(8),
-    confirmPass: z.string().trim().nonempty().min(8),
-  })
-}).superRefine(({ author: { pass, confirmPass } }, ctx) => {
-  if (pass != confirmPass) {
-    ctx.addIssue({
-      code: 'custom',
-      message: 'Mismatch password',
-      path: ['author.confirmPass'],
+export const signupSchema = z
+  .object({
+    author: z.object({
+      name: z.string().trim().nonempty(),
+      email: z.string().email().nonempty(),
+      country: z.string().nonempty(),
+      birthMonth: z.number().nonnegative().min(1).max(12),
+      birthDay: z.number().nonnegative().min(1).max(31),
+      birthYear: z.number().nonnegative().min(1940).max(dayjs().year()),
+      sex: z.enum([ 'MALE', 'FEMALE' ]).default('MALE'),
+      pass: z.string().trim().nonempty().min(8),
+      confirmPass: z.string().trim().nonempty().min(8),
     })
-  }
-})
+  })
+  .superRefine(({ author: { pass, confirmPass } }, ctx) => {
+    if (pass != confirmPass) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'Mismatch password',
+        path: ['author.confirmPass'],
+      })
+    }
+  })
 
 export async function createNewAccount(request: Request) {
   const { author } = signupSchema.parse(parseForm(await request.formData()))
@@ -126,4 +128,10 @@ export function invalidate(session: Session) {
 export async function isLoggedIn(request: Request) {
   const session = await getAuthSession(request)
   return session.has('author')
+}
+
+export async function getSessionData(request: Request) {
+  const session = await getAuthSession(request)
+  const author = session.get('author') as HermitTypes.Author
+  return { author }
 }

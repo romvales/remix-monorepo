@@ -1,0 +1,70 @@
+@import '../../shared/components/tailwind.css';
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  @apply text-[18px] md:text-[20px] lg:text-[24px];
+}
+
+body {
+  @apply min-h-screen grid dark:bg-zinc-900;
+  @apply text-zinc-800 dark:text-zinc-100;
+  grid-template-rows: auto 1fr;
+}
+
+main,
+main > .romvales-main {
+  @apply space-y-4;
+}
+
+.romvales-main {
+  @apply grid py-4;
+  @apply bg-zinc-100 dark:bg-zinc-950;
+
+  grid-template-rows: 1fr auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-zinc-800 dark:text-zinc-200;
+}
+
+p {
+  @apply mb-4 text-zinc-600 dark:text-zinc-400; 
+}
+
+@layer utilities {
+
+  .romvales-container {
+    @apply container mx-auto;
+    @apply md:max-w-[45rem] lg:max-w-[60rem] px-4;
+  }
+
+  .hero-h1 {
+    @apply text-4xl font-semibold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .romvales-h1 {
+    @apply text-2xl font-semibold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .romvales-h2 {
+    @apply text-2xl font-semibold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .romvales-h3 {
+    @apply text-lg font-semibold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .romvales-h-label {
+    @apply uppercase text-xs border rounded-full inline-block px-2 py-1 mb-2;
+    @apply border-zinc-800 dark:border-zinc-100;
+  }
+
+}
+
+.romvales-h-label {
+  @apply text-zinc-800 dark:text-zinc-100;
+}

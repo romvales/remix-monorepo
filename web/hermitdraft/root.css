@@ -1,1 +1,59 @@
 @import '../../shared/components/tailwind.css';
+@plugin '@tailwindcss/typography';
+
+@layer utilities {
+
+  .hermitdraft\@container {
+    @apply container mx-auto px-4 ;
+    @apply lg:max-w-[100ch];
+  }
+
+  .hermitdraft\@h1,
+  .hermitdraft\@h2,
+  .hermitdraft\@h3,
+  .hermitdraft\@h4,
+  .hermitdraft\@h5,
+  .hermitdraft\@h6 {
+    @apply font-medium;
+    @apply mb-2;
+  }
+
+  .hermitdraft\@h1 {
+    @apply text-4xl;
+  }
+
+  .hermitdraft\@h2 {
+    @apply text-2xl;
+  }
+
+  .hermitdraft\@h3 {
+    @apply text-lg;
+  }
+
+}
+
+body {
+  @apply bg-zinc-200 text-zinc-800;
+}
+
+p {
+  @apply text-zinc-700;
+}
+
+.ProseMirror-focused {
+  @apply focus-visible:outline-0;
+}
+
+.tiptap.ProseMirror {
+  @apply px-4 w-full prose max-w-none;
+}
+
+.hermit-toolbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hermit-toolbar::-webkit-scrollbar,
+.hermit-toolbar::-webkit-scroolbar-button {
+  @apply hidden;
+}

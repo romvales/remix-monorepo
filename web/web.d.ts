@@ -1,4 +1,3 @@
-
-type HTMLAttributes<T> = import('react').HTMLAttributes<T>
-
-declare interface ComponentProps<P = object> extends HTMLAttributes<P> {}
+declare type ComponentProps<T = {}> = 
+  import('react').HTMLAttributes<{}> & 
+  import('react').PropsWithRef<T>

@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "9af3f44f-1b5b-4f55-9ab9-4661c3c444d2",
+  "id": "6120c38b-7c39-4d43-81c3-dbebba700b39",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "drafts": {
@@ -35,6 +35,13 @@
           "notNull": true,
           "autoincrement": false
         },
+        "folder": {
+          "name": "folder",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
         "status": {
           "name": "status",
           "type": "text",
@@ -47,8 +54,7 @@
           "type": "integer",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": false,
-          "default": "(CURRENT_TIMESTAMP)"
+          "autoincrement": false
         },
         "updated": {
           "name": "updated",
@@ -112,6 +118,13 @@
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
+        },
+        "images": {
+          "name": "images",
+          "type": "blob",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
         }
       },
       "indexes": {
@@ -124,6 +137,94 @@
         },
         "drafts_slug_unique": {
           "name": "drafts_slug_unique",
+          "columns": [
+            "slug"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "folders": {
+      "name": "folders",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "id2": {
+          "name": "id2",
+          "type": "text(32)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "author": {
+          "name": "author",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "slug": {
+          "name": "slug",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created": {
+          "name": "created",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "updated": {
+          "name": "updated",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "folder": {
+          "name": "folder",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "target": {
+          "name": "target",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "folders_id2_unique": {
+          "name": "folders_id2_unique",
+          "columns": [
+            "id2"
+          ],
+          "isUnique": true
+        },
+        "folders_slug_unique": {
+          "name": "folders_slug_unique",
           "columns": [
             "slug"
           ],
@@ -166,13 +267,19 @@
           "notNull": true,
           "autoincrement": false
         },
+        "folder": {
+          "name": "folder",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
         "created": {
           "name": "created",
           "type": "integer",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": false,
-          "default": "(CURRENT_TIMESTAMP)"
+          "autoincrement": false
         },
         "updated": {
           "name": "updated",
@@ -181,8 +288,8 @@
           "notNull": true,
           "autoincrement": false
         },
-        "name": {
-          "name": "name",
+        "originalName": {
+          "name": "originalName",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -195,16 +302,16 @@
           "notNull": false,
           "autoincrement": false
         },
+        "uploaded": {
+          "name": "uploaded",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
         "size": {
           "name": "size",
           "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "originalName": {
-          "name": "originalName",
-          "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false

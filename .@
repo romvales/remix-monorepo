@@ -72,6 +72,14 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
       npx pocketbase-typegen --db ./web/${APP}.pocketbase/pb_data/data.db --out ./web/${APP}/types/pocketbase-types.ts
       ;;
 
+    directus.types)
+      npx directus-typescript-gen \
+        --host ${DIRECTUS_URL} \
+        --email ${DIRECTUS_EMAIL} \
+        --password ${DIRECTUS_PASSWORD} \
+        --outFile ./web/${APP}/directus.d.ts
+      ;;
+
     prisma-js)
       npx prisma ${@:2}
       ;;

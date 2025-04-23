@@ -1,0 +1,367 @@
+created: 2025-04-17T22:55:21+08
+updated: 2025-04-19T12:19:40+08
+title: romvales.com
+
+metatags:
+
+  /:
+    - title: 'Rom Vales: A Sustainable Experience Designer'
+    - name: description
+      content: I create human-first, research-based, and sustainable experiences to get your brand's unique values noticed by clients.
+    - property: og:title
+      content: 'Rom Vales: A Sustainable Experience Designer'
+    - property: og:description
+      content: I create human-first, sustainable, and minimal experience that clearly aligns with your brand's values and goals.
+    - property: og:image
+      content: 
+    - property: og:url
+      content: https://romvales.com
+    - property: og:site_name
+      content: 'Rom Vales: A Sustainable Experience Designer'
+    - property: og:locale
+      content: en_US
+  
+  /contact:
+    - title: Rom Vales | Contact me
+    - name: description
+      content: I create human-first, research-based, and sustainable experiences to get your brand's unique values noticed by clients.
+    - property: og:title
+      content: 'Rom Vales | Contact me'
+    - property: og:description
+      content: I create human-first, sustainable, and minimal experience that clearly aligns with your brand's values and goals.
+    - property: og:image
+      content: 
+    - property: og:url
+      content: https://romvales.com/contact
+    - property: og:site_name
+      content: 'Rom Vales: A Sustainable Experience Designer'
+    - property: og:locale
+      content: en_US
+      
+
+nav:
+  homeUrl: /
+  links:
+    - name: About
+      url: /#about
+    - name: The Process
+      url: /#process
+    - name: Services
+      url: /#services
+    - name: Contact
+      url: /contact
+
+me:
+  profile:
+    tagline: Connect with your clients in the most sustainable way.
+    name: Rom Vales Villanueva
+    birthday: 1999-07-26
+    email: rom.vales@outlook.com
+    phone: (+63) 918 263 9024
+    social:
+      - plat: Cal.com
+        url: https://cal.com/rom-vales
+      - plat: facebook
+        url: https://facebook.com/rom.vaIes
+
+    cv: /Rom Vales Villanueva - Resume.pdf
+    motto: A thorough, research-based, and sustainable experiences to get your brand unique values noticed by clients.
+    address:
+      country: Philippines
+      state: Albay
+      city: Sto. Domingo
+      postal: 4508
+
+    cta:
+      name: Book a consultation
+      url: https://cal.com/rom-vales
+
+  about:
+    title: Showcase your brand values through sustainable experience.
+    descriptions: 
+      - >
+        I create human-first, sustainable, and minimal experience that clearly 
+        aligns with your brand values and goals.
+
+  # NOTE: For this personal website, I will be focusing solely on copywriting
+  #       services, so better make it brief for development and design.
+  services:
+    title: Your sustainable designer helping you generate profit out of green experiences.
+    desc: >
+      I am ready to create content aligning with your brand goals that reliably connects
+      with your clients in a human-first, sustainable, and profitable way.
+
+    copywriting:
+      title: Sustainable copywriting
+      desc: There's always a greenest way to connect and convert.
+      message: >
+        At first, I make sure that our sustainable content strategy 
+        clearly aligns with your brand goals - then I bring everything
+        together to form a copy you need for every marketing ecosystem you use.
+
+      experiences:
+        - title: Web & marketing copy
+          packages:
+            - name: Website copy
+            - name: Product launch copy
+            - name: Social media content
+            - name: Email marketing
+            - name: Case studies  
+            - name: Lead magnet
+            - name: Business-focused blogs
+
+        - title: Client copy
+          packages:
+            - name: Forms & surveys
+            - name: Reusable and sustainable emails
+            - name: Onboarding & offboard materials
+            - name: Proposals
+            - name: Pitch decks
+
+        - title: Continuous support
+          packages:
+            - name: SEO and content audits
+            - name: Content strategy
+            - name: Copy-editing & proofreading
+            - name: Social media management
+            - name: Testing & iteration
+
+    design:
+      title: Sustainable graphic design
+      desc: Minimal visual is what you need to cultivate growth.
+      message: >
+        You don't have to put every color into an image to attract clients, what you
+        need is a sustainable graphic design that captures your entire brand identity
+        in one, two or three color.
+
+      packages:
+        - name: Print design
+        - name: Web design & development
+        - name: UI/UX design
+        - name: Environmental design
+        - name: Illustration
+
+  process:
+    title: The Process
+    message: Sustainable experience requires a thorough, supportive, and strategic collaboration.
+    steps:
+      - title: Friendly meeting
+        desc: >
+          We start our collaboration with a friendly
+          consultation to know your painpoints and answer your 
+          questions. And after the meeting, I'll ensure both 
+          of us feel connected before moving on to contract & 
+          initial invoice.
+
+      - title: Research & design strategy
+        desc: >
+          Our collaboration will begin with a thorough research
+          on your market, interviewing and gathering data about 
+          your clients so that I perfectly capture your brand
+          unique values.
+
+      - title: Putting things together
+        desc: >
+          I mold everything together I gathered in 
+          the research & design strategy in one place, creating
+          a cohesive and sustainable experience that captures
+          your brand values in the most minimal way.
+
+      - title: Continuous support
+        desc: >
+          With all the created experience in one place, I'll 
+          create a thorough content plan to maximize your
+          business' reach, and take care of your brand
+          entire marketing ecosystem!
+
+
+  props:
+    # [SECTION] Taglines
+
+    - typ: tagline
+      content: 
+        title: Creating minimal and green experience that maximizes your business' profits.
+
+    - typ: tagline
+      content: 
+        title: Creates minimal & sustainable experience that generate revenues.
+    
+    - typ: tagline
+      content: 
+        title: Designs sustainable and audience-centric experiences that converts.
+
+    - typ: tagline
+      content: 
+        title: Helping your company generate sales in the greenest way possible.
+
+    # [SECTION] CTA
+
+    - typ: cta+contact
+      content:
+        title: Ready to adapt into this sustainable approach to generate profit?
+        desc: Book a free consultation and we'll start there.
+        url: https://cal.com/rom-vales
+
+    # [SECTION] Unique value proposition
+
+contact:
+  sub: Let's start our collaboration
+  message: >
+    Fill up and I'll get in touch with you soon or 
+    you can send me an email instead.
+  button: Send an email
+  
+  props:
+    - typ: form+service
+      name: Which service are you interested?
+      attrs:
+        placeholder: Sustainable copywriting
+        name: service
+
+    - typ: form+country
+      name: Country
+      attrs:
+        placeholder: 
+        name: country
+
+    - typ: form
+      name: Your name
+      attrs:
+        placeholder: 
+        name: name
+        type: text
+
+    - typ: form
+      name: Email
+      attrs:
+        placeholder: (e.g. rom.vales@outlook.com)
+        name: email
+        type: email
+
+    - typ: form+gender
+      name: Gender
+      attrs:
+        placeholder:
+        name: gender
+        type: radio  
+    
+    - typ: form
+      name: Company name
+      attrs:
+        placeholder:
+        name: companyName
+        type: text
+
+    - typ: form
+      name: Company website
+      attrs:
+        placeholder:
+        name: website
+        type: url
+
+    - typ: form+industry
+      name: Industry
+      attrs:
+        placeholder:
+        name: industry  
+        type: text
+
+    - typ: form+message
+      name: Message
+      attrs:
+        placeholder: So where does your company need help with?
+        name: message
+
+faqs:
+  - question: How does your sustainable and audience-centric marketing approach works?
+    ans:
+      - >
+        Sustainable and audience-centric marketing approach works by employing solutions
+        that consumes less physical resources - this is done by creating experiences by 
+        writing less yet accurate messages that relates, and employing less graphics in design
+        prints, and other digital assets.
+        
+  - question: How can I get started?
+    ans:
+      - It's quite simple, just book a consultation here in my website and we'll get started.
+  - question: When can I expect my content to be ready?
+    ans: 
+      - >
+        We'll stay connected to keep our projects on schedule every step of the way. Usually,
+        the process in creating sustainable experiences that tailor to your clients takes 4-6 weeks.
+        Timelines vary depending on the project and services, so after our consultation, I'll provide
+        you with custom quote.
+      - >
+        If you have a launch date to chase, please reach out as soon as possible to secure your spot!
+  - question: What types of businesses do you work with?
+    ans:
+      - >
+        I usually work with businesses looking for ways to showcase their brand values to the 
+        public in a sustainable way. Some industries that I am eager to work with are renewable energy,
+        sustainable agriculture, eco-conscious manufacturing, and other sustainable industries.
+      - >
+        I'm also open to creating effective, sustainable and minimalist experience for businesses 
+        eager to showcase their brand values to the public in the most sustainable way possible.
+  - question: Do you offer payment plans?
+    ans: 
+      - >
+        My services are break into 4-5 payment plans. If you have any preference for more payment 
+        plan options, let me know directly so we can talk about additional options for you.
+  - question: How do I know if you're the right person for my business?
+    ans: 
+      - >
+        If you would like your brand values to be noticed through a minimalist, and sustainable experience,
+        then my services are the right choice for your business.
+  - question: What is sustainable experience?
+    ans:
+      - >
+        Sustainable experience is a way to showcase your brand or business with environmental
+        sustainability and people in mind - using digital eco-friendly solutions that requires
+        less physical resources.
+
+industries:
+  - Accounting & Finance
+  - Advertising & Marketing
+  - Aerospace & Defense
+  - Agriculture & Farming
+  - Architecture & Design
+  - Arts & Entertainment
+  - Automotive
+  - Banking & Financial Services
+  - Biotechnology
+  - Business Consulting
+  - Construction
+  - Consumer Goods
+  - Customer Service
+  - Data & Analytics
+  - Education & Training
+  - Energy & Utilities
+  - Engineering
+  - Environmental Services
+  - Fashion & Apparel
+  - Food & Beverage
+  - Government & Public Sector
+  - Healthcare & Medical
+  - Hospitality & Tourism
+  - Human Resources
+  - Information Technology (IT)
+  - Insurance
+  - Legal Services
+  - Logistics & Supply Chain
+  - Manufacturing
+  - Media & Communications
+  - Mining & Metals
+  - Non-Profit & NGOs
+  - Pharmaceuticals
+  - Real Estate
+  - Retail & E-commerce
+  - Science & Research
+  - Security & Investigation
+  - Sports & Recreation
+  - Telecommunications
+  - Transportation
+  - Utilities & Infrastructure
+  - Veterinary Services
+  - Warehousing & Distribution
+  - Writing & Publishing
+  - Other

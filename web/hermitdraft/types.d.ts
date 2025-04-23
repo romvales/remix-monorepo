@@ -9,8 +9,10 @@ declare namespace HermitTypes {
 
   type Author = Omit<import('@prisma/client').Author, 'secret'>
   type AuthorDataSync = import('@prisma/client').AuthorDataSync
+  
   type AuthorDraft = import('./core.db/browser/schema').Draft
   type AuthorMedia = import('./core.db/browser/schema').Media
+  type AuthorFolder = import('./core.db/browser/schema').Folder
 
   type CoreStore = {
     author: Author

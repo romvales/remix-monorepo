@@ -20,6 +20,55 @@ function _mergeNamespaces(n, m) {
   }
   return Object.freeze(Object.defineProperty(n, Symbol.toStringTag, { value: "Module" }));
 }
+const _Logger = class _Logger {
+  constructor(o) {
+    __publicField(this, "options");
+    __publicField(this, "inGroup", false);
+    this.options = { ..._Logger.defaultOptions, ...o };
+  }
+  setLogLevel(o) {
+    this.options.logLevel = o;
+  }
+  setStyles(o) {
+    this.options.styles = { ...this.options.styles, ...o };
+  }
+  print(o, r) {
+    const { isProductionEnv: i, styles: e } = this.options;
+    if (i) return;
+    const t = o;
+    if ("groupCollapsed" === t && /^((?!chrome|android).*safari)/i.test(navigator.userAgent)) return void console[t](...r);
+    const n = Object.entries(e[o]).map(([o2, r2]) => `${o2}: ${r2}`).join("; "), s = this.inGroup ? [] : [`%c${this.options.prefix}`, n];
+    console[t](...s, ...r), "groupCollapsed" === t && (this.inGroup = true), "groupEnd" === t && (this.inGroup = false);
+  }
+  debug(...o) {
+    this.shouldLog("debug") && this.print("debug", o);
+  }
+  info(...o) {
+    this.shouldLog("info") && this.print("info", o);
+  }
+  log(...o) {
+    this.shouldLog("log") && this.print("log", o);
+  }
+  warn(...o) {
+    this.shouldLog("warn") && this.print("warn", o);
+  }
+  error(...o) {
+    this.shouldLog("error") && this.print("error", o);
+  }
+  groupCollapsed(...o) {
+    this.print("groupCollapsed", o);
+  }
+  groupEnd() {
+    this.print("groupEnd", []);
+  }
+  shouldLog(o) {
+    const { logLevel: r } = this.options, i = ["debug", "info", "log", "warn", "error"];
+    return i.indexOf(o) >= i.indexOf(r);
+  }
+};
+__publicField(_Logger, "defaultOptions", { prefix: "remix-pwa", styles: { debug: { background: "#7f8c8d", color: "white", "border-radius": "0.5em", "font-weight": "bold", padding: "2px 0.5em" }, info: { background: "#3498db", color: "white", "border-radius": "0.5em", "font-weight": "bold", padding: "2px 0.5em" }, log: { background: "#2ecc71", color: "white", "border-radius": "0.5em", "font-weight": "bold", padding: "2px 0.5em" }, warn: { background: "#f39c12", color: "white", "border-radius": "0.5em", "font-weight": "bold", padding: "2px 0.5em" }, error: { background: "#c0392b", color: "white", "border-radius": "0.5em", "font-weight": "bold", padding: "2px 0.5em" }, groupCollapsed: { background: "#3498db", color: "white", "border-radius": "0.5em", "font-weight": "bold", padding: "2px 0.5em" }, groupEnd: { background: null, color: "white", "border-radius": "0.5em", "font-weight": "bold", padding: "2px 0.5em" } }, logLevel: "debug", isProductionEnv: false });
+let Logger = _Logger;
+const logger = new Logger();
 const clearUpOldCaches = async (e, c) => (e = e.map((e2) => `${e2}-${c}`), caches.keys().then((c2) => Promise.all([e.forEach((e2) => {
   const { cacheActualName: a } = getCacheNameAndVersion(e2);
   c2.filter((c3) => c3.startsWith(a) && c3 !== e2).forEach((e3) => {
@@ -30,6 +79,9 @@ const getCacheNameAndVersion = (e) => {
   const c = e.split("-"), a = c.pop(), t = c.length - 1;
   return { cacheActualName: c.slice(0, t).join("-"), version: a };
 };
+function getDefaultExportFromCjs(x) {
+  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
+}
 function getAugmentedNamespace(n) {
   if (n.__esModule) return n;
   var f = n.default;
@@ -285,8 +337,8 @@ function wrap(value) {
   return newValue;
 }
 const unwrap = (value) => reverseTransformCache.get(value);
-function openDB(name, version2, { blocked, upgrade, blocking, terminated } = {}) {
-  const request = indexedDB.open(name, version2);
+function openDB(name, version, { blocked, upgrade, blocking, terminated } = {}) {
+  const request = indexedDB.open(name, version);
   const openPromise = wrap(request);
   if (upgrade) {
     request.addEventListener("upgradeneeded", (event) => {
@@ -4692,59 +4744,174 @@ class EnhancedCache {
     await s.done;
   }
 }
-const version = "v1";
-const DOCUMENT_CACHE_NAME = "doc-cache";
-const ASSET_CACHE_NAME = "asset-cache";
-const DATA_CACHE_NAME = "data-cache";
-const MEDIA_CACHE_NAME = "media-cache";
-const docCache = new EnhancedCache(DOCUMENT_CACHE_NAME, {
-  version,
+function isPromise(obj) {
+  return !!obj && (typeof obj === "object" || typeof obj === "function") && typeof obj.then === "function";
+}
+function registerPromiseWorker(callback) {
+  function postOutgoingMessage(e, messageId, error, result) {
+    function postMessage(msg) {
+      if (typeof self.postMessage !== "function") {
+        e.ports[0].postMessage(msg);
+      } else {
+        self.postMessage(msg);
+      }
+    }
+    if (error) {
+      if (typeof console !== "undefined" && "error" in console) {
+        console.error("Worker caught an error:", error);
+      }
+      postMessage([messageId, {
+        message: error.message
+      }]);
+    } else {
+      postMessage([messageId, null, result]);
+    }
+  }
+  function tryCatchFunc(callback2, message) {
+    try {
+      return { res: callback2(message) };
+    } catch (e) {
+      return { err: e };
+    }
+  }
+  function handleIncomingMessage(e, callback2, messageId, message) {
+    var result = tryCatchFunc(callback2, message);
+    if (result.err) {
+      postOutgoingMessage(e, messageId, result.err);
+    } else if (!isPromise(result.res)) {
+      postOutgoingMessage(e, messageId, null, result.res);
+    } else {
+      result.res.then(function(finalResult) {
+        postOutgoingMessage(e, messageId, null, finalResult);
+      }, function(finalError) {
+        postOutgoingMessage(e, messageId, finalError);
+      });
+    }
+  }
+  function onIncomingMessage(e) {
+    var payload = e.data;
+    if (!Array.isArray(payload) || payload.length !== 2) {
+      return;
+    }
+    var messageId = payload[0];
+    var message = payload[1];
+    if (typeof callback !== "function") {
+      postOutgoingMessage(e, messageId, new Error(
+        "Please pass a function into register()."
+      ));
+    } else {
+      handleIncomingMessage(e, callback, messageId, message);
+    }
+  }
+  self.addEventListener("message", onIncomingMessage);
+}
+var register = registerPromiseWorker;
+const register$1 = /* @__PURE__ */ getDefaultExportFromCjs(register);
+const cacheVersion = "v1";
+const documentCacheName = "hermitdraft-docs";
+const assetCacheName = "hermitdraft-assets";
+const dataCacheName = "hermitdraft-data";
+const dbName = "hermitdraft";
+const dbVersion = 1;
+function openDb() {
+  return openDB(dbName, dbVersion, {
+    upgrade(db) {
+      const mediaStore = db.createObjectStore("media", { keyPath: "id2" });
+      mediaStore.createIndex("slug", "slug", { unique: true });
+    },
+    terminated() {
+    }
+  });
+}
+async function getMediaFromStore(slug) {
+  const db = await openDb();
+  const tx = db.transaction("media", "readonly");
+  const store = tx.objectStore("media");
+  const index = store.index("slug");
+  const media = await index.get(slug);
+  await tx.done;
+  db.close();
+  return media;
+}
+const docCache = new EnhancedCache(documentCacheName, {
+  version: cacheVersion,
   strategy: "CacheFirst",
   strategyOptions: {
-    maxEntries: 64
+    ignoreRoutes: [
+      /\/(land|login|contact|signup)/,
+      /^\/@[a-z0-9_-]+(\/[a-zA-Z0-9_-]+)?$/
+    ],
+    maxEntries: 72
   }
 });
-const assetCache = new EnhancedCache(ASSET_CACHE_NAME, {
-  version,
+const assetCache = new EnhancedCache(assetCacheName, {
+  version: cacheVersion,
   strategy: "CacheFirst",
   strategyOptions: {
     maxAgeSeconds: 3600 * 24 * 90,
     maxEntries: 64
   }
 });
-const dataCache = new EnhancedCache(DATA_CACHE_NAME, {
-  version,
+const dataCache = new EnhancedCache(dataCacheName, {
+  version: cacheVersion,
   strategy: "NetworkFirst",
   strategyOptions: {
     networkTimeoutInSeconds: 10,
     maxEntries: 72
   }
 });
-new EnhancedCache(MEDIA_CACHE_NAME, {
-  version,
-  strategy: "CacheFirst",
-  strategyOptions: {}
-});
 self.addEventListener("install", (e) => {
-  console.log("Service worker installed");
+  logger.log("Service worker installed");
   e.waitUntil(self.skipWaiting());
 });
 self.addEventListener("activate", (e) => {
-  console.log("Service worker activated");
+  logger.log("Service worker activated");
   e.waitUntil(Promise.all([
     clearUpOldCaches(
-      [DOCUMENT_CACHE_NAME, DATA_CACHE_NAME, ASSET_CACHE_NAME],
-      version
+      [documentCacheName, dataCacheName, assetCacheName],
+      cacheVersion
     ),
     self.clients.claim()
   ]));
 });
+const hermitdraft = hermidraftServiceWorkerMessageHandler();
 self.addEventListener("message", (e) => {
   e.waitUntil(Promise.all([]));
+});
+register$1(async (data2) => {
+  if (/hermitdraft\.serviceWorker/.test(data2.type))
+    return hermitdraft.handleMessage(data2);
 });
 const defaultFetchHandler = async ({ context }) => {
   const req = context.event.request;
   const url = new URL(req.url);
+  const patt = /\/media\/(?<slug>.+)$/;
+  const { pathname } = url;
+  if (patt.test(pathname)) {
+    return new Promise((resolve) => {
+      setTimeout(async () => {
+        var _a;
+        const { slug } = ((_a = pathname.match(patt)) == null ? void 0 : _a.groups) ?? {};
+        try {
+          const media = await getMediaFromStore(slug);
+          const file = new File([media.bin], media.originalName, {
+            type: media.type,
+            lastModified: media.updated.getTime()
+          });
+          resolve(
+            new Response(file, {
+              headers: {
+                "Content-Type": media.type,
+                "Content-Length": file.size.toString()
+              }
+            })
+          );
+        } catch {
+          return fetch(req);
+        }
+      }, 500);
+    });
+  }
   if (isDocumentRequest(req)) {
     return docCache.handleRequest(req);
   }
@@ -4756,9 +4923,141 @@ const defaultFetchHandler = async ({ context }) => {
   }
   return fetch(req);
 };
+function hermidraftServiceWorkerMessageHandler() {
+  const handleMessage = async (data2) => {
+    const { type, payload } = data2;
+  };
+  return { handleMessage };
+}
 const entryWorker = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   defaultFetchHandler
+}, Symbol.toStringTag, { value: "Module" }));
+var __getOwnPropNames$i = Object.getOwnPropertyNames;
+var __commonJS$i = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames$i(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var require_worker_runtime$i = __commonJS$i({
+  "@remix-pwa/worker-runtime"(exports, module) {
+    module.exports = {};
+  }
+});
+var worker_runtime_default$i = require_worker_runtime$i();
+const route0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: worker_runtime_default$i
+}, Symbol.toStringTag, { value: "Module" }));
+var __getOwnPropNames$h = Object.getOwnPropertyNames;
+var __commonJS$h = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames$h(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var require_worker_runtime$h = __commonJS$h({
+  "@remix-pwa/worker-runtime"(exports, module) {
+    module.exports = {};
+  }
+});
+var worker_runtime_default$h = require_worker_runtime$h();
+const route1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: worker_runtime_default$h
+}, Symbol.toStringTag, { value: "Module" }));
+var __getOwnPropNames$g = Object.getOwnPropertyNames;
+var __commonJS$g = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames$g(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var require_worker_runtime$g = __commonJS$g({
+  "@remix-pwa/worker-runtime"(exports, module) {
+    module.exports = {};
+  }
+});
+var worker_runtime_default$g = require_worker_runtime$g();
+const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: worker_runtime_default$g
+}, Symbol.toStringTag, { value: "Module" }));
+var __getOwnPropNames$f = Object.getOwnPropertyNames;
+var __commonJS$f = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames$f(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var require_worker_runtime$f = __commonJS$f({
+  "@remix-pwa/worker-runtime"(exports, module) {
+    module.exports = {};
+  }
+});
+var worker_runtime_default$f = require_worker_runtime$f();
+const route3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: worker_runtime_default$f
+}, Symbol.toStringTag, { value: "Module" }));
+var __getOwnPropNames$e = Object.getOwnPropertyNames;
+var __commonJS$e = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames$e(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var require_worker_runtime$e = __commonJS$e({
+  "@remix-pwa/worker-runtime"(exports, module) {
+    module.exports = {};
+  }
+});
+var worker_runtime_default$e = require_worker_runtime$e();
+const route4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: worker_runtime_default$e
+}, Symbol.toStringTag, { value: "Module" }));
+var __getOwnPropNames$d = Object.getOwnPropertyNames;
+var __commonJS$d = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames$d(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var require_worker_runtime$d = __commonJS$d({
+  "@remix-pwa/worker-runtime"(exports, module) {
+    module.exports = {};
+  }
+});
+var worker_runtime_default$d = require_worker_runtime$d();
+const route5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: worker_runtime_default$d
+}, Symbol.toStringTag, { value: "Module" }));
+var __getOwnPropNames$c = Object.getOwnPropertyNames;
+var __commonJS$c = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames$c(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var require_worker_runtime$c = __commonJS$c({
+  "@remix-pwa/worker-runtime"(exports, module) {
+    module.exports = {};
+  }
+});
+var worker_runtime_default$c = require_worker_runtime$c();
+const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: worker_runtime_default$c
+}, Symbol.toStringTag, { value: "Module" }));
+var __getOwnPropNames$b = Object.getOwnPropertyNames;
+var __commonJS$b = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames$b(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var require_worker_runtime$b = __commonJS$b({
+  "@remix-pwa/worker-runtime"(exports, module) {
+    module.exports = {};
+  }
+});
+var worker_runtime_default$b = require_worker_runtime$b();
+const route7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: worker_runtime_default$b
+}, Symbol.toStringTag, { value: "Module" }));
+var __getOwnPropNames$a = Object.getOwnPropertyNames;
+var __commonJS$a = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames$a(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var require_worker_runtime$a = __commonJS$a({
+  "@remix-pwa/worker-runtime"(exports, module) {
+    module.exports = {};
+  }
+});
+var worker_runtime_default$a = require_worker_runtime$a();
+const route8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: worker_runtime_default$a
 }, Symbol.toStringTag, { value: "Module" }));
 var __getOwnPropNames$9 = Object.getOwnPropertyNames;
 var __commonJS$9 = (cb, mod) => function __require() {
@@ -4770,7 +5069,7 @@ var require_worker_runtime$9 = __commonJS$9({
   }
 });
 var worker_runtime_default$9 = require_worker_runtime$9();
-const route0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: worker_runtime_default$9
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4784,7 +5083,7 @@ var require_worker_runtime$8 = __commonJS$8({
   }
 });
 var worker_runtime_default$8 = require_worker_runtime$8();
-const route1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: worker_runtime_default$8
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4798,7 +5097,7 @@ var require_worker_runtime$7 = __commonJS$7({
   }
 });
 var worker_runtime_default$7 = require_worker_runtime$7();
-const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route11 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: worker_runtime_default$7
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4812,7 +5111,7 @@ var require_worker_runtime$6 = __commonJS$6({
   }
 });
 var worker_runtime_default$6 = require_worker_runtime$6();
-const route3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route12 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: worker_runtime_default$6
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4826,7 +5125,7 @@ var require_worker_runtime$5 = __commonJS$5({
   }
 });
 var worker_runtime_default$5 = require_worker_runtime$5();
-const route4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route13 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: worker_runtime_default$5
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4840,7 +5139,7 @@ var require_worker_runtime$4 = __commonJS$4({
   }
 });
 var worker_runtime_default$4 = require_worker_runtime$4();
-const route5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route14 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: worker_runtime_default$4
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4854,7 +5153,7 @@ var require_worker_runtime$3 = __commonJS$3({
   }
 });
 var worker_runtime_default$3 = require_worker_runtime$3();
-const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route15 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: worker_runtime_default$3
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4868,7 +5167,7 @@ var require_worker_runtime$2 = __commonJS$2({
   }
 });
 var worker_runtime_default$2 = require_worker_runtime$2();
-const route7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route16 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: worker_runtime_default$2
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4882,7 +5181,7 @@ var require_worker_runtime$1 = __commonJS$1({
   }
 });
 var worker_runtime_default$1 = require_worker_runtime$1();
-const route8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route17 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: worker_runtime_default$1
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4896,11 +5195,13 @@ var require_worker_runtime = __commonJS({
   }
 });
 var worker_runtime_default = require_worker_runtime();
-const route9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const route18 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: worker_runtime_default
 }, Symbol.toStringTag, { value: "Module" }));
-const assets = [];
+const assets = [
+  "/entry.worker.js"
+];
 const routes = {
   "root": {
     id: "root",
@@ -4914,17 +5215,65 @@ const routes = {
     hasWorkerAction: false,
     module: route0
   },
-  "routes/_author.draft.$draftId": {
-    id: "routes/_author.draft.$draftId",
-    parentId: "routes/_author",
-    path: "draft/:draftId",
+  "routes/_author.media.$author.$id.$image": {
+    id: "routes/_author.media.$author.$id.$image",
+    parentId: "routes/_author.media",
+    path: ":author/:id/:image",
     index: void 0,
     caseSensitive: void 0,
-    hasLoader: false,
+    hasLoader: true,
     hasAction: false,
     hasWorkerLoader: false,
     hasWorkerAction: false,
     module: route1
+  },
+  "routes/_author.author[.]rpc.$slug": {
+    id: "routes/_author.author[.]rpc.$slug",
+    parentId: "routes/_author",
+    path: "author.rpc/:slug",
+    index: void 0,
+    caseSensitive: void 0,
+    hasLoader: true,
+    hasAction: true,
+    hasWorkerLoader: false,
+    hasWorkerAction: false,
+    module: route2
+  },
+  "routes/_public.$username._index": {
+    id: "routes/_public.$username._index",
+    parentId: "routes/_public",
+    path: ":username",
+    index: true,
+    caseSensitive: void 0,
+    hasLoader: true,
+    hasAction: false,
+    hasWorkerLoader: false,
+    hasWorkerAction: false,
+    module: route3
+  },
+  "routes/_public.$username.$slug": {
+    id: "routes/_public.$username.$slug",
+    parentId: "routes/_public",
+    path: ":username/:slug",
+    index: void 0,
+    caseSensitive: void 0,
+    hasLoader: true,
+    hasAction: false,
+    hasWorkerLoader: false,
+    hasWorkerAction: false,
+    module: route4
+  },
+  "routes/_author.media[.]upload": {
+    id: "routes/_author.media[.]upload",
+    parentId: "routes/_author",
+    path: "media.upload",
+    index: void 0,
+    caseSensitive: void 0,
+    hasLoader: false,
+    hasAction: true,
+    hasWorkerLoader: false,
+    hasWorkerAction: false,
+    module: route5
   },
   "routes/manifest[.webmanifest]": {
     id: "routes/manifest[.webmanifest]",
@@ -4936,7 +5285,19 @@ const routes = {
     hasAction: false,
     hasWorkerLoader: false,
     hasWorkerAction: false,
-    module: route2
+    module: route6
+  },
+  "routes/_author.draft.$slug": {
+    id: "routes/_author.draft.$slug",
+    parentId: "routes/_author",
+    path: "draft/:slug",
+    index: void 0,
+    caseSensitive: void 0,
+    hasLoader: true,
+    hasAction: false,
+    hasWorkerLoader: false,
+    hasWorkerAction: false,
+    module: route7
   },
   "routes/_guest.land._index": {
     id: "routes/_guest.land._index",
@@ -4948,7 +5309,19 @@ const routes = {
     hasAction: false,
     hasWorkerLoader: false,
     hasWorkerAction: false,
-    module: route3
+    module: route8
+  },
+  "routes/_author.folder.$": {
+    id: "routes/_author.folder.$",
+    parentId: "routes/_author",
+    path: "folder/*",
+    index: void 0,
+    caseSensitive: void 0,
+    hasLoader: true,
+    hasAction: false,
+    hasWorkerLoader: false,
+    hasWorkerAction: false,
+    module: route9
   },
   "routes/_author._index": {
     id: "routes/_author._index",
@@ -4956,11 +5329,35 @@ const routes = {
     path: void 0,
     index: true,
     caseSensitive: void 0,
+    hasLoader: true,
+    hasAction: false,
+    hasWorkerLoader: false,
+    hasWorkerAction: false,
+    module: route10
+  },
+  "routes/_author.logout": {
+    id: "routes/_author.logout",
+    parentId: "routes/_author",
+    path: "logout",
+    index: void 0,
+    caseSensitive: void 0,
+    hasLoader: false,
+    hasAction: true,
+    hasWorkerLoader: false,
+    hasWorkerAction: false,
+    module: route11
+  },
+  "routes/_guest.contact": {
+    id: "routes/_guest.contact",
+    parentId: "routes/_guest",
+    path: "contact",
+    index: void 0,
+    caseSensitive: void 0,
     hasLoader: false,
     hasAction: false,
     hasWorkerLoader: false,
     hasWorkerAction: false,
-    module: route4
+    module: route12
   },
   "routes/_author.media": {
     id: "routes/_author.media",
@@ -4968,11 +5365,11 @@ const routes = {
     path: "media",
     index: void 0,
     caseSensitive: void 0,
-    hasLoader: false,
+    hasLoader: true,
     hasAction: false,
     hasWorkerLoader: false,
     hasWorkerAction: false,
-    module: route5
+    module: route13
   },
   "routes/_guest.signup": {
     id: "routes/_guest.signup",
@@ -4984,7 +5381,7 @@ const routes = {
     hasAction: true,
     hasWorkerLoader: false,
     hasWorkerAction: false,
-    module: route6
+    module: route14
   },
   "routes/_guest.login": {
     id: "routes/_guest.login",
@@ -4996,7 +5393,7 @@ const routes = {
     hasAction: true,
     hasWorkerLoader: false,
     hasWorkerAction: false,
-    module: route7
+    module: route15
   },
   "routes/_author": {
     id: "routes/_author",
@@ -5008,7 +5405,19 @@ const routes = {
     hasAction: false,
     hasWorkerLoader: false,
     hasWorkerAction: false,
-    module: route8
+    module: route16
+  },
+  "routes/_public": {
+    id: "routes/_public",
+    parentId: "root",
+    path: void 0,
+    index: void 0,
+    caseSensitive: void 0,
+    hasLoader: true,
+    hasAction: false,
+    hasWorkerLoader: false,
+    hasWorkerAction: false,
+    module: route17
   },
   "routes/_guest": {
     id: "routes/_guest",
@@ -5020,7 +5429,7 @@ const routes = {
     hasAction: false,
     hasWorkerLoader: false,
     hasWorkerAction: false,
-    module: route9
+    module: route18
   }
 };
 const entry = { module: entryWorker };
@@ -9689,3 +10098,4 @@ _self.addEventListener(
     return event.respondWith(response);
   }
 );
+//# sourceMappingURL=entry.worker.js.map

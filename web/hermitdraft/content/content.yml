@@ -28,7 +28,9 @@ benefits:
 
 features:
   - title: Offline-first writing experience
-    desc: Allows your to continue working on your draft in a place where internet is unavailable. 
+    desc: >
+      Allows your to continue working on your 
+      drafts in a place where internet is unavailable. 
 
 convo:
   title: For writers, made by a noob writer
@@ -59,7 +61,7 @@ faqs:
         desktop modern web browsers.
 
 cta:
-  title: Start writing your drafts today.
+  title: Start writing your ideas today
   actions:
     - label: Sign up to Hermitdraft
       to: /signup

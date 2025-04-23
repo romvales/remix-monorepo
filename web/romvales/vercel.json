@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "name": "romvales",
+  "buildCommand": "pnpm remix.build",
+  "outputDirectory": "build",
+  "devCommand": "pnpm remix.dev",
+  "framework": "remix",
+  "installCommand": null,
+  "headers": []
+}

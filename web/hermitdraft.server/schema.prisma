@@ -45,3 +45,22 @@ model AuthorDataSync {
 
   @@map("authorsDataSync")
 }
+
+model AuthorPublicDraft {
+  id Int @id @default(autoincrement())
+  id2 String @unique
+  lastUpdated DateTime @updatedAt @default(now())
+  authorId Int
+  slug String @unique
+  created DateTime
+  updated DateTime
+  published DateTime
+  title String
+  subheadline String?
+  desc String?
+  featuredImageUrl String?
+  content Json
+  images String[]
+
+  @@map("authorsDrafts")
+}

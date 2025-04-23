@@ -1,0 +1,1 @@
+declare type HermitTRPCContext = import('./context').HermitTRPCContext
