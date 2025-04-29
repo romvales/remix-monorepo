@@ -28,7 +28,7 @@ export default function Layout() {
           <nav className={
             cn(
               'flex items-center justify-between',
-              'border dark:border-zinc-900 dark:text-zinc-200 shadow px-4 py-1 lg:py-2 rounded-xl',
+              'border dark:border-zinc-700/40 dark:text-zinc-200 shadow px-4 py-1 lg:py-2 rounded-xl',
               'bg-white dark:bg-zinc-800 max-w-[60ch] mx-auto',
             )
           }>

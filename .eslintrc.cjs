@@ -15,10 +15,7 @@ module.exports = {
     es6: true,
   },
 
-  extends: [ 
-    '@remix-run/eslint-config',
-    'eslint:recommended',
-  ],
+  extends: ['@remix-run/eslint-config', 'eslint:recommended', 'plugin:storybook/recommended'],
 
   overrides: [
     {

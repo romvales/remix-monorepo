@@ -1,0 +1,1 @@
+ALTER TABLE "resorto"."users" ADD COLUMN "country" text;

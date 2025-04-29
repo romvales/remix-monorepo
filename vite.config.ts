@@ -2,6 +2,7 @@ import invariant from 'tiny-invariant'
 import { defineConfig, PluginOption } from 'vite'
 
 import yaml from '@modyfi/vite-plugin-yaml'
+import { netlifyPlugin } from '@netlify/remix-adapter/plugin'
 import { remixPWA } from '@remix-pwa/dev'
 import { Preset, vitePlugin as remix } from '@remix-run/dev'
 import { vercelPreset } from '@vercel/remix/vite'
@@ -17,6 +18,7 @@ const plugins: PluginOption[] = [
   yaml(),
   envOnlyMacros(),
   tsconfigPaths(),
+
   nodePolyfills({
     include: [ 'buffer' ],
     globals: { Buffer: true },
@@ -37,23 +39,27 @@ const plugins: PluginOption[] = [
 
 // Add the vercelPreset if process.env.ADAPTER is vercel.
 if (/vercel/.test(process.env.ADAPTER)) presets.push(vercelPreset())
-if (process.env.PWA) plugins.push(remixPWA({
-  workerMinify: process.env.NODE_ENV == 'production',
-  workerBuildDirectory: `web/${process.env.APP}/public`,
-  workerSourceMap: true,
-  scope: '/',
-  buildVariables: {
-    'process.env.ORIGIN': process.env.ORIGIN,
-  },
-}))
+if (/netlify/.test(process.env.ADAPTER)) plugins.push(netlifyPlugin())
 
-plugins.push(
+if (process.env.PWA) plugins.push(
+  remixPWA({
+    workerMinify: process.env.NODE_ENV == 'production',
+    workerBuildDirectory: `web/${process.env.APP}/public`,
+    workerSourceMap: true,
+    scope: '/',
+    buildVariables: {
+      'process.env.ORIGIN': process.env.ORIGIN,
+    },
+  })
+)
+
+if (!process.env.STORYBOOK) plugins.push(
   remix({
     appDirectory: `web/${process.env.APP}`,
     buildDirectory: `build/${process.env.APP}`,
     presets,
 
-    ignoredRouteFiles: [ 
+    ignoredRouteFiles: [
       '**/*.css',
       '**/*.{test,spec}.{ts,tsx}',
     ],
@@ -77,7 +83,7 @@ export default defineConfig({
       target: 'esnext',
     },
 
-    exclude: [ 'sqlocal' ],
+    exclude: [ 'sqlocal', '@electric-sql/pglite' ],
   },
 
   worker: {
@@ -98,6 +104,7 @@ export default defineConfig({
 
   define: {
     'process.env': {
+      APP: process.env.APP,
       ORIGIN: process.env.ORIGIN,
       SECRET: process.env.SECRET,
 
@@ -111,6 +118,12 @@ export default defineConfig({
 
       TURNSTILE_SITE: process.env.TURNSTILE_SITE,
       TURNSTILE_SECRET: process.env.TURNSTILE_SECRET,
+
+      SMTP_HOST: process.env.SMTP_HOST,
+      SMTP_PORT: process.env.SMTP_PORT,
+      SMTP_SECURE: process.env.SMTP_SECURE,
+      SMTP_USER: process.env.SMTP_USER,
+      SMTP_PASS: process.env.SMTP_PASS,
     },
   },
 })

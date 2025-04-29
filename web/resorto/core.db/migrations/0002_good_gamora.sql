@@ -1,0 +1,22 @@
+CREATE TABLE "resorto"."users" (
+	"id" integer,
+	"uid" text PRIMARY KEY NOT NULL,
+	"created" timestamp with time zone,
+	"updated" timestamp with time zone,
+	"deleted" timestamp with time zone,
+	"lastLogin" timestamp,
+	"address" json,
+	"email" text,
+	"phone" text,
+	"username" text,
+	"firstName" text,
+	"lastName" text,
+	"birthday" timestamp,
+	"sex" text,
+	"googleId" text,
+	"googleRefreshToken" text,
+	CONSTRAINT "users_uid_unique" UNIQUE("uid"),
+	CONSTRAINT "users_email_unique" UNIQUE("email"),
+	CONSTRAINT "users_phone_unique" UNIQUE("phone"),
+	CONSTRAINT "users_username_unique" UNIQUE("username")
+);

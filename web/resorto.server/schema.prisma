@@ -1,0 +1,221 @@
+
+datasource db {
+  url = env("DATABASE_URL")
+  provider = "postgresql"
+}
+
+generator js {
+  provider = "prisma-client-js"
+}
+
+// DESC: core tables
+
+model User {
+  id Int @id @default(autoincrement())
+  uid String @unique
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  deleted DateTime?
+  lastLogin DateTime?
+  secret String?
+  address Json
+
+  country String
+  email String @unique
+  phone String? @unique
+  username String @unique
+  firstName String
+  lastName String
+  birthday DateTime
+  sex Sex
+
+  googleId String?
+  googleRefreshToken String?
+
+  devices Device[]
+  workers Worker[]
+  resorts Resort[]
+
+  @@map("users")
+}
+
+model Resort {
+  id Int @id @default(autoincrement())
+  uid String @unique
+  created DateTime
+  updated DateTime
+  deleted DateTime?
+  ownerId Int
+  
+  email String @unique
+  phone String
+  address Json
+
+  username String @unique
+  name String
+
+  rooms Room[]
+  owner User @relation(fields: [ownerId], references: [id])
+
+  @@map("resorts")
+}
+
+model Room {
+  id Int @id @default(autoincrement())
+  uid String @unique
+  created DateTime
+  updated DateTime
+  deleted DateTime?
+  resortId Int
+  roomNo String
+  roomType String
+  roomStatus String
+  maxOccupancy Int
+
+  reservations Reservation[]
+  resort Resort @relation(fields: [resortId], references: [id])
+  
+  @@map("rooms")
+}
+
+model Guest {
+  id Int @id @default(autoincrement())
+  uid String @unique
+  created DateTime
+  updated DateTime
+  deleted DateTime?
+  lastLogin DateTime?
+  lastUsed DateTime?
+  phone String
+  address Json
+
+  email String @unique
+  username String @unique
+  firstName String
+  lastName String
+
+  reservations Reservation[]
+
+  @@map("guests")
+}
+
+model Worker {
+  id Int @id @default(autoincrement())
+  uid String @unique
+  created DateTime
+  updated DateTime
+  deleted DateTime
+  ownerId Int
+  passcode String?
+  phone String
+  
+  email String
+  username String @unique
+  firstName String
+  lastName String
+
+  tasks Task[]
+  devices Device[]
+  owner User @relation(fields: [ownerId], references: [id])
+
+  @@map("workers")
+}
+
+// DESC: reservations
+
+model Reservation {
+  id Int @id @default(autoincrement())
+  uid String @unique
+  created DateTime 
+  updated DateTime 
+  deleted DateTime?
+  roomId Int
+  guestId Int
+  paymentId Int
+
+  checkIn DateTime
+  checkOut DateTime
+
+  guest Guest @relation(fields: [guestId], references: [id])
+  room Room @relation(fields: [roomId], references: [id])
+
+  @@map("reservations")
+}
+
+// DESC: operational tables
+
+model Task {
+  id Int @id @default(autoincrement())
+  uid String @unique
+  created DateTime 
+  updated DateTime 
+  deleted DateTime?
+  done DateTime?
+  roomId Int
+  status String
+
+  workers Worker[]
+
+  @@map("tasks")
+}
+
+model Payment {
+  id Int @id @default(autoincrement())
+  uid String @unique
+  created DateTime 
+  updated DateTime 
+  deleted DateTime?
+  amount Decimal
+  method String
+  status String
+  receipt Json
+
+  @@map("payments")
+}
+
+// DESC: security
+
+model Device {
+  id Int @id @default(autoincrement())
+  uid String @unique
+  created DateTime 
+  updated DateTime 
+  deleted DateTime?
+  ownerId Int
+  workerId Int
+  data Json
+  trusted Boolean
+  type DeviceType
+
+  owner User @relation(fields: [ownerId], references: [id])
+  worker Worker @relation(fields: [workerId], references: [id])
+  updates Sync[]
+
+  @@map("devices")
+}
+
+// DESC: syncs
+
+model Sync {
+  id Int @id @default(autoincrement())
+  uid String @unique
+  created DateTime @default(now())
+  deviceId Int
+  device Device @relation(fields: [deviceId], references: [id])
+  changes Json
+  hash String @unique
+
+  @@map("syncs")
+}
+
+// DESC: enums
+
+enum Sex {
+  MALE
+  FEMALE
+}
+
+enum DeviceType {
+  WEB
+  CLI
+}

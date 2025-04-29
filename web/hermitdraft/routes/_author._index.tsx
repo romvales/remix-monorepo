@@ -1,11 +1,11 @@
 import { cn, parseForm } from '@components/lib/utils'
 import { DraftDirectory } from '@hermitdraft/components/list'
 
-import { AuthorActionData, HomeDropdownMenu } from '@hermitdraft/components/menu'
+import { authorClientAction, HomeDropdownMenu } from '@hermitdraft/components/menu'
 
 import { getSessionData } from '@hermitdraft/core.service/auth'
-import { countDrafts, createUntitledDraft, getDrafts } from '@hermitdraft/core.service/draft.client'
-import { countFolders, getFolders, saveFolder } from '@hermitdraft/core.service/folder.client'
+import { countDrafts, createUntitledDraft, deleteDraft, getDraftBySlug, getDrafts, saveDraft } from '@hermitdraft/core.service/draft.client'
+import { countFolders, deleteFolder, getFolderBySlug, getFolders, saveFolder } from '@hermitdraft/core.service/folder.client'
 
 import { LoaderFunctionArgs } from '@remix-run/node'
 
@@ -15,17 +15,11 @@ import {
   redirect,
   useLoaderData,
 } from '@remix-run/react'
+import { kebabCase } from 'lodash-es'
+import invariant from 'tiny-invariant'
 
 export const clientAction = async (args: ClientActionFunctionArgs) => {
-  const { action } = parseForm(await args.request.clone().formData())
-
-  if (action == AuthorActionData.CREATE_DRAFT) 
-    return createUntitledDraftAction(args)
-
-  if (action == AuthorActionData.CREATE_FOLDER)
-    return createFolderAction(args)
-
-  return {}
+  return authorClientAction(args)
 }
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
@@ -102,4 +96,52 @@ export async function createFolderAction({ request }: ClientActionFunctionArgs) 
   const created = await saveFolder({ author, folder, name, target })
 
   return { created }
+}
+
+export async function renameDraftAction({ request }: ClientActionFunctionArgs) {
+  const { slug, title } = parseForm(await request.formData()) as {
+    slug: string
+    title: string
+  }
+
+  const draft = await getDraftBySlug(slug)
+  draft.title = title
+  draft.slug = kebabCase(title)
+
+  const updated = await saveDraft(draft)
+
+  return { updated }
+}
+
+export async function renameFolderAction({ request }: ClientActionFunctionArgs) {
+  const { slug, name } = parseForm(await request.formData()) as {
+    slug: string
+    name: string
+  }
+
+  const folder = await getFolderBySlug(slug)
+  
+  invariant(folder, 'Renaming a non existing folder is an error.')
+
+  folder.name = name
+  folder.slug = kebabCase(name)
+
+  const updated = await saveFolder(folder)
+  return { updated }
+}
+
+export async function deleteDraftAction({ request }: ClientActionFunctionArgs) {
+  const { id } = parseForm(await request.formData()) as { id: number }
+
+  await deleteDraft(id)
+
+  return { deleted: true }
+}
+
+export async function deleteFolderAction({ request }: ClientActionFunctionArgs) {
+  const { id } = parseForm(await request.formData()) as { id: number }
+
+  await deleteFolder(id)
+
+  return { deleted: true }
 }

@@ -1,8 +1,10 @@
 import register from 'promise-worker/register'
 
 import { initialize } from '@hermitdraft/core.db/browser'
+
 import { DraftClientWebWorkerService } from '@hermitdraft/core.worker/draft'
 import { MediaClientWebWorkerService } from '@hermitdraft/core.worker/media'
+
 import { HermitdraftMessageType, SQLocalMessageType } from './enum'
 import { FolderClientWebWorkerService } from './folder'
 

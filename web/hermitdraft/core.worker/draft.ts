@@ -118,50 +118,42 @@ export class DraftClientWebWorkerService {
 
     // FEATURE: Publish the draft to the internet.
     if (status == 'PUB') {
-      try {
-        // Remove not needed fields before mutating
-        const _res = await trpc.publish.mutate(omit(updated, [ 'id', 'folder', 'status' ]))
-        const images = draft.images as string[]
+      // Remove not needed fields before mutating
+      const _res = await trpc.publish.mutate(omit(updated, [ 'id', 'folder', 'status' ]))
+      const images = draft.images as string[]
 
-        // FEATURE: Upload and remove unused images from the cloudflare r2 bucket.
-        const upload = new Promise<File[]>(async (resolve) => {
-          const pending: File[] = []
+      // FEATURE: Upload and remove unused images from the cloudflare r2 bucket.
+      const upload = new Promise<File[]>(async (resolve) => {
+        const pending: File[] = []
 
-          for (const imageUrl of images) {
-            const url = new URL(imageUrl)
-            const slug = url.pathname.replace('/media/', '')
-            const image = await getMediaFromStore(slug)
-  
-            if (image.uploaded) {
-              continue
-            }
-  
-            image.uploaded = true
-            
-            pending.push(new File([ image.bin! ], slug.replaceAll('/', '_'), { type: image.type }))
-  
-            await persistMediaToStore(image)
+        for (const imageUrl of images) {
+          const url = new URL(imageUrl)
+          const slug = url.pathname.replace('/media/', '')
+          const image = await getMediaFromStore(slug)
+
+          if (image.uploaded) {
+            continue
           }
 
-          resolve(pending)
-        })
+          image.uploaded = true
+          
+          pending.push(new File([ image.bin! ], slug.replaceAll('/', '_'), { type: image.type }))
 
-        const refs = await Promise.all([ upload, unupload(_res?.removed ?? []) ])
-        res = { updated, refs }
-      } catch {
+          await persistMediaToStore(image)
+        }
 
-      }
+        resolve(pending)
+      })
+
+      const refs = await Promise.all([ upload, unupload(_res?.removed ?? []) ])
+      res = { updated, refs }
     }
 
     // FEATURE: Unpublish the draft from the internet.
     if (status != 'PUB' && updated?.published) {
-      try {
-        await trpc.unpublish.mutate(id2)
-        const refs = await Promise.all([ [], unupload(updated?.images as string[] ?? []) ])
-        res = { updated, refs }
-      } catch {
-
-      }
+      await trpc.unpublish.mutate(id2)
+      const refs = await Promise.all([ [], unupload(updated?.images as string[] ?? []) ])
+      res = { updated, refs }
     }
 
     // FEATURE: Upload and remove images used by the draft to/from the Cloudflare R2 bucket.
@@ -218,7 +210,17 @@ export class DraftClientWebWorkerService {
     }).catch(() => undefined)
   }
 
-  deleteDraft(id: number) {
+  async deleteDraft(id: number) {
+    const draft = await this.getDraft(id)
+
+    invariant(draft, 'Cannot delete a draft that is not existing.')
+
+    // If the draft is still publish, make sure to unpublish it.
+    if (draft.status == 'PUB') {
+      draft.status = 'DRAFT'
+      await this.saveDraft(draft)
+    }
+
     return this.props.db.delete(drafts).where(eq(drafts.id, id))
   }
 

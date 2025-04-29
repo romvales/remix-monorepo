@@ -1,4 +1,5 @@
 import { sql } from 'drizzle-orm'
+import { PgliteDatabase } from 'drizzle-orm/pglite'
 import { SqliteRemoteDatabase } from 'drizzle-orm/sqlite-proxy'
 import { MigrationConfig, MigrationMeta } from './index.types'
 
@@ -35,14 +36,15 @@ export async function migrate<TSchema extends Record<string, unknown>>(
   config: MigrationConfig
 ) {
   
+  const tableName = config.migrationsTable ?? '__drizzle_migrations'
   const migrations = await readMigrationFiles(config)
 
   const drizzleMigrationTable = sql`
-  CREATE TABLE IF NOT EXISTS "__drizzle_migrations" (
-    id SERIAL PRIMARY KEY,
-    hash text NOT NULL,
-    created_at numeric
-  )
+    CREATE TABLE IF NOT EXISTS "${tableName}" (
+      id SERIAL PRIMARY KEY,
+      hash text NOT NULL,
+      created_at numeric
+    )
   `
 
   await db.run(drizzleMigrationTable)
@@ -50,7 +52,7 @@ export async function migrate<TSchema extends Record<string, unknown>>(
   type MigrationValuesResult = [ number, string, string ]
   const dbMigrations = await db.values<MigrationValuesResult>(
     sql`
-    SELECT id, hash, created_at FROM "__drizzle_migrations" ORDER BY created_at DESC LIMIT 1
+    SELECT id, hash, created_at FROM "${tableName}" ORDER BY created_at DESC LIMIT 1
     `
   )
 
@@ -62,11 +64,48 @@ export async function migrate<TSchema extends Record<string, unknown>>(
       queries.push(
         ...migration.sql,
         `
-        INSERT INTO "__drizzle_migrations" ("hash", "created_at") VALUES ('${migration.hash}', '${migration.folderMillis}')
+        INSERT INTO "${tableName}" ("hash", "created_at") VALUES ('${migration.hash}', '${migration.folderMillis}')
         `,
       )
     }
   }
 
   for (const query of queries) await db.run(sql.raw(query))
+}
+
+export async function pgliteMigration(
+  db: PgliteDatabase<any>,
+  config: MigrationConfig
+) {
+  const tableName = config.migrationsTable ?? '__drizzle_migrations'
+  const migrations = await readMigrationFiles(config)
+  const drizzleMigrationTable = sql.raw(`
+    CREATE TABLE IF NOT EXISTS "${tableName}" (
+      id SERIAL PRIMARY KEY,
+      hash text NOT NULL,
+      created numeric
+    )
+  `)
+
+  await db.execute(drizzleMigrationTable)
+
+  const { rows: dbMigrations } = await db.execute(sql.raw(`
+    SELECT id, hash, created FROM "${tableName}" ORDER BY created DESC LIMIT 1
+  `))
+
+  const lastMigration = dbMigrations[0] ?? undefined
+  const queries: string[] = []
+
+  for (const migration of migrations) {
+    if (!lastMigration || Number(lastMigration.created)! < migration.folderMillis) {
+      queries.push(
+        ...migration.sql,
+        `
+        INSERT INTO "${tableName}" ("hash", "created") VALUES ('${migration.hash}', '${migration.folderMillis}')
+        `
+      )
+    }
+  }
+  
+  for (const query of queries) await db.execute(sql.raw(query))
 }

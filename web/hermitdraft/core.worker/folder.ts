@@ -1,5 +1,5 @@
 import { initialize } from '@hermitdraft/core.db/browser'
-import { foldersTable as folders } from '@hermitdraft/core.db/browser/schema'
+import { draftsTable, foldersTable as folders } from '@hermitdraft/core.db/browser/schema'
 import { createRandomString } from '@shared/utils/db'
 import { and, eq, isNull } from 'drizzle-orm'
 import { kebabCase, merge } from 'lodash-es'
@@ -73,7 +73,22 @@ export class FolderClientWebWorkerService {
     })
   }
 
-  deleteFolder(id: number) {
+  async isFolderNonEmpty(id: number) {
+    const draftCount = await this.props.db.$count(draftsTable, eq(draftsTable.folder, id))
+    const folderCount = await this.props.db.$count(folders, eq(folders.folder, id))
+
+    return draftCount+folderCount != 0
+  }
+
+  async deleteFolder(id: number) {
+    const folder = this.getFolder(id)
+
+    invariant(folder, 'Cannot delete a non existing folder.')
+
+    if (await this.isFolderNonEmpty(id)) {
+      throw Error()
+    }
+
     return this.props.db.delete(folders).where(eq(folders.id, id))
   }
 

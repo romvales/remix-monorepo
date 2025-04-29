@@ -1,4 +1,5 @@
 import { createItem, DirectusClient, DirectusError, RestClient, StaticTokenClient } from '@directus/sdk'
+import { transporter } from '@shared/nodemailer'
 import { contactWithServicesSchema } from '@shared/schemas/contact'
 import { createRandomString } from '@shared/utils/db'
 import { Session } from '@vercel/remix'
@@ -28,6 +29,7 @@ export async function flushPendingMessagesFromSession(
       services: interests,
       country,
       email,
+      message,
     } = contact
 
     toCreate.push(
@@ -43,19 +45,29 @@ export async function flushPendingMessagesFromSession(
           raw: contact,
         })
       )
-      .then(() => { 
+      .then(async () => {
+        // Send an email using nodemailer
+        await transporter.sendMail({
+          from: 'no-reply@marketing.romvales.com',
+          to: 'rom.vales@outlook.com',
+          subject: `New message from "${firstName} ${lastName} <${email}>"`,
+          replyTo: email,
+          text: message,
+        })
+          .then(console.log)
+          .catch(console.error)
+
         pending.splice(i, 1)
       })
       .catch((e: DirectusError) => {
 
-        for (const error of e.errors) {
+        for (const error of e.errors ?? []) {
           if (/unique/.test(error.message.toLowerCase())) {
             pending.splice(i, 1)
             attempts.splice(i, 1)
             return
           }
         }
-
 
         if (attempts[i] >= MAX_PENDING_MESSAGE_ATTEMPT) {
           pending.splice(i, 1)

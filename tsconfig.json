@@ -36,6 +36,7 @@
       "@zapenlist/*": [ "./web/zapenlist/*" ],
       "@hermitdraft/*": [ "./web/hermitdraft/*" ],
       "@namestash/*": [ "./web/namestash/*" ],
+      "@resorto/*": ["./web/resorto/*"],
       "@romvales/*": ["./web/romvales/*"],
       "@components/*": [ "./shared/components/*" ],
       "@components/ui/*": [ "./shared/components/ui/*" ],

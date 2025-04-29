@@ -54,13 +54,8 @@ export default function Home() {
 
                 <nav className='space-x-2'>
                   <Button asChild>
-                    <a href={profile.cta.url} target='_blank'>
-                      {profile.cta.name}
-                    </a>
-                  </Button>
-                  <Button variant={'secondary'} asChild>
                     <Link to={'/contact'}>
-                      Contact
+                      Send me a message
                     </Link>
                   </Button>
                 </nav>
@@ -155,7 +150,7 @@ export default function Home() {
               className={
                 cn(
                   'mb-4 py-10',
-                  'bg-zinc-50 dark:bg-zinc-900',
+                  'bg-zinc-50 dark:bg-zinc-950',
                 )
               }>
               <div
@@ -164,7 +159,7 @@ export default function Home() {
                     'romvales-container',
                   )
                 }>
-                <div className='py-[4rem] px-[1rem] lg:px-[4rem] space-y-2'>
+                <div className='py-[2rem] px-[1rem] lg:px-[4rem] space-y-2'>
                   <p className='romvales-h-label'>Copy</p>
                   <div>
                     <h3 className='romvales-h3'>{copywriting.title}</h3>
@@ -180,10 +175,10 @@ export default function Home() {
                 }>
                   {copywriting.experiences.map((exp, i) => (
                     <li key={i}>
-                      <h3 className='text-sm uppercase mb-2'>{exp.title}</h3>
+                      <h5 className='text-sm uppercase mb-2'>{exp.title}</h5>
                       <ol>
                         {exp.packages.map((pkg, i) => (
-                          <li key={i} className='flex gap-1 items-center'>
+                          <li key={i} className='text-sm flex gap-1 items-center text-zinc-700 dark:text-zinc-500'>
                             {pkg.name}
                           </li>
                         ))}
@@ -198,7 +193,7 @@ export default function Home() {
               id='design'
               className={
                 cn(
-                  'py-10 bg-zinc-50 dark:bg-zinc-900',
+                  'py-10 bg-zinc-50 dark:bg-zinc-950',
                 )
               }>
               <div
@@ -207,7 +202,7 @@ export default function Home() {
                     'romvales-container',
                   )
                 }>
-                <div className='py-[4rem] px-[1rem] lg:px-[4rem]'>
+                <div className='py-[2rem] px-[1rem] lg:px-[4rem]'>
                   <p className='romvales-h-label'>Graphic design</p>
                   <h3 className='romvales-h3'>{design.title}</h3>
                   <h4 className='romvales-h4'>{design.desc}</h4>
@@ -215,12 +210,12 @@ export default function Home() {
                 </div>
 
                 <div className='px-[1rem] lg:px-[4rem]'>
-                  <h3 className='uppercase text-sm mb-2'>Design Packages</h3>
+                  <h5 className='uppercase text-sm mb-2'>Design Packages</h5>
                   <ol>
                     {design.packages.map((pkg, i) => (
                       <li key={i} className={
                         cn(
-                          'flex gap-1 items-center',
+                          'text-sm flex gap-1 items-center text-zinc-700 dark:text-zinc-500',
                         )
                       }>
                         {pkg.name}

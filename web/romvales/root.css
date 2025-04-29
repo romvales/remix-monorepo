@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  @apply min-h-screen grid dark:bg-zinc-900;
+  @apply min-h-screen grid dark:bg-zinc-950;
   @apply text-zinc-800 dark:text-zinc-100;
   grid-template-rows: auto 1fr;
 }
@@ -24,7 +24,7 @@ main > .romvales-main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply text-zinc-800 dark:text-zinc-200;
+  @apply text-zinc-800 dark:text-zinc-300;
 }
 
 p {
@@ -56,6 +56,10 @@ p {
   .romvales-h3 {
     @apply text-lg font-semibold;
     font-family: 'Times New Roman', Times, serif;
+  }
+
+  .romvales-h4 {
+    @apply mb-4;
   }
 
   .romvales-h-label {

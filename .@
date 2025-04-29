@@ -41,11 +41,11 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
       ;;
 
     email.dev)
-      email dev -d ./emails/${APP}
+      email dev -d ./emails
       ;;
 
     email.build)
-      email build -d ./emails/${APP}
+      email build -d ./emails
       ;;
 
     pocketbase)
@@ -90,6 +90,10 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
 
     prisma-js.generate)
       ./.@ prisma-js generate --schema=./web/${APP}.server/schema.prisma --generator js 
+      ;;
+
+    storybook.dev)
+      ./.@ STORYBOOK=1 pnpm run storybook
       ;;
 
     *)

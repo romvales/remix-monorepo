@@ -3,12 +3,33 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 import { CirclePlusIcon } from 'lucide-react'
 
-import { cn } from '@components/lib/utils'
-import { useLoaderData, useSubmit } from '@remix-run/react'
+import { cn, parseForm } from '@components/lib/utils'
+import { createFolderAction, createUntitledDraftAction, deleteDraftAction, deleteFolderAction, renameDraftAction, renameFolderAction } from '@hermitdraft/routes/_author._index'
+import { ClientActionFunctionArgs, useLoaderData, useSubmit } from '@remix-run/react'
 
 export enum AuthorActionData {
   CREATE_DRAFT,
   CREATE_FOLDER,
+  RENAME_DRAFT,
+  RENAME_FOLDER,
+  RENAME_MEDIA,
+  DELETE_DRAFT,
+  DELETE_FOLDER,
+}
+
+export async function authorClientAction(args: ClientActionFunctionArgs) {
+  const { action } = parseForm(await args.request.clone().formData())
+
+  switch (Number(action)) {
+  case AuthorActionData.CREATE_DRAFT: return createUntitledDraftAction(args)
+  case AuthorActionData.CREATE_FOLDER: return createFolderAction(args)
+  case AuthorActionData.RENAME_DRAFT: return renameDraftAction(args)
+  case AuthorActionData.DELETE_DRAFT: return deleteDraftAction(args)
+  case AuthorActionData.RENAME_FOLDER: return renameFolderAction(args)
+  case AuthorActionData.DELETE_FOLDER: return deleteFolderAction(args)
+  }
+
+  return {}
 }
 
 export function HomeDropdownMenu({}: ComponentProps) {

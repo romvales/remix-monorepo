@@ -1,7 +1,7 @@
-import { cn, parseForm } from '@components/lib/utils'
+import { cn } from '@components/lib/utils'
 import { Button } from '@components/ui/button'
 import { MediaDirectory } from '@hermitdraft/components/list'
-import { AuthorActionData } from '@hermitdraft/components/menu'
+import { AuthorActionData, authorClientAction } from '@hermitdraft/components/menu'
 import { getSessionData } from '@hermitdraft/core.service/auth'
 import { getMedias, saveMedia } from '@hermitdraft/core.service/media.client'
 import { LoaderFunctionArgs } from '@remix-run/node'
@@ -10,7 +10,6 @@ import { ClientActionFunctionArgs, ClientLoaderFunctionArgs, useLoaderData, useR
 import { getFolders } from '@hermitdraft/core.service/folder.client'
 import { MediaClientWebWorkerService } from '@hermitdraft/core.worker/media'
 import { CirclePlusIcon, UploadIcon } from 'lucide-react'
-import { createFolderAction } from './_author._index'
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { author } = await getSessionData(request)
@@ -18,12 +17,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 }
 
 export const clientAction = async (args: ClientActionFunctionArgs) => {
-  const { action } = parseForm(await args.request.clone().formData())
-
-  if (action == AuthorActionData.CREATE_FOLDER)
-    return createFolderAction(args)
-
-  return {}
+  return authorClientAction(args)
 }
 
 export const clientLoader = async ({ request, serverLoader }: ClientLoaderFunctionArgs) => {

@@ -1,6 +1,6 @@
-import { cn, parseForm } from '@components/lib/utils'
+import { cn } from '@components/lib/utils'
 import { DraftDirectory } from '@hermitdraft/components/list'
-import { AuthorActionData, HomeDropdownMenu } from '@hermitdraft/components/menu'
+import { authorClientAction, HomeDropdownMenu } from '@hermitdraft/components/menu'
 import { getSessionData } from '@hermitdraft/core.service/auth'
 import { getDrafts } from '@hermitdraft/core.service/draft.client'
 import { getFolderBySlug, getFolders } from '@hermitdraft/core.service/folder.client'
@@ -8,7 +8,6 @@ import { getFolderBySlug, getFolders } from '@hermitdraft/core.service/folder.cl
 import { LoaderFunctionArgs } from '@remix-run/node'
 import { ClientActionFunctionArgs, ClientLoaderFunctionArgs } from '@remix-run/react'
 import invariant from 'tiny-invariant'
-import { createFolderAction, createUntitledDraftAction } from './_author._index'
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { author } = await getSessionData(request)
@@ -16,15 +15,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 }
 
 export const clientAction = async (args: ClientActionFunctionArgs) => {
-  const { action } = parseForm(await args.request.clone().formData())
-
-  if (action == AuthorActionData.CREATE_DRAFT) 
-    return createUntitledDraftAction(args)
-
-  if (action == AuthorActionData.CREATE_FOLDER)
-    return createFolderAction(args)
-
-  return {}
+  return authorClientAction(args)
 }
 
 export const clientLoader = async ({ params, serverLoader }: ClientLoaderFunctionArgs) => {
