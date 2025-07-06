@@ -9,6 +9,8 @@ declare namespace NodeJS {
     ORIGIN: string
     SECRET: string
     PWA: string
+
+    GRPC_HOST: string
   }
 
 }

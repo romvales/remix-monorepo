@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+option go_package = "github.com/romvales/moceserver/gen";
+
+import "models/props.proto";
+import "models/requests.proto";
+import "models/responses.proto";
+import "google/protobuf/any.proto";
+
+package monolith;
+
+service MoceMonolithService {
+  rpc hello(models.HelloRequest) returns (models.HelloResponse) {}
+
+  rpc moceStats(google.protobuf.Any) returns (google.protobuf.Any) {}
+
+  rpc saveUser(requests.UserActionRequest) returns (responses.UserActionResponse) {}
+  rpc getUser(requests.UserActionRequest) returns (responses.UserActionResponse) {}
+  rpc deleteUser(requests.UserActionRequest) returns (responses.UserActionResponse) {}
+  rpc getUsers(requests.UserActionRequest) returns (responses.UserActionResponse) {}
+  rpc getSoftDeletedUsers(requests.UserActionRequest) returns (responses.UserActionResponse) {}
+  rpc countUsers(requests.UserActionRequest) returns (responses.UserActionResponse) {}
+
+  rpc saveCustomer(requests.CustomerActionRequest) returns (responses.CustomerActionResponse) {}
+  rpc getCustomer(requests.CustomerActionRequest) returns (responses.CustomerActionResponse) {}
+  rpc deleteCustomer(requests.CustomerActionRequest) returns (responses.CustomerActionResponse) {}
+  rpc getCustomers(requests.CustomerActionRequest) returns (responses.CustomerActionResponse) {}
+  rpc getSoftDeletedCustomers(requests.CustomerActionRequest) returns (responses.CustomerActionResponse) {}
+  rpc countCustomers(requests.CustomerActionRequest) returns (responses.CustomerActionResponse) {}
+
+  rpc saveShop(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+  rpc getShop(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+  rpc deleteShop(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+  rpc getShops(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+  rpc getSoftDeletedShops(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+  rpc countShops(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+
+  rpc saveChannel(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+  rpc getChannel(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+  rpc deleteChannel(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+  rpc getChannels(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+  rpc getSoftDeletedChannels(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+  rpc countChannels(requests.ShopActionRequest) returns (responses.ShopActionResponse) {}
+
+  // To create a product variant, one must call
+  // these function with specific options, to indicate
+  // that they are creating a variant.
+
+  rpc saveProduct(requests.ProductActionRequest) returns (responses.ProductActionResponse) {}
+  rpc getProduct(requests.ProductActionRequest) returns (responses.ProductActionResponse) {}
+  rpc deleteProduct(requests.ProductActionRequest) returns (responses.ProductActionResponse) {}
+  rpc getProducts(requests.ProductActionRequest) returns (responses.ProductActionResponse) {}
+  rpc getSoftDeletedProducts(requests.ProductActionRequest) returns (responses.ProductActionResponse) {}
+  rpc countProducts(requests.ProductActionRequest) returns (responses.ProductActionResponse) {}
+
+  rpc saveOrder(requests.OrderActionRequest) returns (responses.OrderActionResponse) {}
+  rpc getOrder(requests.OrderActionRequest) returns (responses.OrderActionResponse) {}
+  rpc deleteOrder(requests.OrderActionRequest) returns (responses.OrderActionResponse) {}
+  rpc getOrders(requests.OrderActionRequest) returns (responses.OrderActionResponse) {}
+  rpc getSoftDeletedOrders(requests.OrderActionRequest) returns (responses.OrderActionResponse) {}
+  rpc countOrders(requests.OrderActionRequest) returns (responses.OrderActionResponse) {}
+
+  rpc saveCollection(requests.CollectionActionRequest) returns (responses.CollectionActionResponse) {}
+  rpc getCollection(requests.CollectionActionRequest) returns (responses.CollectionActionResponse) {}
+  rpc deleteCollection(requests.CollectionActionRequest) returns (responses.CollectionActionResponse) {}
+  rpc getCollections(requests.CollectionActionRequest) returns (responses.CollectionActionResponse) {}
+  rpc getSoftDeletedCollections(requests.CollectionActionRequest) returns (responses.CollectionActionResponse) {}
+  rpc countCollections(requests.CollectionActionRequest) returns (responses.CollectionActionResponse) {}
+  
+  rpc createTransaction(requests.TransactionActionRequest) returns (responses.TransactionActionResponse) {}
+  rpc getTransaction(requests.TransactionActionRequest) returns (responses.TransactionActionResponse) {}
+  rpc getTransactions(requests.TransactionActionRequest) returns (responses.TransactionActionResponse) {}
+  rpc getSoftDeletedTransactions(requests.TransactionActionRequest) returns (responses.TransactionActionResponse) {}
+  rpc countTransactions(requests.TransactionActionRequest) returns (responses.TransactionActionResponse) {}
+
+  rpc webhooks(requests.WebhookActionRequest) returns (responses.WebhookActionResponse) {}
+}

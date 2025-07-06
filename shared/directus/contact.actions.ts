@@ -54,7 +54,7 @@ export async function flushPendingMessagesFromSession(
           replyTo: email,
           text: message,
         })
-          .then(console.log)
+          .then(console.log)  
           .catch(console.error)
 
         pending.splice(i, 1)

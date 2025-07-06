@@ -1,0 +1,644 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+
+package models;
+
+option go_package = "github.com/romvales/moceserver/gen/models";
+
+// @ core
+
+message User {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  optional google.protobuf.Timestamp deleted = 4;
+
+  string name = 5;
+  string username = 6;
+  string email = 7;
+
+  repeated Shop shops = 8;
+  repeated Customer customers = 9;
+}
+
+message Shop {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  optional google.protobuf.Timestamp deleted = 4;
+
+  string name = 5;
+  string desc = 6;
+  string currency = 7;
+  string weightUnit = 8;
+
+  string userId = 9;
+
+  repeated Product products = 10;
+  repeated Location locations = 11;
+  repeated Order orders = 12;
+  repeated ShippingZone shippingZones = 13;
+  repeated Discount discounts = 14;
+  repeated TaxConfiguration taxConfig = 15;
+
+  User user = 16;
+}
+
+message Channel {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+
+  string name = 4;
+  string typ = 5;
+
+  bool active  = 6;
+
+  string shopId = 7;
+  Shop shop = 8;
+}
+
+message ChannelProduct {
+  string id = 1;
+  google.protobuf.Timestamp published = 2;
+
+  bool active = 3;
+  double override = 4;
+  string description = 5;
+
+  string productId = 6;
+  Product product = 7;
+  string channelId = 8;
+  Channel channel = 9;
+}
+
+message Location {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  
+  string country = 4;
+  string state = 5;
+  string city = 6;
+  string zip = 7;
+  repeated string addresses = 8;
+  string phone = 9;
+
+  bool active = 10;
+  string shopId = 11;
+
+  Shop shop = 12;
+  repeated InventoryLevel inventoryLevels = 13;
+  repeated InventoryAdjustment adjustments = 14;
+}
+
+message Product {
+
+  enum ProductStatus {
+    DRAFT = 0;
+    ACTIVE = 1;
+    INACTIVE = 2;
+    ARCHIVED = 3;
+    OUT_OF_STOCK = 4;
+    DISCONTINUE = 5;
+    PREORDER = 6;
+    BACKORDER = 7;
+  }
+
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  optional google.protobuf.Timestamp deleted = 4;
+  optional google.protobuf.Timestamp published = 5;
+  google.protobuf.Timestamp archived = 6;
+
+  ProductStatus status = 7;
+  string title = 8;
+  string type = 9;
+  repeated string tags = 10;
+  string shopId = 11;
+
+  Shop shop = 12;
+  repeated ProductVariant variants = 13;
+  repeated ProductImage images = 14;
+  repeated ProductOption options = 15;
+  repeated LineItem lineItems = 16;
+  repeated CollectionProduct collections = 17;
+  repeated ChannelProduct channels = 18;
+}
+
+message ProductVariant {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  optional google.protobuf.Timestamp deleted = 4;
+
+  string title = 5;
+  string sku = 6;
+  string barcode = 7;
+  int32 position = 8;
+
+  bool taxable = 9;
+  bool reqShipping = 10;
+
+  double price = 11;
+  int32 quantity = 12;
+  double weight = 13;
+  string weightUnit = 14;
+  string productId = 15;
+
+  Product product = 16;
+  repeated LineItem lineItems = 17;
+  optional InventoryItem inventoryItem = 18;
+}
+
+message ProductImage {
+  string id = 1;
+  string url = 2;
+  string altText = 3;
+  int32 position = 4;
+  string productId = 5;
+
+  Product product = 6;
+}
+
+message ProductOption {
+  string id = 1;
+  string name = 2;
+  int32 position = 3;
+  repeated string values = 4;
+  string productId = 5;
+
+  Product product = 6;
+}
+
+message Customer {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  optional google.protobuf.Timestamp deleted = 4;
+
+  string fullName = 5;
+  string email = 6;
+  string phone = 7;
+  repeated string tags = 8;
+  string note = 9;
+
+  bool taxExempt = 10;
+  string ownerId = 11;
+
+  repeated Order orders = 12;
+  repeated CustomerAddress addresses = 13;
+  User owner = 14;
+}
+
+message CustomerAddress {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  
+  string name = 4;
+  string company = 5;
+  string country = 6;
+  string state = 7;
+  string city = 8;
+  string zip = 9;
+  repeated string addresses = 10;
+  string phone = 11;
+  string customerId = 12;
+
+  Customer customer = 13;
+  repeated Order orderShippings = 14;
+  repeated Order orderBills = 15;
+
+  int32 position = 16;
+}
+
+message Order {
+
+  enum OrderStatus {
+    PENDING = 0;
+    CONFIRM = 1;
+    HOLD = 2;
+    PAYMENT_FAIL = 3;
+    AWAITING_SHIPMENT = 4;
+    PARTIAL = 5;
+    IN_TRANSIT = 6;
+    DELIVERED = 7;
+    DONE = 8;
+    CANCEL = 9;
+    RETURN = 10;
+    REFUND = 11;
+    FAILED = 12;
+    DISPUTE = 13;
+    LOST_IN_TRANSIT = 14;
+  }
+
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  optional google.protobuf.Timestamp deleted = 4;
+  optional google.protobuf.Timestamp cancelled = 5;
+  google.protobuf.Timestamp closed = 6;
+
+  OrderStatus status = 7;
+  Fulfillment.FulfillmentStatus fulfillmentStatus = 8;
+
+  string orderNumber = 9;
+  repeated string tags = 10;
+  string note = 11;
+  string currency = 12;
+
+  double totalPrice = 13;
+  double subtotal = 14;
+  double totalTax = 15;
+  double totalShippingPrice = 16;
+  double shippingFee = 17;
+
+  string cancelReason = 18;
+  string shopId = 19;
+  optional string customerId = 20;
+  string shippingAddressId = 21;
+  string billingAddressId = 22;
+
+  Shop shop = 23;
+  optional Customer customer = 24;
+  optional CustomerAddress shippingAddress = 25;
+  optional CustomerAddress billingAddress = 26;
+  repeated TransactionOrder transactions = 27;
+  repeated Fulfillment fulfillments = 28;
+  repeated LineItem items = 29;
+  repeated DiscountUsage discountUsage = 30;
+  repeated TaxLine taxes = 31;
+
+  optional string channelId = 32;
+  optional Channel channel = 33;
+
+  repeated InventoryAdjustment adjustments = 34;
+}
+
+message LineItem {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  
+  string sku = 4;
+  string vendor = 5;
+
+  double price = 6;
+  double quantity = 7;
+  bool taxable = 8;
+  bool reqShipping = 9;
+
+  string orderId = 10;
+  optional string productId = 11;
+  optional string variantId = 12;
+
+  Order order = 13;
+  optional Product product = 14;
+  optional ProductVariant variant = 15;
+  repeated FulfillmentLineItem fulfillments = 16;
+  repeated TaxLine taxes = 17;
+}
+
+message Fulfillment {
+
+  enum FulfillmentStatus {
+    PENDING = 0;
+    PROCESS = 1;
+    SHIPPED = 2;
+    DELIVERED = 3;
+    CANCEL = 4;
+    RETURN = 5;
+    OUT_FOR_DELIVERY = 6;
+    IN_TRANSIT = 7;
+    PARTIAL = 8;
+  }
+
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+
+  FulfillmentStatus status = 4;
+  string trackCompany = 5;
+  string trackNumber = 6;
+  string trackUrl = 7;
+  string orderId = 8;
+
+  repeated FulfillmentLineItem items = 9;
+  Order order = 10;
+}
+
+message FulfillmentLineItem {
+  string id = 1;
+  double quantity = 2;
+  string fulfillmentId = 3;
+  string itemId = 4;
+
+  LineItem item = 5;
+}
+
+message Transaction {
+
+  enum TransactionKind {
+    VOID = 0;
+    CHARGE = 1;
+    CAPTURE = 2;
+    AUTHORIZATION = 3;
+    K_REFUND = 4;
+    PAYOUT = 5;
+    DISPUTE = 6;
+    CREDIT = 7;
+    ADJUST = 8;
+  }
+
+  enum TransactionStatus {
+    OK = 0;
+    FAIL = 1;
+    PENDING = 2;
+    CANCEL = 3;
+    S_REFUND = 4;
+    PROCESS = 5;
+  }
+
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp processed = 3;
+
+  TransactionKind kind = 4;
+  TransactionStatus status = 5;
+
+  double amount = 6;
+  string currency = 7;
+
+  repeated Order orders = 8;
+}
+
+message TransactionOrder {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+
+  string transactionId = 3;
+  string orderId = 4;
+
+  Transaction transaction = 5;
+  Order order = 6;
+}
+
+message PaymentGateway {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+
+  string name = 4;
+  bool isActive = 5;
+  bool isTestMode = 6;
+  google.protobuf.Any credentials = 7;
+
+  repeated Transaction transactions = 8;
+}
+
+message InventoryItem {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  
+  string sku = 4;
+  string barcode = 5;
+  bool tracked = 6;
+  bool reqShipping = 7;
+
+  repeated InventoryLevel levels = 8;
+}
+
+message InventoryLevel {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  
+  string itemId = 4;
+  string locationId = 5;
+
+  InventoryItem item = 6;
+  Location location = 7;
+}
+
+message InventoryAdjustment {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+
+  string reason = 3;
+  int32 delta = 4;
+  double quantityBefore = 5;
+  double quantityAfter = 6;
+  
+  optional double cost = 7;
+  optional string note = 8;
+
+  string itemId = 9;
+  InventoryItem item = 10;
+  string locationId = 11;
+  Location location = 12;
+  optional string orderId = 13;
+  optional Order order = 14;
+  
+}
+
+message InventoryHistory {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+
+  string type = 3;
+  double delta = 4;
+  double before = 5;
+  double after = 6;
+
+  string itemId = 7;
+  InventoryItem item = 8;
+  optional string orderId = 9;
+  optional Order order = 10;
+}
+
+// @ marketing
+
+enum DiscountType {
+  PERCENT = 0;
+  FIXED = 1;
+  FREE_SHIPPING = 2;
+  BNGN = 3;
+  TIER = 4;
+  VOLUME = 5;
+  BOGO = 6;
+}
+
+message Discount {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  optional google.protobuf.Timestamp deleted = 4;
+  google.protobuf.Timestamp starts = 5;
+  google.protobuf.Timestamp ends = 6;
+
+  DiscountType typ = 7;
+  double value = 8;
+
+  bool once = 9;
+  int32 numUsed = 10;
+  optional int32 usageLim = 11;
+
+  string code = 12;
+  string shopId = 13;
+
+  Shop shop = 14;
+  repeated DiscountUsage usage = 15;
+}
+
+message DiscountUsage {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+
+  double value = 3;
+  DiscountType typ = 4;
+
+  optional string discountId = 5;
+  optional string orderId = 6;
+
+  optional Order order = 7;
+  optional Discount discount = 8;
+}
+
+// @ misc
+
+message Webhook {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  
+}
+
+message ShippingZone {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  optional google.protobuf.Timestamp deleted = 4;
+
+  string name = 5;
+
+  string shopId = 6;
+
+  Shop shop = 7;
+  repeated ShippingRate rates = 8;
+}
+
+message ShippingRate {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  optional google.protobuf.Timestamp deleted = 4;
+
+  string name = 5;
+
+  double price = 6;
+  repeated double subtotalRange = 7;
+  repeated google.protobuf.Timestamp deliveryDuration = 8;
+
+  string zoneId = 9;
+
+  ShippingZone zone = 10;
+}
+
+message TaxConfiguration {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+
+  bool charges = 4;
+  bool taxIncluded = 5;
+
+  string shopId = 6;
+
+  Shop shop = 7;
+}
+
+message Tax {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+
+  string country = 4;
+  double rate = 5;
+
+  string configId = 6;
+
+  TaxConfiguration config = 7;
+}
+
+message TaxLine {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+
+  string title = 4;
+  double price = 5;
+  double rate = 6;
+
+  optional string itemId = 7;
+  optional string orderId = 8;
+
+  optional LineItem item = 9;
+  optional Order order = 10;
+}
+
+// @ collection
+
+message Collection {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+  optional google.protobuf.Timestamp deleted = 4;
+  optional google.protobuf.Timestamp published = 5;
+
+  bool isPublish = 6;
+
+  optional string sort = 7;
+  string title = 8;
+  optional string desc = 9;
+
+  string shopId = 10;
+
+  Shop shop = 11;
+
+  repeated CollectionProduct products = 12;
+  repeated CollectionImage images = 13;
+}
+
+message CollectionProduct {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+
+  string collectionId = 3;
+  string productId = 4;
+
+  Collection collection = 5;
+  Product product = 6;
+}
+
+message CollectionImage {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+
+  string url = 3;
+  string altText = 4;
+  int32 position = 5;
+
+  string collectionId = 6;
+  Collection collection = 7;
+}
+
+message Localization {
+  string id = 1;
+  google.protobuf.Timestamp created = 2;
+  google.protobuf.Timestamp updated = 3;
+}

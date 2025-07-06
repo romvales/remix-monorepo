@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+option go_package = "github.com/romvales/moceserver/gen/models";
+
+import "models/core.proto";
+
+package requests;
+
+message RequestArgs {
+  
+  message PaginationOptions {
+    int32 page = 1;
+    int32 itemsPerPage = 2;
+  }
+
+  message FilterOptions {
+    string search = 1;
+  }
+
+  optional FilterOptions filter = 1;
+  optional PaginationOptions paging = 2;
+  optional bool softDelete = 3;
+
+}
+
+message UserActionRequest {
+  optional models.User user = 1;
+  optional RequestArgs args = 2;
+}
+
+message CustomerActionRequest {
+  optional models.Customer customer = 1;
+  optional RequestArgs args = 2;
+}
+
+message ShopActionRequest {
+  optional models.Shop shop = 1;
+  optional RequestArgs args = 2;
+}
+
+message ProductActionRequest {
+  optional models.Product product = 1;
+  optional RequestArgs args = 2;
+}
+
+message OrderActionRequest {
+  optional models.Order order = 1;
+  optional RequestArgs args = 2;
+}
+
+message CollectionActionRequest {
+  optional models.Collection collection = 1;
+  optional RequestArgs args = 2;
+}
+
+message TransactionActionRequest {
+  optional models.Transaction transaction = 1;
+  optional RequestArgs args = 2;
+}
+
+message WebhookActionRequest {
+  
+}

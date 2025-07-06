@@ -1,0 +1,39 @@
+@import '../../shared/components/tailwind.css';
+
+@layer utilities {
+
+  .romvales-container {
+    @apply container mx-auto;
+    @apply md:max-w-[45rem] lg:max-w-[60rem] px-4;
+  }
+
+  .hero-h1 {
+    @apply text-2xl md:text-4xl font-semibold uppercase;
+    font-family: Cambria, 'Times New Roman', Times, serif;
+  }
+
+  .romvales-h1 {
+    @apply text-xl md:text-2xl font-semibold uppercase;
+    font-family: Cambria, 'Times New Roman', Times, serif;
+  }
+
+  .romvales-h2 {
+    @apply text-xl md:text-2xl font-semibold uppercase;
+    font-family: Cambria, 'Times New Roman', Times, serif;
+  }
+
+  .romvales-h3 {
+    @apply text-base md:text-lg font-semibold uppercase;
+    font-family: Cambria, 'Times New Roman', Times, serif;
+  }
+
+  .romvales-h4 {
+    @apply mb-4;
+  }
+
+  .romvales-h-label {
+    @apply uppercase text-xs border rounded-full inline-block px-2 py-1 mb-2;
+    @apply border-zinc-800 dark:border-zinc-100;
+  }
+
+}

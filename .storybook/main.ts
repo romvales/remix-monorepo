@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   stories: [
-    '../web/**/*.stories.@(ts|tsx)',
+    '../apps/**/*.stories.@(ts|tsx)',
     '../shared/**/*.stories.@(ts|tsx)',
     '../stories/**/*.stories.@(ts|tsx|js|jsx)',
   ],

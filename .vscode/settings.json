@@ -1,3 +1,23 @@
 {
-  "deno.enable": false
+  "typescript.experimental.useTsgo": false,
+  "typescript.experimental.expandableHover": true,
+  "deno.enable": false,
+  "protoc": {
+    "path": "protoc",
+    "compile_on_save": true,
+    "options": [
+      "--proto_path=${workspaceRoot}/apps/moce.server/protoc",
+
+      "--go_out=${workspaceRoot}/apps/moce.server/gen",
+      "--go_opt=paths=source_relative",
+      "--go-grpc_out=${workspaceRoot}/apps/moce.server/gen",
+      "--go-grpc_opt=paths=source_relative",
+
+      "--ts_out=${workspaceRoot}/apps/moce/types",
+      "--ts_opt=unary_rpc_promise=true",
+      "--ts_opt=no_namespace",
+      "--ts_opt=json_names",
+      "--ts_opt=node"
+    ]
+  }
 }

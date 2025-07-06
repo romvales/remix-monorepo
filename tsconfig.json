@@ -1,11 +1,11 @@
 {
   "include": [
-    "web/**/*.ts",
-    "web/**/*.tsx",
-    "web/**/.server/**/*.ts",
-    "web/**/.server/**/*.tsx",
-    "web/**/.client/**/*.ts",
-    "web/**/.client/**/*.tsx",
+    "apps/**/*.ts",
+    "apps/**/*.tsx",
+    "apps/**/.server/**/*.ts",
+    "apps/**/.server/**/*.tsx",
+    "apps/**/.client/**/*.ts",
+    "apps/**/.client/**/*.tsx",
     "shared/**/*.tsx",
     "shared/**/*.ts",
     "vite.config.ts",
@@ -33,11 +33,13 @@
       "@modyfi/vite-plugin-yaml/modules"
     ],
     "paths": {
-      "@zapenlist/*": [ "./web/zapenlist/*" ],
-      "@hermitdraft/*": [ "./web/hermitdraft/*" ],
-      "@namestash/*": [ "./web/namestash/*" ],
-      "@resorto/*": ["./web/resorto/*"],
-      "@romvales/*": ["./web/romvales/*"],
+      "@zapenlist/*": [ "apps/zapenlist/*" ],
+      "@hermitdraft/*": [ "apps/hermitdraft/*" ],
+      "@namestash/*": [ "apps/namestash/*" ],
+      "@resorto/*": ["apps/resorto/*"],
+      "@romvales/*": ["apps/romvales/*"],
+      "@moce/*": [ "apps/moce/*" ],
+      "@moce.server/*": [ "apps/moce.server/*" ],
       "@components/*": [ "./shared/components/*" ],
       "@components/ui/*": [ "./shared/components/ui/*" ],
       "@shared/*": [ "./shared/*" ]

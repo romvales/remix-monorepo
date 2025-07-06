@@ -2,7 +2,7 @@ import invariant from 'tiny-invariant'
 import { defineConfig, PluginOption } from 'vite'
 
 import yaml from '@modyfi/vite-plugin-yaml'
-import { netlifyPlugin } from '@netlify/remix-adapter/plugin'
+import { netlifyPlugin } from '@netlify/remix-edge-adapter/plugin'
 import { remixPWA } from '@remix-pwa/dev'
 import { Preset, vitePlugin as remix } from '@remix-run/dev'
 import { vercelPreset } from '@vercel/remix/vite'
@@ -37,14 +37,10 @@ const plugins: PluginOption[] = [
   },
 ]
 
-// Add the vercelPreset if process.env.ADAPTER is vercel.
-if (/vercel/.test(process.env.ADAPTER)) presets.push(vercelPreset())
-if (/netlify/.test(process.env.ADAPTER)) plugins.push(netlifyPlugin())
-
 if (process.env.PWA) plugins.push(
   remixPWA({
     workerMinify: process.env.NODE_ENV == 'production',
-    workerBuildDirectory: `web/${process.env.APP}/public`,
+    workerBuildDirectory: `apps/${process.env.APP}/public`,
     workerSourceMap: true,
     scope: '/',
     buildVariables: {
@@ -53,29 +49,36 @@ if (process.env.PWA) plugins.push(
   })
 )
 
-if (!process.env.STORYBOOK) plugins.push(
-  remix({
-    appDirectory: `web/${process.env.APP}`,
-    buildDirectory: `build/${process.env.APP}`,
-    presets,
 
-    ignoredRouteFiles: [
-      '**/*.css',
-      '**/*.{test,spec}.{ts,tsx}',
-    ],
 
-    future: {
-      v3_singleFetch: true,
-      v3_relativeSplatPath: true,
-      v3_fetcherPersist: true,
-      v3_throwAbortReason: true,
-      v3_lazyRouteDiscovery: true,
-    },
-  })
-)
+if (!process.env.STORYBOOK) {
+  if (/vercel/.test(process.env.ADAPTER)) presets.push(vercelPreset())
+  if (/netlify/.test(process.env.ADAPTER)) plugins.push(netlifyPlugin())
+
+  plugins.push(
+    remix({
+      appDirectory: `apps/${process.env.APP}`,
+      buildDirectory: `build/${process.env.APP}`,
+      presets,
+  
+      ignoredRouteFiles: [
+        '**/*.css',
+        '**/*.{test,spec}.{ts,tsx}',
+      ],
+  
+      future: {
+        v3_singleFetch: true,
+        v3_relativeSplatPath: true,
+        v3_fetcherPersist: true,
+        v3_throwAbortReason: true,
+        v3_lazyRouteDiscovery: true,
+      },
+    })
+  )
+}
 
 export default defineConfig({
-  publicDir: `web/${process.env.APP}/public`,
+  publicDir: `apps/${process.env.APP}/public`,
   plugins,
 
   optimizeDeps: {

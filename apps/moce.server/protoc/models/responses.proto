@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+option go_package = "github.com/romvales/moceserver/gen/models";
+
+import "google/protobuf/any.proto";
+import "models/core.proto";
+
+package responses;
+
+message PaginationMetadata {
+  int32 page = 1;
+  int32 itemsPerPage = 2;
+  int32 totalItems = 3;
+  int32 totalPages = 4;
+  bool hasNext = 5;
+  bool hasPrev = 6;
+}
+
+message ErrorMetadata {
+  string message = 1;
+  string trace = 2;
+  google.protobuf.Any details = 3;
+}
+
+message ResponseMetadata {
+  int32 code = 1;
+  string reqId = 2;
+  string msg = 3;
+  string timestamp = 4;
+
+  optional PaginationMetadata paging = 5;
+  optional ErrorMetadata errors = 6;
+}
+
+message UserActionResponse {
+  ResponseMetadata metadata = 1;
+  optional models.User user = 2;
+  
+  optional int64 totalUsers = 3;
+  optional int64 totalDeletedUsers = 4;
+}
+
+message CustomerActionResponse {
+  ResponseMetadata metadata = 1;
+}
+
+message ShopActionResponse {
+  ResponseMetadata metadata = 1;
+}
+
+message ProductActionResponse {
+  ResponseMetadata metadata = 1;
+}
+
+message OrderActionResponse {
+  ResponseMetadata metadata = 1;
+}
+
+message CollectionActionResponse {
+  ResponseMetadata metadata = 1;
+}
+
+message TransactionActionResponse {
+  ResponseMetadata metadata = 1;
+}
+
+message WebhookActionResponse {
+  ResponseMetadata metadata = 1;
+}

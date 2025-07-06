@@ -4,10 +4,10 @@ shopt -s expand_aliases
 
 export APP=${APP:-example}
 export ENV=${ENV:-dev}
-export POCKETBASE_DIR="web/${APP}.pocketbase"
+export POCKETBASE_DIR="apps/${APP}.pocketbase"
 
 # Load the environment variables from the config.toml
-eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
+eval $(.bin/env/env -root apps/${APP} -env ${ENV}) && {
   case $1 in
 
     remix.dev)
@@ -69,7 +69,7 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
       ;;
 
     pocketbase.types)
-      npx pocketbase-typegen --db ./web/${APP}.pocketbase/pb_data/data.db --out ./web/${APP}/types/pocketbase-types.ts
+      npx pocketbase-typegen --db ./apps/${APP}.pocketbase/pb_data/data.db --out ./apps/${APP}/types/pocketbase-types.ts
       ;;
 
     directus.types)
@@ -77,7 +77,7 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
         --host ${DIRECTUS_URL} \
         --email ${DIRECTUS_EMAIL} \
         --password ${DIRECTUS_PASSWORD} \
-        --outFile ./web/${APP}/directus.d.ts
+        --outFile ./apps/${APP}/directus.d.ts
       ;;
 
     prisma-js)
@@ -85,15 +85,40 @@ eval $(.bin/env/env -root web/${APP} -env ${ENV}) && {
       ;;
 
     prisma.migrate)
-      ./.@ prisma-js migrate dev --schema=./web/${APP}.server/schema.prisma
+      ./.@ prisma-js migrate dev --schema=./apps/${APP}.server/schema.prisma
+      ;;
+
+    prisma.merge)
+      migrations=$(find ./apps/${APP}.server/migrations | sort -n | grep migration.sql)
+      cat $migrations > ./apps/${APP}.server/migrations/schema.sql
       ;;
 
     prisma-js.generate)
-      ./.@ prisma-js generate --schema=./web/${APP}.server/schema.prisma --generator js 
+      ./.@ prisma-js generate --schema=./apps/${APP}.server/schema.prisma --generator js 
+      ;;
+
+    prisma-go.generate)
+      cd ./apps/${APP}.server && npx prisma generate --schema=./schema.prisma --generator go
       ;;
 
     storybook.dev)
       ./.@ STORYBOOK=1 pnpm run storybook
+      ;;
+
+    go.dir)
+      cd ./apps/${APP}.server && eval ${@:2}
+      ;;
+
+    go.dev)
+      cd ./apps/${APP}.server && air
+      ;;
+
+    go.test)
+      cd ./apps/${APP}.server && go clean -testcache && go test -v ./...
+      ;;
+
+    sqlc.generate)
+      cd ./apps/${APP}.server && sqlc generate
       ;;
 
     *)

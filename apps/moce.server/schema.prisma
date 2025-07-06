@@ -1,0 +1,756 @@
+
+datasource db {
+  url = env("DATABASE_URL")
+  provider = "postgresql"
+}
+
+generator js {
+  provider = "prisma-client-js"
+}
+
+generator go {
+  provider = "go run github.com/steebchen/prisma-client-go"
+}
+
+// @@@ core models
+
+model Session {
+  token String @id
+  data Bytes
+  expiry DateTime
+
+  @@index([ expiry ])
+  @@map("sessions")
+}
+
+model User {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  deleted DateTime?
+
+  name String
+  username String @unique
+  email String @unique
+
+  shops Shop[]
+  customers Customer[]
+
+  @@map("users")
+}
+
+model Shop {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  deleted DateTime?
+
+  name String
+  desc String
+  currency String
+  weightUnit String
+
+  userId String
+  user User @relation(fields: [userId], references: [id])
+
+  products Product[]
+  locations Location[]
+  orders Order[]
+  shippingZones ShippingZone[]
+  discounts Discount[]
+  collections Collection[]
+  taxConfig TaxConfigurations?
+  channels Channel[]
+
+  @@map("shops")
+}
+
+model Channel {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  name String
+  typ String
+
+  active Boolean
+
+  shopId String
+  shop Shop @relation(fields: [shopId], references: [id])
+
+  products ChannelProduct[]
+  orders Order[]
+
+  @@map("salesChannels")
+}
+
+model ChannelProduct {
+  id String @id @default(nanoid())
+  published DateTime?
+
+  active Boolean @default(true)
+  override Decimal?
+  description String?
+  
+  productId String
+  product Product @relation(fields: [productId], references: [id])
+  channelId String
+  channel Channel @relation(fields: [channelId], references: [id])
+
+  @@unique([ productId, channelId ])
+  @@map("channelProducts")
+}
+
+model Location {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  country String?
+  state String?
+  city String?
+  zip String?
+  addresses String[]
+  phone String?
+
+  active Boolean @default(true)
+
+  shopId String
+  shop Shop @relation(fields: [shopId], references: [id])
+  
+  inventoryLevels InventoryLevel[]
+  adjustments InventoryAdjustment[]
+
+  @@map("locations")
+}
+
+model ProductImage {
+  id String @id @default(nanoid())
+
+  url String
+  altText String
+  position Int @default(0)
+
+  productId String
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("productImages")
+}
+
+model ProductOption {
+  id String @id @default(nanoid())
+
+  name String
+  position Int @default(0)
+
+  values String[]
+
+  productId String
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("productOptions")
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  INACTIVE
+  ARCHIVED
+  OUT_OF_STOCK
+  DISCONTINUE
+  PREORDER
+  BACKORDER
+}
+
+model Product {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  deleted DateTime?
+  archived DateTime?
+  published DateTime?
+
+  status ProductStatus
+
+  title String
+  type String?
+  tags String[]
+
+  shopId String
+  shop Shop @relation(fields: [shopId], references: [id])
+  variants ProductVariant[]
+  images ProductImage[]
+  options ProductOption[]
+  lineItems LineItem[]
+  collections CollectionProduct[]
+  channels ChannelProduct[]
+
+  @@map("products")
+}
+
+model ProductVariant {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  deleted DateTime?
+
+  title String
+
+  sku String? @unique
+  barcode String? @unique
+  position Int @default(0)
+
+  taxable Boolean
+  reqShipping Boolean
+
+  price Decimal @default(0.0)
+  weight Float?
+  weightUnit String
+  
+  productId String
+  product Product @relation(fields: [productId], references: [id])
+
+  inventoryItem InventoryItem?
+  lineItems LineItem[]
+
+  @@map("productVariants")
+}
+
+model Customer {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  deleted DateTime?
+
+  fullName String
+  email String @unique
+  phone String?
+  tags String[]
+  note String?
+
+  taxExempt Boolean @default(false)
+
+  orders Order[]
+  addresses CustomerAddress[]
+  ownerId String
+  owner User @relation(fields: [ownerId], references: [id])
+
+  @@map("customers")
+}
+
+model CustomerAddress {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  name String
+  company String?
+  position Int @default(0)
+
+  country String?
+  state String?
+  city String?
+  zip String?
+  addresses String[]
+  phone String?
+
+  customerId String
+  customer Customer @relation(fields: [customerId], references: [id])
+  orderShippings Order[] @relation(name: "shippingAddress")
+  orderBills Order[] @relation(name: "billingAddress")
+
+  @@map("customersAddresses")
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRM
+  HOLD
+  PAYMENT_FAIL
+  AWAITING_SHIPMENT
+  PARTIAL
+  IN_TRANSIT
+  DELIVERED
+  DONE
+  CANCEL
+  RETURN
+  REFUND
+  FAILED
+  DISPUTE
+  LOST_IN_TRANSIT
+}
+
+model Order {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  cancelled DateTime?
+  closed DateTime?
+  deleted DateTime?
+
+  status OrderStatus
+  fulfillmentStatus FulfillmentStatus
+  
+  orderNumber String @unique
+  tags String[]
+  note String?
+  currency String
+
+  totalPrice Decimal
+  subtotal   Decimal
+  totalTax   Decimal
+  totalShippingPrice Float
+  shippingFee Float
+
+  cancelReason String?
+
+  shopId String
+  shop Shop @relation(fields: [shopId], references: [id])
+  customerId String?
+  customer Customer? @relation(fields: [customerId], references: [id])
+  shippingAddressId String?
+  shippingAddress CustomerAddress? @relation(name: "shippingAddress", fields: [shippingAddressId], references: [id])
+  billingAddressId String?
+  billingAddress CustomerAddress? @relation(name: "billingAddress", fields: [billingAddressId], references: [id])
+  transactions TransactionOrder[]
+  fulfillments Fulfillment[]
+  items LineItem[]
+  discountUsage DiscountUsage[]
+  taxes TaxLine[]
+  adjustments InventoryAdjustment[]
+  history InventoryHistory[]
+  channelId String?
+  channel Channel? @relation(fields: [channelId], references: [id])
+
+  @@map("orders")
+}
+
+model LineItem {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  sku String?
+  vendor String?
+
+  price Decimal
+  quantity Float @default(0.0)
+  taxable Boolean @default(true)
+  reqShipping Boolean @default(true)
+
+  orderId String
+  order Order @relation(fields: [orderId], references: [id])
+  productId String?
+  product Product? @relation(fields: [productId], references: [id])
+  variantId String?
+  variant ProductVariant? @relation(fields: [variantId], references: [id])
+  fulfillments FulfillmentLineItem[]
+  taxes TaxLine[]
+
+  @@map("orderItems")
+}
+
+enum FulfillmentStatus {
+  PENDING
+  PROCESS
+  SHIPPED
+  DELIVERED
+  CANCEL
+  RETURN
+  OUT_FOR_DELIVERY
+  IN_TRANSIT
+  PARTIAL
+}
+
+model Fulfillment {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  status FulfillmentStatus @default(PENDING)
+  trackCompany String?
+  trackNumber String?
+  trackUrl String?
+
+  orderId String
+  order Order @relation(fields: [orderId], references: [id])
+
+  items FulfillmentLineItem[]
+
+  @@map("fulfillments")
+}
+
+model FulfillmentLineItem {
+  id String @id @default(nanoid())
+
+  quantity Float @default(0.0)
+
+  fulfillmentId String
+  fulfillment Fulfillment @relation(fields: [fulfillmentId], references: [id])
+  
+  itemId String
+  item LineItem @relation(fields: [itemId], references: [id])
+
+  @@map("fulfillmentLineItems")
+}
+
+enum TransactionKind {
+  VOID
+  CHARGE
+  CAPTURE
+  AUTHORIZATION
+  REFUND
+  PAYOUT
+  DISPUTE
+  CREDIT
+  ADJUST
+}
+
+enum TransactionStatus {
+  OK
+  FAIL
+  PENDING
+  CANCEL
+  REFUND
+  PROCESS
+}
+
+model Transaction {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  processed DateTime?
+
+  kind TransactionKind
+  status TransactionStatus
+
+  amount Decimal
+  currency String
+
+  orders TransactionOrder[]
+
+  gatewayId String?
+  gateway PaymentGateway? @relation(fields: [gatewayId], references: [id])
+
+  @@map("transactions")
+}
+
+model TransactionOrder {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+
+  transactionId String
+  transaction Transaction @relation(fields: [transactionId], references: [id])
+  orderId String
+  order Order @relation(fields: [orderId], references: [id])
+
+  @@map("transactionOrders")
+}
+
+model PaymentGateway {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  name String
+  isActive Boolean @default(false)
+  isTestMode Boolean @default(false)
+  credentials Json
+  webhookUrl String?
+
+  transactions Transaction[]
+
+  @@map("paymentGateways")
+}
+
+model InventoryItem {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  cost Decimal @default(0.0)
+  quantity Float @default(0.0)
+
+  sku String?
+  barcode String?
+  hscode String?
+  origin String?
+
+  tracked Boolean @default(false)
+  reqShipping Boolean @default(true)
+
+  levels InventoryLevel[]
+  variantId String? @unique
+  variant ProductVariant? @relation(fields: [variantId], references: [id])
+  adjustments InventoryAdjustment[]
+
+  history InventoryHistory[]
+
+  @@index([ sku ])
+  @@index([ barcode ])
+  @@index([ hscode ])
+  @@map("inventoryItems")
+}
+
+model InventoryLevel {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  available Float @default(0)
+  onhand Float @default(0)
+  reserved Float @default(0)
+  incoming Float @default(0)
+
+  itemId String
+  item InventoryItem @relation(fields: [itemId], references: [id])
+  locationId String
+  location Location @relation(fields: [locationId], references: [id])
+
+  @@unique([locationId, itemId])
+  @@map("inventoryLevels")
+}
+
+model InventoryAdjustment {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  
+  reason String
+  delta Int
+  quantityBefore Decimal
+  quantityAfter Decimal
+
+  cost Decimal?
+  note String?
+
+  itemId String
+  item InventoryItem @relation(fields: [itemId], references: [id])
+  locationId String
+  location Location @relation(fields: [locationId], references: [id])
+  orderId String?
+  order Order? @relation(fields: [orderId], references: [id])
+
+  @@map("inventoryAdjustments")
+}
+
+model InventoryHistory {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+
+  type String
+  delta Decimal
+  before Decimal
+  after Decimal
+
+  itemId String
+  item InventoryItem @relation(fields: [itemId], references: [id])
+  orderId String?
+  order Order? @relation(fields: [orderId], references: [id])
+
+  @@index([ created ])
+  @@map("inventoryHistory")
+}
+
+// @@@ marketing
+
+enum DiscountType {
+  PERCENT
+  FIXED
+  FREE_SHIPPING
+  BNGN
+  TIER
+  VOLUME
+  BOGO
+}
+
+model Discount {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  deleted DateTime?
+  starts DateTime
+  ends DateTime
+
+  typ DiscountType
+  value Float
+  
+  once Boolean @default(false)
+  numUsed Int
+  usageLim Int?
+
+  code String @unique
+  
+  shopId String
+  shop Shop @relation(fields: [shopId], references: [id])
+
+  usage DiscountUsage[]
+
+  @@map("discounts")
+}
+
+model DiscountUsage {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+
+  value Float
+  typ DiscountType
+
+  discountId String?
+  discount Discount? @relation(fields: [discountId], references: [id])
+  orderId String?
+  order Order? @relation(fields: [orderId], references: [id])
+
+  @@map("discountUsages")
+}
+
+model Webhook {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  @@map("webhooks")
+}
+
+// @@ shipping & taxes
+
+model ShippingZone {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  deleted DateTime?
+  
+  name String
+
+  shopId String
+  shop Shop @relation(fields: [shopId], references: [id])
+  rates ShippingRate[]
+
+  @@map("shippingZones")
+}
+
+model ShippingRate {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  deleted DateTime?
+
+  name String
+  
+  price Decimal
+  subtotalRange Decimal[]
+  deliveryDuration DateTime[]
+
+  zoneId String
+  zone ShippingZone @relation(fields: [zoneId], references: [id])
+}
+
+model TaxConfigurations {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  charges Boolean @default(true)
+  taxIncluded Boolean @default(false)
+
+  taxes Tax[]
+  
+  shopId String @unique
+  shop Shop @relation(fields: [shopId], references: [id])
+}
+
+model Tax {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  country String
+  rate Float
+
+  configId String
+  config TaxConfigurations @relation(fields: [configId], references: [id])
+
+  @@map("taxes")
+}
+
+model TaxLine {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  title String
+  price Decimal
+  rate Float
+
+  itemId String?
+  item LineItem? @relation(fields: [itemId], references: [id])
+  orderId String?
+  order Order? @relation(fields: [orderId], references: [id])
+
+  @@map("taxLines")
+}
+
+// @@@ collections
+
+model Collection {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  deleted DateTime?
+  published DateTime?
+
+  isPublish Boolean @default(false)
+
+  sort String?
+  title String
+  desc String?
+
+  shopId String
+  shop Shop @relation(fields: [shopId], references: [id])
+
+  products CollectionProduct[]
+  images CollectionImage[]
+
+  @@map("collections")
+}
+
+model CollectionProduct {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+
+  collectionId String
+  collection Collection @relation(fields: [collectionId], references: [id])
+  productId String
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("collectionProducts")
+}
+
+model CollectionImage {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+
+
+  url String
+  altText String
+  position Int @default(0)
+
+  collectionId String
+  collection Collection @relation(fields: [collectionId], references: [id])
+
+  @@map("collectionImages")
+}
+
+// @@@ content management
+
+// @@@ metafields
+
+// @@@ localization
+
+model Localization {
+  id String @id @default(nanoid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  @@map("locales")
+}
+
+// @@@ misc

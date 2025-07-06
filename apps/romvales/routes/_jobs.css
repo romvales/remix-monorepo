@@ -1,0 +1,54 @@
+@import '../../../shared/components/tailwind.css';
+@plugin '@tailwindcss/typography';
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  @apply text-[16px] sm:text-[17px];
+}
+
+body {
+  @apply min-h-screen grid dark:bg-zinc-950;
+  @apply text-zinc-800 dark:text-zinc-100;
+  grid-template-rows: auto 1fr;
+}
+
+main,
+main > .romvales-main {
+  @apply space-y-4;
+}
+
+.romvales-main {
+  @apply grid py-4;
+  @apply bg-zinc-100 dark:bg-zinc-950;
+
+  grid-template-rows: 1fr auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-zinc-800 dark:text-zinc-100;
+  font-family: Cambria, 'Times New Roman', Times, serif;
+}
+
+.prose ul, ol {
+  @apply space-y-0;
+
+  & > li {
+    @apply text-zinc-800 dark:text-zinc-400 text-base;
+  }
+}
+
+p {
+  @apply text-zinc-600 dark:text-zinc-400; 
+}
+
+.romvales-h-label {
+  @apply text-zinc-800 dark:text-zinc-100;
+}
+
+.prose > h1, h2, h3, h4, h5, h6 {
+  @apply my-2;
+}
+
+.prose h2 {
+  @apply text-lg;
+}
